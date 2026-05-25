@@ -1,35 +1,22 @@
 @import './base.css';
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+@theme{
+  /* Colors */
+  --color-primary: #12294B;
+  --color-secondary: #7988D2;
+  --color-tertiary: #405B77;
+
+  /* Custom Breakpoints */
+    --breakpoint-xs: 420px;
+    --breakpoint-nav: 950px;
+    --breakpoint-wide: 1200px; 
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+@layer components {
+    .nav-link {
+        @apply text-white text-base tracking-wide font-normal relative;
+    }
 }
