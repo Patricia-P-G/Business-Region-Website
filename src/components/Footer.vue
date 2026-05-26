@@ -7,48 +7,48 @@
 
         <!-- TITLES -->
         <div class="col-span-12 md:col-span-3">
-          <h2 class="text-xl font-medium">
+          <h2 class="text-xl font-bold">
             Business Region DE-DK
           </h2>
         </div>
 
         <div class="col-span-12 md:col-start-5 md:col-end-7">
-          <h2 class="text-xl font-medium">
+          <h2 class="text-xl font-bold">
             Contact
           </h2>
         </div>
 
         <div class="col-span-12 md:col-start-7 md:col-end-9">
-          <h2 class="text-xl font-medium">
+          <h2 class="text-xl font-bold">
             Opening hours
           </h2>
         </div>
 
         <div class="col-span-12 md:col-start-9 md:col-end-11">
-          <h2 class="text-xl font-medium">
+          <h2 class="text-xl font-bold">
             Follow us
           </h2>
         </div>
 
         <div class="col-span-12 md:col-start-11 md:col-end-13">
-          <h2 class="text-xl font-medium">
+          <h2 class="text-xl font-bold">
             More
           </h2>
         </div>
 
         <!-- ONE BIG LINE -->
-        <div class="col-span-12 mb-2 mt-5">
+        <div class="col-span-12 mb-2 mt-3">
           <div class="h-px w-full bg-white/40"></div>
         </div>
 
         <!-- LOGO / BRAND -->
         <div class="col-span-12 md:col-span-3">
           <router-link to="/" class="mb-8 flex items-center">
-            <img src="@/assets/Business Region SVG.svg" width="200" height="100" alt="Business Region logo"
-              class="pt-10" />
+            <img src="@/assets/business-region-logo.svg" width="200" height="100" alt="Business Region logo"
+              class="pt-10 filter invert" />
           </router-link>
 
-          <div class="flex items-center gap-4 pt-10">
+          <div class="flex items-center gap-1 pt-2">
             <img src="@/assets/interreg logo.png" alt="Interreg logo" class="h-11 rounded-md bg-white cursor-pointer" />
           </div>
         </div>

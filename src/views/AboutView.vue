@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="relative h-[720px] w-full overflow-hidden">
+    <section class="relative h-[760px] w-full overflow-hidden">
 
       <!-- HERO IMAGE -->
       <img src="@/assets/about us/hero-image-about-us.png" alt="About us hero"
@@ -15,7 +15,7 @@
         <div class="text-white">
 
           <!-- TITLE -->
-          <h1 class="mx-auto max-w-6xl text-4xl font-semibold uppercase leading-tight text-white
+          <h1 class="mx-auto max-w-6xl text-4xl font-semibold uppercase leading-tight tracking-wide text-white
                    drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)]
                    sm:text-5xl
                    lg:text-4xl
@@ -34,7 +34,7 @@
           <!-- LOGO BOX -->
           <div class="flex justify-center">
             <div class="mx-auto flex w-100 items-center justify-center rounded-2xl bg-white py-2 shadow-xl">
-              <img src="@/assets/about us/logo partners about us.png" alt="Interreg logo" class="h-20 cursor-pointer" />
+              <img src="@/assets/about us/logo partners about us.png" alt="Interreg logo" class="h-20" />
             </div>
           </div>
         </div>

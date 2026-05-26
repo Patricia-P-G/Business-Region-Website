@@ -4,8 +4,8 @@
             class="fixed top-0 z-50 w-full bg-primary shadow-sm"
             aria-label="Main navigation"
         >
-            <div class="mx-auto px-5 xs:px-6 sm:px-8 lg:px-25 wide:px-25">
-                <div class="grid h-[71px] grid-cols-12 items-center gap-2.5">
+            <div class="mx-auto px-5 xs:px-6 sm:px-8 lg:px-20 wide:px-20">
+                <div class="grid h-[71px] grid-cols-12 items-center gap-2.5 ">
 
                     <!-- LOGO -->
                     <div class="col-span-6 flex justify-start nav:col-span-2">
@@ -15,9 +15,9 @@
                             aria-label="Business Region homepage"
                         >
                             <img
-                                src="@/assets/Business Region SVG.svg"
+                                src="@/assets/business-region-logo.svg"
                                 alt="Business Region logo"
-                                class="w-[115px] xs:w-[125px] nav:w-[135px]"
+                                class="w-[115px] xs:w-[125px] nav:w-[135px] filter invert"
                             />
                         </router-link>
                     </div>
@@ -44,7 +44,7 @@
                         <button
                             @click.stop="toggleLanguageDropdown"
                             type="button"
-                            class="flex h-10 items-center justify-center gap-1.5 text-sm font-bold uppercase text-white transition-all duration-300 cursor-pointer wide:gap-2 wide:px-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+                            class="flex h-10 items-center justify-center gap-1.5 text-sm font-normal uppercase text-white transition-all duration-300 cursor-pointer wide:gap-2 wide:px-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
                             aria-label="Select language"
                             :aria-expanded="isLanguageDropdownOpen"
                             aria-haspopup="true"
@@ -55,7 +55,7 @@
                                 class="h-6 w-6"
                             />
 
-                            <span class="">
+                            <span>
                                 {{ selectedLanguage.code }}
                             </span>
 

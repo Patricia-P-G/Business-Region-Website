@@ -1,214 +1,327 @@
 <template>
   <section
     class="relative w-full overflow-hidden bg-[linear-gradient(to_bottom,#F8F8F8_0%,#EEF0FF_55%,#9BA8F0_100%)] py-14 sm:py-20"
+    aria-labelledby="partners-title"
   >
-    <div class="relative z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-25">
+    <div class="relative z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-20">
       <div class="grid grid-cols-12 gap-2.5">
-
         <!-- TITLE -->
         <div class="col-span-12">
-          <h2 class="text-center text-2xl font-black uppercase text-[#11213A] sm:text-left sm:text-4xl">
+          <h2 id="partners-title" class="text-3xl font-bold uppercase text-primary sm:text-4xl">
             Companies that trust us:
           </h2>
+        </div>
 
-          <hr class="mt-3 border-0 border-t-[3px] border-[#12294B]" />
+        <!-- UNDERLINE -->
+        <div class="col-span-12">
+          <hr class="border-0 border-t-[2px] border-primary" />
         </div>
 
         <!-- TESTIMONIALS -->
-        <div class="col-span-12 mt-14 sm:mt-20">
-          <Swiper
-            :modules="[Pagination, Keyboard]"
-            :slides-per-view="1"
-            :centered-slides="true"
-            :loop="true"
-            :initial-slide="1"
-            :pagination="{ clickable: true }"
-            :keyboard="{ enabled: true }"
-            :space-between="24"
-            :breakpoints="{
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 32
-              }
-            }"
-            class="testimonial-swiper"
-            @swiper="onSwiperInit"
-            @slideChange="onSlideChange"
-          >
-            <SwiperSlide
-              v-for="(person, index) in testimonials"
+        <div class="col-span-12 mt-20">
+          <!-- MOBILE -->
+          <div class="flex flex-col gap-8 md:hidden">
+            <article
+              v-for="person in testimonials"
               :key="person.name"
+              class="testimonial-card active-card"
             >
-              <button
-                type="button"
-                class="flex w-full justify-center text-left"
-                @click="goToTestimonial(index)"
-                :aria-label="`Show testimonial from ${person.name}`"
+              <!-- HEADER -->
+              <div class="flex items-center gap-4">
+                <img
+                  :src="person.image"
+                  :alt="`${person.name} portrait`"
+                  class="h-14 w-14 rounded-full object-cover"
+                />
+
+                <div>
+                  <h3 class="text-sm font-semibold">
+                    {{ person.name }}
+                  </h3>
+
+                  <p class="mt-1 text-xs italic text-white/70">
+                    {{ person.position }}
+                  </p>
+                </div>
+              </div>
+
+              <!-- QUOTE -->
+              <span class="quote-left"> “ </span>
+
+              <p class="testimonial-text">
+                {{ person.quote }}
+              </p>
+
+              <span class="quote-right"> ” </span>
+            </article>
+          </div>
+
+          <!-- DESKTOP -->
+          <div class="hidden md:grid grid-cols-12 items-center gap-2.5">
+            <!-- LEFT CARD -->
+            <div class="col-span-12 md:col-span-4">
+              <article
+                class="testimonial-card"
+                :class="activeIndex === 0 ? 'active-card' : 'small-card'"
+                @click="activeIndex = 0"
               >
-                <!-- ACTIVE CARD -->
-                <article
-                  v-if="activeIndex === index"
-                  class="relative min-h-[330px] w-full max-w-[330px] rounded-xl bg-[#112E56] px-7 py-6 text-white shadow-[0_0_16px_rgba(121,139,210,0.9)] transition-all duration-300 sm:min-h-[360px]"
-                >
+                <div class="card-inner">
+                  <!-- HEADER -->
                   <div class="flex items-center gap-4">
                     <img
-                      :src="person.image"
-                      :alt="person.name"
+                      :src="testimonials[0].image"
+                      :alt="`${testimonials[0].name} portrait`"
                       class="h-14 w-14 rounded-full object-cover"
                     />
 
                     <div>
                       <h3 class="text-sm font-semibold">
-                        {{ person.name }}
+                        {{ testimonials[0].name }}
                       </h3>
 
                       <p class="mt-1 text-xs italic text-white/70">
-                        {{ person.position }}
+                        {{ testimonials[0].position }}
                       </p>
                     </div>
                   </div>
 
-                  <span class="absolute left-7 top-24 text-6xl font-black text-[#7C8BDA]">
-                    “
-                  </span>
+                  <!-- QUOTES -->
+                  <span class="quote-left"> “ </span>
 
-                  <p class="relative z-10 mt-10 pl-10 pr-4 text-sm leading-5 text-white">
-                    {{ person.quote }}
+                  <p class="testimonial-text">
+                    {{ testimonials[0].quote }}
                   </p>
 
-                  <span class="absolute bottom-5 right-8 text-6xl font-black text-[#7C8BDA]">
-                    ”
-                  </span>
-                </article>
+                  <span class="quote-right"> ” </span>
+                </div>
+              </article>
+            </div>
 
-                <!-- SIMPLE CARD -->
-                <article
-                  v-else
-                  class="flex h-24 w-full max-w-[360px] items-center gap-5 rounded-lg bg-[#496587] px-6 text-white shadow-lg transition-all duration-300 hover:bg-[#405B77] md:mt-28"
-                >
-                  <img
-                    :src="person.image"
-                    :alt="person.name"
-                    class="h-14 w-14 rounded-full object-cover"
-                  />
+            <!-- MIDDLE CARD -->
+            <div class="col-span-12 md:col-span-4">
+              <article
+                class="testimonial-card"
+                :class="activeIndex === 1 ? 'active-card' : 'small-card'"
+                @click="activeIndex = 1"
+              >
+                <div class="card-inner">
+                  <!-- HEADER -->
+                  <div class="flex items-center gap-4">
+                    <img
+                      :src="testimonials[1].image"
+                      :alt="`${testimonials[1].name} portrait`"
+                      class="h-14 w-14 rounded-full object-cover"
+                    />
 
-                  <div>
-                    <h3 class="text-sm font-semibold">
-                      {{ person.name }}
-                    </h3>
+                    <div>
+                      <h3 class="text-sm font-semibold">
+                        {{ testimonials[1].name }}
+                      </h3>
 
-                    <p class="mt-2 text-xs italic text-white/75">
-                      {{ person.position }}
-                    </p>
+                      <p class="mt-1 text-xs italic text-white/70">
+                        {{ testimonials[1].position }}
+                      </p>
+                    </div>
                   </div>
-                </article>
-              </button>
-            </SwiperSlide>
-          </Swiper>
-        </div>
 
+                  <!-- QUOTES -->
+                  <span class="quote-left"> “ </span>
+
+                  <p class="testimonial-text">
+                    {{ testimonials[1].quote }}
+                  </p>
+
+                  <span class="quote-right"> ” </span>
+                </div>
+              </article>
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="col-span-12 md:col-span-4">
+              <article
+                class="testimonial-card"
+                :class="activeIndex === 2 ? 'active-card' : 'small-card'"
+                @click="activeIndex = 2"
+              >
+                <div class="card-inner">
+                  <!-- HEADER -->
+                  <div class="flex items-center gap-4">
+                    <img
+                      :src="testimonials[2].image"
+                      :alt="`${testimonials[2].name} portrait`"
+                      class="h-14 w-14 rounded-full object-cover"
+                    />
+
+                    <div>
+                      <h3 class="text-sm font-semibold">
+                        {{ testimonials[2].name }}
+                      </h3>
+
+                      <p class="mt-1 text-xs italic text-white/70">
+                        {{ testimonials[2].position }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- QUOTES -->
+                  <span class="quote-left"> “ </span>
+
+                  <p class="testimonial-text">
+                    {{ testimonials[2].quote }}
+                  </p>
+
+                  <span class="quote-right"> ” </span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- DOTS -->
+          <div class="mt-16 hidden justify-center gap-3 md:flex">
+            <button
+              v-for="(_, index) in testimonials"
+              :key="index"
+              @click="activeIndex = index"
+              class="h-3 w-3 rounded-full transition-all duration-300"
+              :class="activeIndex === index ? 'scale-125 bg-primary' : 'bg-[#D9D9F2]'"
+              :aria-label="`Show testimonial ${index + 1}`"
+            ></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Keyboard } from 'swiper/modules'
+import person1 from "@/assets/person1.png";
+import person2 from "@/assets/person2.png";
+import person3 from "@/assets/person3.png";
 
-import 'swiper/css'
-import 'swiper/css/pagination'
-
-import person1 from '@/assets/person1.png'
-import person2 from '@/assets/person2.png'
-import person3 from '@/assets/person3.png'
-
-const activeIndex = ref(1)
-const swiperInstance = ref(null)
-
-const onSwiperInit = swiper => {
-  swiperInstance.value = swiper
-  activeIndex.value = swiper.realIndex
-}
-
-const onSlideChange = swiper => {
-  activeIndex.value = swiper.realIndex
-}
-
-const goToTestimonial = index => {
-  activeIndex.value = index
-
-  if (swiperInstance.value) {
-    swiperInstance.value.slideToLoop(index)
-  }
-}
+const activeIndex = ref(1);
 
 const testimonials = [
   {
-    name: 'Kristian Levering',
-    position: 'Manager of Levering & CO',
+    name: "Kristian Levering",
+    position: "Manager of Levering & CO",
     image: person1,
     quote:
-      'Business Region helped us build stronger cross-border connections and discover valuable opportunities across the region.'
+      "Business Region helped us build stronger cross-border connections and discover valuable opportunities across the region.",
   },
   {
-    name: 'Hans Zubruck',
-    position: 'CEO of Mackletrusk',
+    name: "Hans Zubruck",
+    position: "CEO of Mackletrusk",
     image: person2,
     quote:
-      'Business Region was essential for our cross-border collaboration. We managed to increase revenue and productivity thanks to this platform.'
+      "Business Region was essential for our cross-border collaboration. We managed to increase revenue and productivity thanks to this platform.",
   },
   {
-    name: 'Daniel Larsson',
-    position: 'Head of department at ECRO',
+    name: "Daniel Larsson",
+    position: "Head of department at ECRO",
     image: person3,
     quote:
-      'The network helped us connect with relevant partners, companies, and initiatives across the Danish-German border.'
-  }
-]
+      "The network helped us connect with relevant partners, companies, and initiatives across the Danish-German border.",
+  },
+];
 </script>
 
 <style scoped>
-.testimonial-swiper {
-  padding-bottom: 70px;
+.testimonial-card {
+  width: 100%;
+  min-height: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    opacity 0.45s ease,
+    background-color 0.45s ease;
 }
 
-:deep(.swiper-wrapper) {
-  align-items: center;
+.card-inner {
+  position: relative;
+
+  min-height: 420px;
+
+  border-radius: 14px;
+  background: #12294b;
+
+  padding: 28px;
+
+  color: white;
+
+  transition:
+    transform 0.45s ease,
+    background-color 0.45s ease;
+
+  box-shadow: 0 0 18px rgba(121, 139, 210, 0.65);
 }
 
-:deep(.swiper-pagination) {
-  bottom: 10px;
-}
-
-:deep(.swiper-pagination-bullet) {
-  width: 10px;
-  height: 10px;
-  background: #b8b8e9;
+.active-card {
   opacity: 1;
+  z-index: 20;
 }
 
-:deep(.swiper-pagination-bullet-active) {
-  background: #11213a;
+.active-card .card-inner {
+  transform: scale(1.08);
+}
+
+.small-card {
+  opacity: 0.6;
+}
+
+.small-card .card-inner {
+  transform: scale(0.82);
+  background: #5d7091;
+}
+
+.testimonial-text {
+  position: relative;
+  z-index: 10;
+
+  margin-top: 42px;
+
+  padding-left: 38px;
+  padding-right: 14px;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.quote-left {
+  position: absolute;
+
+  left: 26px;
+  top: 96px;
+
+  font-size: 72px;
+  font-weight: 900;
+
+  color: #7c8bda;
+}
+
+.quote-right {
+  position: absolute;
+  right: 26px;
+  bottom: 14px;
+  font-size: 72px;
+  font-weight: 900;
+  color: #7c8bda;
 }
 
 @media (max-width: 767px) {
-  .testimonial-swiper {
-    padding-bottom: 80px;
+  .testimonial-card,
+  .card-inner {
+    min-height: auto;
   }
 
-  :deep(.swiper-pagination) {
-    right: 8px;
-    left: auto;
-    top: 50%;
-    bottom: auto;
-    width: auto;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  .active-card .card-inner,
+  .small-card .card-inner {
+    transform: scale(1);
+  }
+
+  .small-card {
+    opacity: 1;
   }
 }
 </style>

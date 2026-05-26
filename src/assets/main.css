@@ -1,22 +1,30 @@
-@import './base.css';
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "./base.css";
 
-@theme{
-  /* Colors */
-  --color-primary: #12294B;
-  --color-secondary: #7988D2;
-  --color-tertiary: #405B77;
-
-  /* Custom Breakpoints */
-    --breakpoint-xs: 420px;
-    --breakpoint-nav: 950px;
-    --breakpoint-wide: 1200px; 
+@layer base {
+  html,
+  body {
+    font-family: 'Raleway', sans-serif;
+  }
 }
 
+@theme {
+  /* Colors */
+  --color-primary: #12294b;
+  --color-secondary: #7988d2;
+  --color-tertiary: #405b77;
+
+  --font-display: "Raleway", sans-serif;
+
+  /* Custom Breakpoints */
+  --breakpoint-xs: 420px;
+  --breakpoint-nav: 950px;
+  --breakpoint-wide: 1200px;
+}
 
 @layer components {
-    .nav-link {
-        @apply text-white text-base tracking-wide font-normal relative;
-    }
+  .nav-link {
+    @apply text-white text-base tracking-wide font-normal relative;
+  }
 }

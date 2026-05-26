@@ -20,7 +20,7 @@
 
         <!-- Subtitle -->
         <p class="mx-auto mt-8 max-w-4xl text-3xl font-medium leading-10
-                 text-white drop-shadow-[0_3px_3px_rgba(0,0,0,0.45)]">
+                 text-white drop-shadow-[0_3px_3px_rgba(0,0,0,0.45)] tracking-wide">
           A growing library of interviews, conference talks,
           and event footage from across the cross-border region.
         </p>

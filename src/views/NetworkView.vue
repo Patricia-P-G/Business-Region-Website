@@ -23,7 +23,7 @@
           </h1>
 
           <!-- TEXT -->
-          <p class="mx-auto pb-35 max-w-5xl text-xl font-normal leading-6
+          <p class="mx-auto pb-20 max-w-2xl text-xl font-normal leading-6 tracking-wide
                    sm:text-2x drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)]">
             Business DE-DK is a cross-border project focused on strengthening cooperation
             between businesses, institutions, and initiatives in the northern German and
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <!-- BOTTOM FADE -->
+     <!-- BOTTOM FADE -->
       <div class="absolute bottom-0 left-0 z-20 h-[240px] w-full
                bg-[linear-gradient(to_top,#FFFFFF_0%,rgba(255,255,255,0.88)_35%,rgba(255,255,255,0)_100%)]">
       </div>

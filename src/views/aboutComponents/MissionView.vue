@@ -16,7 +16,7 @@
 
         <!-- Text -->
         <div class="col-span-12 md:col-start-7 md:col-end-12">
-          <h2 class="text-3xl font-medium uppercase text-black pb-5">
+          <h2 class="text-3xl font-bold uppercase text-black pb-5">
             Our Mission
           </h2>
 
@@ -27,7 +27,7 @@
             companies and job seekers.
           </p>
 
-          <p class="mt-6 text-lg leading-6 text-black pb-10">
+          <p class="mt-6 text-lg font-thin leading-6 text-black pb-10">
             As part of the project we collect data and insights about regional
             opportunities, needs, and existing initiatives by collaborating with
             organizations, politicians, and stakeholders across the region. This
@@ -36,7 +36,7 @@
           </p>
 
           <button
-            class="mt-10 rounded-md bg-[#7C8BDA] px-10 py-3 text-sm font-bold uppercase text-white transition hover:bg-[#6677c7] cursor-pointer"
+            class="mt-10 rounded-md bg-primary px-10 py-3 text-sm font-bold uppercase text-white transition hover:bg-[#6677c7] cursor-pointer"
           >
             Contact Us
           </button>

@@ -34,12 +34,11 @@ const router = createRouter({
       component: NetworkView,
     },
 
-     // PARTNER PAGES
+    // PARTNER PAGES
     {
       path: "/partners/business-esbjerg",
       name: "business-esbjerg",
-      component: () =>
-        import("@/views/networkComponents/business esbjerg/BusinessEsbjergView.vue"),
+      component: () => import("@/views/networkComponents/business esbjerg/BusinessEsbjergView.vue"),
     },
 
     // {
