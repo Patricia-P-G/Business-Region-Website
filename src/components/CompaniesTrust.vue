@@ -5,184 +5,112 @@
   >
     <div class="relative z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-20">
       <div class="grid grid-cols-12 gap-2.5">
-        <!-- TITLE -->
         <div class="col-span-12">
-          <h2 id="partners-title" class="text-xl flex justify-center font-bold uppercase text-primary sm:text-4xl xs:text-xl">
+          <h2
+            id="partners-title"
+            class="flex justify-center text-center text-xl font-bold uppercase text-primary xs:text-2xl md:text-3xl lg:justify-start lg:text-4xl"
+          >
             Companies that trust us:
           </h2>
         </div>
 
-        <!-- UNDERLINE -->
         <div class="col-span-12">
           <hr class="border-0 border-t-[2px] border-primary" />
         </div>
 
-        <!-- TESTIMONIALS -->
-        <div class="col-span-12 mt-20">
+        <div class="col-span-12 mt-10 md:mt-20">
           <!-- MOBILE -->
           <div class="flex flex-col gap-8 md:hidden">
             <article
               v-for="person in testimonials"
               :key="person.name"
-              class="testimonial-card active-card"
+              class="testimonial-card active-card mobile-card"
             >
-              <!-- HEADER -->
               <div class="flex items-center gap-4">
                 <img
                   :src="person.image"
                   :alt="`${person.name} portrait`"
-                  class="h-14 w-14 rounded-full object-cover"
+                  class="testimonial-img shrink-0 rounded-full object-cover"
                 />
 
-                <div>
-                  <h3 class="text-lg  xs:text-sm font-semibold">
+                <div class="min-w-0">
+                  <h3 class="text-base font-semibold xs:text-lg">
                     {{ person.name }}
                   </h3>
 
-                  <p class="mt-1 text-xs italic text-black">
+                  <p class="mt-1 text-xs italic text-white/75">
                     {{ person.position }}
                   </p>
                 </div>
               </div>
 
-              <!-- QUOTE -->
-              <span class=" hidden md:visible quote-left"> “ </span>
-
               <p class="testimonial-text">
                 {{ person.quote }}
               </p>
 
-              <span class="quote-right"> ” </span>
+              <span class="quote-right">”</span>
             </article>
           </div>
 
-          <!-- DESKTOP -->
-          <div class="hidden md:grid grid-cols-12 items-center gap-2.5">
-            <!-- LEFT CARD -->
-            <div class="col-span-12 md:col-span-4">
+          <!-- TABLET / DESKTOP -->
+          <div class="testimonial-desktop-grid hidden md:grid">
+            <div
+              v-for="(person, index) in testimonials"
+              :key="person.name"
+              class="testimonial-column"
+            >
               <article
                 class="testimonial-card"
-                :class="activeIndex === 0 ? 'active-card' : 'small-card'"
-                @click="activeIndex = 0"
+                :class="activeIndex === index ? 'active-card' : 'small-card'"
+                @click="activeIndex = index"
               >
                 <div class="card-inner">
-                  <!-- HEADER -->
-                  <div class="flex items-center gap-4">
+                  <div class="flex items-center gap-5">
                     <img
-                      :src="testimonials[0].image"
-                      :alt="`${testimonials[0].name} portrait`"
-                      class="h-14 w-14 rounded-full object-cover"
+                      :src="person.image"
+                      :alt="`${person.name} portrait`"
+                      class="testimonial-img shrink-0 rounded-full object-cover"
                     />
 
-                    <div>
-                      <h3 class="text-sm font-semibold">
-                        {{ testimonials[0].name }}
+                    <div class="min-w-0">
+                      <h3 class="testimonial-name">
+                        {{ person.name }}
                       </h3>
 
-                      <p class="mt-1 text-xs italic text-white/70">
-                        {{ testimonials[0].position }}
+                      <p class="testimonial-position">
+                        {{ person.position }}
                       </p>
                     </div>
                   </div>
 
-                  <!-- QUOTES -->
-                  <span class="quote-left"> “ </span>
+                  <img
+                    src="@/assets/quotes up.svg"
+                    class="quote-img quote-img-up"
+                    alt=""
+                    aria-hidden="true"
+                  />
 
                   <p class="testimonial-text">
-                    {{ testimonials[0].quote }}
+                    {{ person.quote }}
                   </p>
 
-                  <span class="quote-right"> ” </span>
-                </div>
-              </article>
-            </div>
-
-            <!-- MIDDLE CARD -->
-            <div class="col-span-12 md:col-span-4">
-              <article
-                class="testimonial-card"
-                :class="activeIndex === 1 ? 'active-card' : 'small-card'"
-                @click="activeIndex = 1"
-              >
-                <div class="card-inner">
-                  <!-- HEADER -->
-                  <div class="flex items-center gap-4">
-                    <img
-                      :src="testimonials[1].image"
-                      :alt="`${testimonials[1].name} portrait`"
-                      class="h-14 w-14 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="text-sm font-semibold">
-                        {{ testimonials[1].name }}
-                      </h3>
-
-                      <p class="mt-1 text-xs italic text-white/70">
-                        {{ testimonials[1].position }}
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- QUOTES -->
-                  <span class="quote-left"> “ </span>
-
-                  <p class="testimonial-text">
-                    {{ testimonials[1].quote }}
-                  </p>
-
-                  <span class="quote-right"> ” </span>
-                </div>
-              </article>
-            </div>
-
-            <!-- RIGHT CARD -->
-            <div class="col-span-12 md:col-span-4">
-              <article
-                class="testimonial-card"
-                :class="activeIndex === 2 ? 'active-card' : 'small-card'"
-                @click="activeIndex = 2"
-              >
-                <div class="card-inner">
-                  <!-- HEADER -->
-                  <div class="flex items-center gap-4">
-                    <img
-                      :src="testimonials[2].image"
-                      :alt="`${testimonials[2].name} portrait`"
-                      class="h-14 w-14 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="text-sm font-semibold">
-                        {{ testimonials[2].name }}
-                      </h3>
-
-                      <p class="mt-1 text-xs italic text-white/70">
-                        {{ testimonials[2].position }}
-                      </p>
-                    </div>
-                  </div>
-
-                  <!-- QUOTES -->
-                  <span class="quote-left"> “ </span>
-
-                  <p class="testimonial-text">
-                    {{ testimonials[2].quote }}
-                  </p>
-
-                  <span class="quote-right"> ” </span>
+                  <img
+                    src="@/assets/quotes down.svg"
+                    class="quote-img quote-img-down"
+                    alt=""
+                    aria-hidden="true"
+                  />
                 </div>
               </article>
             </div>
           </div>
 
-          <!-- DOTS -->
           <div class="mt-16 hidden justify-center gap-3 md:flex">
             <button
               v-for="(_, index) in testimonials"
               :key="index"
               @click="activeIndex = index"
-              class="h-3 w-3 rounded-full transition-all duration-300"
+              class="h-2 w-2 rounded-full transition-all duration-300"
               :class="activeIndex === index ? 'scale-125 bg-primary' : 'bg-[#D9D9F2]'"
               :aria-label="`Show testimonial ${index + 1}`"
             ></button>
@@ -215,7 +143,7 @@ const testimonials = [
     position: "CEO of Mackletrusk",
     image: person2,
     quote:
-      "Business Region was essential for our cross-border collaboration. We managed to increase revenue and productivity thanks to this platform.",
+      "Business Region played a major role in improving our cross-border collaboration. Through this platform, we connected with valuable partners, expanded our network, and discovered new opportunities that helped increase both productivity and growth.",
   },
   {
     name: "Daniel Larsson",
@@ -227,12 +155,24 @@ const testimonials = [
 ];
 </script>
 
+
 <style scoped>
-.testimonial-card {
+.testimonial-desktop-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 10px;
+  align-items: center;
+}
+
+.testimonial-column {
+  grid-column: span 4 / span 4;
   width: 100%;
-  min-height: 420px;
+}
+
+.testimonial-card {
+  position: relative;
+  width: 100%;
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible;
   transition:
     opacity 0.45s ease,
     background-color 0.45s ease;
@@ -240,21 +180,32 @@ const testimonials = [
 
 .card-inner {
   position: relative;
-
   min-height: 420px;
-
   border-radius: 14px;
   background: #12294b;
-
-  padding: 28px;
-
+  padding: 40px;
   color: white;
-
+  box-shadow: 0 0 18px rgba(121, 139, 210, 0.65);
   transition:
     transform 0.45s ease,
     background-color 0.45s ease;
+}
 
-  box-shadow: 0 0 18px rgba(121, 139, 210, 0.65);
+.testimonial-img {
+  width: 72px;
+  height: 72px;
+}
+
+.testimonial-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.testimonial-position {
+  margin-top: 4px;
+  font-size: 12px;
+  font-style: italic;
+  color: rgb(255 255 255 / 0.7);
 }
 
 .active-card {
@@ -263,11 +214,11 @@ const testimonials = [
 }
 
 .active-card .card-inner {
-  transform: scale(1.08);
+  transform: scale(1);
 }
 
 .small-card {
-  opacity: 0.6;
+  opacity: 0.65;
 }
 
 .small-card .card-inner {
@@ -278,50 +229,304 @@ const testimonials = [
 .testimonial-text {
   position: relative;
   z-index: 10;
-
-  margin-top: 42px;
-
-  padding-left: 38px;
-  padding-right: 14px;
-
+  margin-top: 52px;
+  padding-left: 48px;
+  padding-right: 38px;
   font-size: 15px;
   line-height: 1.7;
 }
 
-.quote-left {
+.quote-img {
   position: absolute;
+  width: 32px;
+  height: 40px;
+}
 
+.quote-img-up {
   left: 26px;
-  top: 96px;
+  top: 128px;
+}
 
-  font-size: 72px;
-  font-weight: 900;
-
-  color: #7c8bda;
+.quote-img-down {
+  right: 26px;
+  bottom: 24px;
 }
 
 .quote-right {
   position: absolute;
-  right: 26px;
-  bottom: 14px;
-  font-size: 72px;
+  right: 24px;
+  bottom: 10px;
+  font-size: 58px;
   font-weight: 900;
+  line-height: 1;
   color: #7c8bda;
 }
 
-@media (max-width: 767px) {
-  .testimonial-card,
+/* DESKTOP SHRINK STEP 1 */
+@media (min-width: 1200px) and (max-width: 1399px) {
   .card-inner {
-    min-height: auto;
+    min-height: 360px;
+    padding: 28px;
   }
 
-  .active-card .card-inner,
+  .testimonial-img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .testimonial-name {
+    font-size: 15px;
+  }
+
+  .testimonial-position {
+    font-size: 10px;
+  }
+
+  .testimonial-text {
+    margin-top: 36px;
+    padding-left: 32px;
+    padding-right: 22px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .quote-img {
+    width: 26px;
+    height: 32px;
+  }
+
+  .quote-img-up {
+    left: 20px;
+    top: 104px;
+  }
+
+  .quote-img-down {
+    right: 20px;
+    bottom: 20px;
+  }
+
   .small-card .card-inner {
-    transform: scale(1);
+    transform: scale(0.86);
+  }
+}
+
+/* DESKTOP SHRINK STEP 2 */
+@media (min-width: 1050px) and (max-width: 1199px) {
+  .card-inner {
+    min-height: 330px;
+    padding: 22px;
+  }
+
+  .testimonial-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .testimonial-name {
+    font-size: 13px;
+  }
+
+  .testimonial-position {
+    font-size: 9px;
+  }
+
+  .testimonial-text {
+    margin-top: 28px;
+    padding-left: 26px;
+    padding-right: 14px;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .quote-img {
+    width: 22px;
+    height: 28px;
+  }
+
+  .quote-img-up {
+    left: 16px;
+    top: 88px;
+  }
+
+  .quote-img-down {
+    right: 16px;
+    bottom: 18px;
+  }
+
+  .small-card .card-inner {
+    transform: scale(0.88);
+  }
+}
+
+/* DESKTOP SHRINK STEP 3 - still 3 cards */
+@media (min-width: 949px) and (max-width: 1049px) {
+  .testimonial-desktop-grid {
+    gap: 8px;
+  }
+
+  .card-inner {
+    min-height: 310px;
+    padding: 18px;
+  }
+
+  .testimonial-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .testimonial-name {
+    font-size: 12px;
+  }
+
+  .testimonial-position {
+    font-size: 8px;
+  }
+
+  .testimonial-text {
+    margin-top: 24px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .quote-img {
+    width: 20px;
+    height: 24px;
+  }
+
+  .quote-img-up {
+    left: 14px;
+    top: 78px;
+  }
+
+  .quote-img-down {
+    right: 14px;
+    bottom: 16px;
+  }
+
+  .small-card .card-inner {
+    transform: scale(0.9);
+  }
+}
+
+/* FROM 948PX DOWN: 1 CARD PER ROW */
+@media (min-width: 768px) and (max-width: 948px) {
+  .testimonial-desktop-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .testimonial-column {
+    grid-column: auto;
+  }
+
+  .card-inner {
+    min-height: auto;
+    padding: 24px 22px 30px;
+  }
+
+  .testimonial-img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .testimonial-name {
+    font-size: 16px;
+  }
+
+  .testimonial-position {
+    font-size: 11px;
+  }
+
+  .testimonial-text {
+    margin-top: 28px;
+    padding-left: 24px;
+    padding-right: 18px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .quote-img {
+    width: 24px;
+    height: 30px;
+  }
+
+  .quote-img-up {
+    left: 18px;
+    top: 86px;
+  }
+
+  .quote-img-down {
+    right: 20px;
+    bottom: 16px;
   }
 
   .small-card {
     opacity: 1;
+  }
+
+  .small-card .card-inner {
+    transform: scale(1);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .mobile-card {
+    background: #12294b;
+    padding: 24px 22px 56px;
+    color: white;
+    box-shadow: 0 0 18px rgba(121, 139, 210, 0.65);
+  }
+
+  .mobile-card:nth-child(1),
+  .mobile-card:nth-child(3) {
+    background: #405b77;
+  }
+
+  .testimonial-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .testimonial-text {
+    margin-top: 32px;
+    padding-left: 24px;
+    padding-right: 10px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: white;
+  }
+
+  .quote-right {
+    right: 22px;
+    bottom: 10px;
+    font-size: 52px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .mobile-card {
+    padding: 22px 18px 52px;
+  }
+
+  .testimonial-img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .testimonial-text {
+    margin-top: 28px;
+    padding-left: 18px;
+    padding-right: 6px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .quote-right {
+    right: 18px;
+    bottom: 8px;
+    font-size: 48px;
   }
 }
 </style>

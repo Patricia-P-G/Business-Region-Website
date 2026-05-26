@@ -37,7 +37,10 @@
 
   .dropdown-link{
     @apply text-black text-base tracking-wide font-normal
+  }
 
+  .heading-section{
+    
   }
 
 }
