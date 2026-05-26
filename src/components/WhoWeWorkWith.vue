@@ -4,11 +4,11 @@
     aria-describedby="partners-description" itemscope itemtype="https://schema.org/Organization">
 
     <!-- Center Glow -->
-    <div class="pointer-events-none absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#A5B4FF]/25 blur-3xl"
+    <div class="pointer-events-none absolute left-1/2 top-1/2 h-162.5 w-162.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#A5B4FF]/25 blur-3xl"
         aria-hidden="true"></div>
 
     <!-- Right Spacing -->
-    <div class="relative z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-20">
+    <div class="relative z-10 mx-auto max-w-400 px-5 xs:px-6 sm:px-8 lg:px-20">
 
         <!-- Grid Wrapper -->
         <div class="grid grid-cols-12 gap-2.5">
@@ -27,7 +27,7 @@
 
             <!-- Underline -->
             <div class="col-span-12">
-                <hr class="border-0 border-t-[2px] border-white/90" />
+                <hr class="border-0 border-t-2 border-white/90" />
             </div>
 
             <!-- Cards Grid Wrapper -->
