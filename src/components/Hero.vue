@@ -57,38 +57,6 @@
 
 
 <script setup>
-import { useHead } from '@unhead/vue'
-
-useHead({
-  title: 'Business Region DE-DK | Cross-Border Business & Recruitment',
-
-  meta: [
-    {
-      name: 'description',
-      content: 'Business Region DE-DK supports cross-border collaboration, recruitment, and regional growth across Southern Denmark and Northern Germany.',
-    },
-    {
-      name: 'keywords',
-      content: 'Business Region DE-DK, Denmark Germany business, cross-border recruitment, regional growth, Denmark Germany collaboration',
-    },
-    {
-      property: 'og:title',
-      content: 'Business Region DE-DK',
-    },
-    {
-      property: 'og:description',
-      content:'Cross-border business collaboration and recruitment between Denmark and Germany.',
-    },
-    {
-      property: 'og:type',
-      content: 'website',
-    },
-    {
-      property: 'og:image',
-      content: '/hero-image.png',
-}
-  ],
-});
 </script>
 
 <style scoped>
