@@ -1,12 +1,11 @@
 <template>
-  <section
-    class="relative min-h-screen w-full"
-    aria-labelledby="hero-title"
-  >
+  <section class="relative min-h-screen w-full" aria-labelledby="hero-title">
+
     <!-- Hero Image -->
     <img
       src="@/assets/hero-image.png"
-      alt="Business professionals collaborating across the Denmark-Germany border region"
+      alt=""
+      aria-hidden="true"
       class="absolute inset-0 h-full w-full object-cover object-center"
       fetchpriority="high"
     />
@@ -15,40 +14,36 @@
     <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
 
     <!-- Container -->
-    <div class="relative z-10 mx-auto min-h-screen max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-20 wide:px-20">
+    <div class="relative z-10 mx-auto min-h-screen max-w-400 px-5 xs:px-6 sm:px-8 lg:px-20 wide:px-20">
+
       <!-- 12 column grid -->
       <div class="grid min-h-screen grid-cols-12 gap-2.5">
 
         <!-- Hero content -->
-        <div
-          class="col-span-12 flex flex-col items-center justify-center text-center md:col-start-1 md:col-end-11 md:items-start md:text-left lg:col-end-10"
-        >
+        <div class="col-span-12 flex flex-col items-center justify-center text-center lg:col-start-1 lg:col-end-10 lg:items-start lg:text-left">
+
           <!-- Main page title -->
-          <h1
-            id="hero-title"
-            class="pb-10 text-4xl font-semibold leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-5xl wide:text-6xl"
-          >
+          <h1 id="hero-title" class="pb-8 text-4xl font-semibold leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)] sm:pb-10 sm:text-5xl lg:text-5xl wide:text-6xl">
             Cross-Border Business & Recruitment Denmark–Germany
           </h1>
 
           <!-- SEO-friendly hero description -->
-          <p
-            class="mx-auto max-w-[900px] pb-10 text-base leading-7 tracking-wide text-white sm:text-xl md:mx-0"
-          >
-            Business Region DE-DK supports cross-border collaboration, recruitment, and regional
-            growth by connecting companies, talent, and opportunities across Southern Denmark and
+          <p class="mx-auto max-w-225 pb-10 text-base leading-7 tracking-wide text-white sm:text-xl lg:mx-0">
+            Business Region DE-DK supports cross-border collaboration,
+            recruitment, and regional growth by connecting companies,
+            talent, and opportunities across Southern Denmark and
             Northern Germany.
           </p>
 
           <!-- CTA link -->
           <router-link
             to="/about"
-            class="flex h-[42px] w-[168px] mb-25 xs:mb-0 items-center justify-center rounded-md bg-secondary text-sm font-normal uppercase text-white transition-all duration-300 hover:bg-[#5F73D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+            class=" flex h-10.5 w-42 mb-23 xs:mb-0 items-center justify-center rounded-md bg-secondary text-sm font-normal uppercase text-white transition-all duration-300 hover:bg-[#5F73D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
             aria-label="Read more about Business Region DE-DK"
-            title="Read more about Business Region DE-DK"
-          >
+            title="Read more about Business Region DE-DK">
             Read More
           </router-link>
+
         </div>
 
       </div>
@@ -56,10 +51,45 @@
 
     <!-- Bottom fade decoration -->
     <div class="hero-bottom-fade" aria-hidden="true"></div>
+
   </section>
 </template>
 
-<script setup></script>
+
+<script setup>
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'Business Region DE-DK | Cross-Border Business & Recruitment',
+
+  meta: [
+    {
+      name: 'description',
+      content: 'Business Region DE-DK supports cross-border collaboration, recruitment, and regional growth across Southern Denmark and Northern Germany.',
+    },
+    {
+      name: 'keywords',
+      content: 'Business Region DE-DK, Denmark Germany business, cross-border recruitment, regional growth, Denmark Germany collaboration',
+    },
+    {
+      property: 'og:title',
+      content: 'Business Region DE-DK',
+    },
+    {
+      property: 'og:description',
+      content:'Cross-border business collaboration and recruitment between Denmark and Germany.',
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:image',
+      content: '/hero-image.png',
+}
+  ],
+});
+</script>
 
 <style scoped>
 .hero-bottom-fade {
@@ -69,6 +99,7 @@
   z-index: 20;
   height: 10rem;
   width: 100%;
+
   background-image: linear-gradient(
     to top,
     rgba(255, 255, 255, 1) 0%,
@@ -79,5 +110,4 @@
     rgba(255, 255, 255, 0) 100%
   );
 }
-
 </style>
