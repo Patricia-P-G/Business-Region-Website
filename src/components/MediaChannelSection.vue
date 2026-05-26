@@ -158,7 +158,7 @@ const videos = [
     image: mediaPerson1,
     alt: "Business interview with Peter Engel discussing cross-border business challenges",
     views: "3.1K",
-    embed: "https://www.youtube.com/embed/5fDe_LQ-qcc",
+    embed: "https://youtube.com/shorts/cP1LckqWuyQ",
   },
   {
     title: "What does it really take to move to another country for a job?",
@@ -167,7 +167,7 @@ const videos = [
     image: mediaPerson2,
     alt: "Interview discussing international relocation and jobs abroad",
     views: "3.1K",
-    embed: "https://www.youtube.com/embed/G5m4kabOHSc",
+    embed: "https://youtube.com/shorts/1ny8k3w_noM",
   },
   {
     title: "What does the cross-border region need?",
@@ -176,7 +176,7 @@ const videos = [
     image: mediaPerson3,
     alt: "Discussion about future needs of the Danish-German cross-border region",
     views: "3.1K",
-    embed: "https://www.youtube.com/embed/nh4SJTDYbkA",
+    embed: "https://youtube.com/shorts/AV2WvYJ9wlw",
   },
 ];
 </script>
