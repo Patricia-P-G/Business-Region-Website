@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative min-h-[680px] w-full overflow-hidden md:min-h-screen"
+    class="relative min-h-screen w-full"
     aria-labelledby="hero-title"
   >
     <!-- Hero Image -->
@@ -15,27 +15,25 @@
     <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
 
     <!-- Container -->
-    <div
-      class="relative z-10 mx-auto min-h-[680px] max-w-[1600px] px-5 py-24 xs:px-6 sm:min-h-[740px] sm:px-8 sm:py-28 md:min-h-screen md:py-0 lg:px-20 wide:px-20"
-    >
+    <div class="relative z-10 mx-auto min-h-screen max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-20 wide:px-20">
       <!-- 12 column grid -->
-      <div class="grid min-h-[680px] grid-cols-12 gap-2.5 sm:min-h-[740px] md:min-h-screen">
+      <div class="grid min-h-screen grid-cols-12 gap-2.5">
 
         <!-- Hero content -->
         <div
-          class="col-span-12 flex flex-col items-center justify-center text-center md:col-start-1 md:col-end-11 md:items-start md:text-left lg:col-end-10"
+          class="col-span-12 flex flex-col items-center py-50 text-center md:col-start-1 md:col-end-11 md:items-start md:text-left lg:col-end-10"
         >
           <!-- Main page title -->
           <h1
             id="hero-title"
-            class="max-w-[980px] pb-6 text-3xl font-semibold leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)] xs:text-4xl sm:pb-8 sm:text-5xl md:pb-10 lg:text-5xl wide:text-6xl"
+            class="pb-10 text-4xl font-semibold leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)] sm:text-5xl lg:text-5xl wide:text-6xl"
           >
             Cross-Border Business & Recruitment Denmark–Germany
           </h1>
 
           <!-- SEO-friendly hero description -->
           <p
-            class="mx-auto max-w-[900px] pb-8 text-base leading-7 tracking-wide text-white sm:pb-10 sm:text-lg md:mx-0 md:text-xl"
+            class="mx-auto max-w-[900px] pb-10 text-base leading-7 tracking-wide text-white sm:text-xl md:mx-0"
           >
             Business Region DE-DK supports cross-border collaboration, recruitment, and regional
             growth by connecting companies, talent, and opportunities across Southern Denmark and
@@ -69,7 +67,7 @@
   bottom: 0;
   left: 0;
   z-index: 20;
-  height: 7rem;
+  height: 10rem;
   width: 100%;
   background-image: linear-gradient(
     to top,
@@ -82,15 +80,4 @@
   );
 }
 
-@media (min-width: 640px) {
-  .hero-bottom-fade {
-    height: 8.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-bottom-fade {
-    height: 10rem;
-  }
-}
 </style>
