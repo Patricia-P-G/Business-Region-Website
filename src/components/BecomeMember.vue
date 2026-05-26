@@ -1,18 +1,17 @@
 <template>
     <section class="relative w-full overflow-hidden bg-white py-24">
         <div class="relative z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-20">
-
             <div class="grid grid-cols-12 items-center gap-2.5">
 
                 <!-- LEFT CONTENT -->
                 <div class="col-span-12 lg:col-start-1 lg:col-end-6">
 
                     <!-- Title -->
-                     <div class="flex justify-center">
-                    <h2 class="pb-10 text-3xl flex justify-center font-semibold uppercase text-primary sm:text-4xl">
-                        Become a member today
-                    </h2>
-                </div>
+                     <div class="">
+                        <h2 class="pb-10 text-3xl flex justify-center font-semibold uppercase text-primary sm:text-4xl">
+                            Become a member today
+                        </h2>
+                    </div>
 
                     <!-- Content -->
                     <div class="text-[#111111]">
@@ -59,7 +58,7 @@
                             <div v-if="!showForm" key="info"
                                 class="absolute inset-0 rounded-[40px] bg-[#112E56] px-10 py-12 text-white lg:rounded-l-[60px]">
 
-                                <div class="flex h-full flex-col justify-between">
+                                <div class="flex h-full flex-col gap-10 justify-center">
                                     <!-- ITEM -->
                                     <div class="flex items-center gap-6">
                                         <img src="@/assets/globe icon.svg" alt="" class="h-16 w-16" />
@@ -89,142 +88,7 @@
                                 </div>
 
                             </div>
-
-                            <!-- FORM -->
-                            <div v-else key="form"
-                                class="absolute inset-0 overflow-hidden rounded-[40px] bg-white shadow-2xl lg:rounded-l-[60px]">
-
-                                <div class="grid h-full lg:grid-cols-12">
-
-                                    <!-- STEPS -->
-                                    <div class="bg-primary px-6 py-10 text-white lg:col-span-4">
-
-                                        <button v-for="(step, index) in steps" :key="step" @click="currentStep = index"
-                                            :class="[
-                                                'mb-8 flex w-full items-center gap-4 rounded-md px-4 py-3 text-left text-xs uppercase transition-all duration-300',
-                                                currentStep === index
-                                                    ? 'bg-white text-primary'
-                                                    : 'text-white'
-                                            ]">
-
-                                            <span class="flex h-7 w-7 items-center justify-center rounded-full border">
-                                                {{ index + 1 }}
-                                            </span>
-
-                                            {{ step }}
-
-                                        </button>
-
-                                    </div>
-
-                                    <!-- FORM CONTENT -->
-                                    <div class="flex h-full flex-col justify-between px-8 py-10 lg:col-span-8">
-
-                                        <!-- STEP 1 -->
-                                        <div v-if="currentStep === 0" class="grid gap-5">
-
-                                            <label class="form-label">
-                                                Company name
-
-                                                <input class="form-input" placeholder="Eks. Nike" />
-                                            </label>
-
-                                            <div class="grid gap-5 sm:grid-cols-2">
-
-                                                <label class="form-label">
-                                                    Address
-
-                                                    <input class="form-input" placeholder="Eks. Norgesgade, 45" />
-                                                </label>
-
-                                                <label class="form-label">
-                                                    City
-
-                                                    <input class="form-input" placeholder="Eks. Esbjerg" />
-                                                </label>
-
-                                            </div>
-
-                                            <label class="form-label max-w-[220px]">
-                                                Postnumber
-
-                                                <input class="form-input" placeholder="Eks. 6705" />
-                                            </label>
-
-                                        </div>
-
-                                        <!-- STEP 2 -->
-                                        <div v-if="currentStep === 1" class="grid gap-5">
-
-                                            <div class="grid gap-5 sm:grid-cols-2">
-
-                                                <label class="form-label">
-                                                    Contact person
-
-                                                    <input class="form-input" placeholder="Eks. Joe Boel" />
-                                                </label>
-
-                                                <label class="form-label">
-                                                    Tlf.
-
-                                                    <input class="form-input" placeholder="Eks. 12345678" />
-                                                </label>
-
-                                            </div>
-
-                                            <label class="form-label">
-                                                Email
-
-                                                <input class="form-input" placeholder="Eks. joeboel@gmail.com" />
-                                            </label>
-
-                                            <label class="form-label">
-                                                Company website
-
-                                                <input class="form-input" placeholder="Eks. company.dk" />
-                                            </label>
-
-                                        </div>
-
-                                        <!-- STEP 3 -->
-                                        <div v-if="currentStep === 2" class="grid gap-5">
-
-                                            <label class="form-label">
-                                                CVR Number
-
-                                                <input class="form-input" placeholder="Eks. 32345678" />
-                                            </label>
-
-                                            <label class="form-label">
-                                                Company description
-
-                                                <textarea class="form-input min-h-[150px] resize-none"
-                                                    placeholder="Type a brief description here"></textarea>
-
-                                            </label>
-
-                                        </div>
-
-                                        <!-- BUTTONS -->
-                                        <div class="mt-8 flex gap-5">
-
-                                            <button @click="prevStep"
-                                                class="flex h-10 flex-1 items-center justify-center rounded-md border border-primary text-xs uppercase text-primary transition hover:bg-gray-100">
-                                                ← Back
-                                            </button>
-
-                                            <button @click="nextStep"
-                                                class="flex h-10 flex-1 items-center justify-center rounded-md bg-secondary text-xs uppercase text-white transition hover:bg-[#5F73D9]">
-                                                {{ currentStep === 2 ? 'Submit' : 'Next' }} →
-                                            </button>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
+                            
 
                         </transition>
 
@@ -260,6 +124,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import Form from './Form.vue'
 
 const showForm = ref(false)
 const currentStep = ref(0)

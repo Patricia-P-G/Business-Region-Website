@@ -1,175 +1,137 @@
 <template>
-  <section
-    class="relative w-full overflow-hidden bg-white py-20"
-    aria-labelledby="media-preview-title"
-  >
-    <div class="relative z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-20">
-      <!-- GRID -->
-      <div class="grid grid-cols-12 gap-2.5">
-        <!-- TITLE -->
-        <div class="col-span-12 pb-10 text-center sm:pb-14">
-          <h2
-            class="relative mx-auto inline-block max-w-[900px] px-8 text-xl font-bold leading-tight text-[#11213A] sm:px-14 sm:text-4xl"
-          >
-            <img
-              src="@/assets/quotes up.svg"
-              class="absolute left-0 top-[-14px] h-5 w-5 sm:-left-2 sm:top-[-20px] sm:h-8 sm:w-8"
-              alt=""
-              aria-hidden="true"
-            />
+    <!-- Media Channel Section -->
+    <section class="relative w-full overflow-hidden bg-white py-20" aria-labelledby="media-preview-title" aria-describedby="media-preview-description"
+     itemscope itemtype="https://schema.org/ItemList">
 
-            One region. Two countries. Endless possibilities.
+        <!-- Right SpACE -->
+        <div class="relative z-10 mx-auto max-w-400 px-5 xs:px-6 sm:px-8 lg:px-20">
 
-            <img
-              src="@/assets/quotes down.svg"
-              class="absolute bottom-[-14px] right-0 h-5 w-5 sm:-right-2 sm:bottom-[-20px] sm:h-8 sm:w-8"
-              alt=""
-              aria-hidden="true"
-            />
-          </h2>
-        </div>
+            <!-- Grid Title Wrapper -->
+            <div class="grid grid-cols-12 gap-2.5">
+                <div class="col-span-12 pb-10 text-center sm:pb-14">
+                    <h2 id="media-preview-title" class="relative mx-auto inline-block max-w-225 px-8 text-xl font-bold leading-tight text-primary sm:px-14 sm:text-4xl"
+                        itemprop="name">
 
-        <!-- CONTENT -->
-        <div class="col-span-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <!-- VIDEO CARDS -->
-          <article
-            v-for="(video, i) in videos"
-            :key="video.title"
-            class="group relative h-[500px] overflow-hidden rounded-xl shadow-[0_4px_10px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_18px_rgba(0,0,0,0.3)]"
-          >
-            <!-- If this video is playing, show iframe in-place -->
-            <template v-if="currentVideoIndex === i">
-              <div class="absolute inset-0 bg-black">
-                <div class="relative h-full w-full">
-                  <div class="relative h-full w-full">
-                    <iframe
-                      :src="video.embed + '?autoplay=1&rel=0'"
-                      class="h-full w-full"
-                      frameborder="0"
-                      allow="autoplay; encrypted-media; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <button
-                    @click.prevent="closePlayer"
-                    aria-label="Close video"
-                    class="absolute right-3 top-3 z-10 rounded bg-white/90 px-3 py-1 text-sm font-semibold text-[#11213A]"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            </template>
+                        <!-- Up Quote Icon -->
+                        <img src="@/assets/quotes up.svg" alt="" aria-hidden="true" class="absolute left-0 -top-3.5 h-5 w-5 sm:-left-2 sm:-top-5 sm:h-8 sm:w-8"
+                        />
 
-            <!-- Otherwise show thumbnail + play button -->
-            <template v-else>
-              <img
-                :src="video.image"
-                :alt="video.alt"
-                loading="lazy"
-                class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+                        One region. Two countries. Endless possibilities.
 
-              <!-- LAVENDER FADE -->
-              <div
-                class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#6F7FDD]/95 via-[#6F7FDD]/55 to-transparent"
-                aria-hidden="true"
-              ></div>
+                        <!-- Quotes Down Icon -->
+                        <img src="@/assets/quotes down.svg" alt="" aria-hidden="true"class="absolute bottom-[-14px] right-0 h-5 w-5 sm:-right-2 sm:bottom-[-20px] sm:h-8 sm:w-8"
+                        />
+                    </h2>
 
-              <!-- SHORT TAG -->
-              <span
-                class="absolute right-4 top-4 rounded-md bg-[#7C8BDA] px-5 py-1 text-[9px] font-bold uppercase text-white"
-              >
-                Short
-              </span>
-
-              <!-- PLAY ICON -->
-              <button
-                type="button"
-                class="absolute inset-0 flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80"
-                :aria-label="`Play video: ${video.title}`"
-                @click.prevent="play(i)"
-              >
-                <img
-                  src="@/assets/play-button.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="h-20 w-20 transition duration-300 group-hover:scale-110 group-hover:brightness-125 cursor-pointer"
-                />
-              </button>
-
-              <!-- TEXT -->
-              <div class="absolute bottom-5 left-5 right-5 text-white">
-                <div class="absolute bottom-10">
-                  <h3 class="pb-2 text-lg font-normal uppercase leading-6">
-                    {{ video.title }}
-                  </h3>
-
-                  <p class="mt-2 text-[14px] italic leading-4 text-white/85">
-                    {{ video.description }}
-                  </p>
+                    <p id="media-preview-description" class="sr-only" itemprop="description">
+                        Watch interviews, short videos, conference talks, and business stories from the
+                        Danish-German cross-border region.
+                    </p>
                 </div>
 
-                <p class="mt-5 text-right text-[10px] font-bold">{{ video.views }} views</p>
-              </div>
-            </template>
-          </article>
+                <!--Grid Cards Wrapper -->
+                <div class="col-span-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    <!-- Card -->
+                    <article v-for="(video, i) in videos" :key="video.title" class="group relative h-125 overflow-hidden rounded-xl shadow-[0_4px_10px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_18px_rgba(0,0,0,0.3)]"
+                        itemscope itemtype="https://schema.org/VideoObject" itemprop="itemListElement" :aria-labelledby="`video-title-${i}`">
+                        
+                        <!-- Meta Tags -->
+                        <meta itemprop="name" :content="video.title" />
+                        <meta itemprop="description" :content="video.description" />
+                        <meta itemprop="embedUrl" :content="video.embed" />
+                        <meta itemprop="uploadDate" content="2026-01-01" />
 
-          <!-- MEDIA CHANNEL CARD -->
-          <aside
-            class="flex h-[500px] flex-col justify-center items-center rounded-xl bg-[#7C8BDA] px-7 text-white shadow-[0_4px_10px_rgba(0,0,0,0.28)]"
-            aria-labelledby="media-channel-title"
-          >
-            <h3 id="media-channel-title" class="text-3xl font-bold uppercase">Media Channel</h3>
+                        <!-- Video Player --- Displys embedded YouTube video when selected -->
+                        <template v-if="currentVideoIndex === i">
 
-            <p class="text-lg font-normal text-justify leading-6 tracking-wide text-white py-10">
-              Interviews, conference talks, and footage from across the cross-border region. Hear
-              advisors, CEOs, and partners share what’s working, what isn’t, and where the
-              opportunities are. A full library of voices shaping the Danish-German business
-              community.
-            </p>
+                            <!-- Full-size video container -->
+                            <div class="absolute inset-0 bg-black">
+                                <iframe :src="video.embed + '?autoplay=1&rel=0'" :title="`Video player for ${video.title}`" class="h-full w-full" allow="autoplay; encrypted-media; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
 
-            <router-link
-              to="/media"
-              aria-label="Browse more videos from the media channel"
-              class="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-lg font-bold text-[#11213A] transition-all duration-300 hover:bg-[#EEF0FF] focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80"
-            >
-              Browse More
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32">
-                <path d="M0 0h32v32H0z" fill="none" />
-                <path
-                  fill="currentColor"
-                  d="M11.166 23.963L22.36 17.5c1.43-.824 1.43-2.175 0-3L11.165 8.037c-1.43-.826-2.598-.15-2.598 1.5v12.926c0 1.65 1.17 2.326 2.598 1.5z"
-                />
-              </svg>
-            </router-link>
-          </aside>
+                                <!-- Close Button -->
+                                <button type="button" @click.prevent="closePlayer" aria-label="Close video player" class="absolute right-3 top-3 z-10 rounded bg-white/90 px-3 py-1 text-sm font-semibold text-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-white">
+                                    Close
+                                </button>
+                            </div>
+                        </template>
+
+                        <!-- Thumbnail Preview -->
+                        <template v-else>
+                    
+                            <!-- Thumbnail Picture -->
+                            <img :src="video.image" :alt="video.alt" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+
+                            <!-- Purple Gradient -->
+                            <div class="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-secondary/95 via-[#6F7FDD]/55 to-transparent"
+                            aria-hidden="true"></div>
+
+                            <!-- Video Category/Tag -->
+                            <span class="absolute right-4 top-4 rounded-md bg-secondary px-5 py-1 text-[9px] font-bold uppercase text-white">
+                                Short
+                            </span>
+
+                            <!-- Play Button -->
+                            <button type="button" class="absolute inset-0 flex items-center justify-center focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80"
+                                :aria-label="`Play video: ${video.title}`" @click.prevent="play(i)">
+
+                                <!-- Play Icon -->
+                                <img src="@/assets/play-button.svg" alt="" aria-hidden="true" class="h-20 w-20 cursor-pointer transition duration-300 group-hover:scale-110 group-hover:brightness-125"
+                                />
+                            </button>
+
+                            <!-- Video Details Wrapper -->
+                            <div class="absolute inset-x-5 bottom-10 flex h-35 flex-col justify-end text-white">
+                            
+                                <!-- Title -->
+                                <h3 :id="`video-title-${i}`" class="line-clamp-3 min-h-0 sm:min-h-18 pb-2 text-lg font-normal uppercase leading-6"
+                                    itemprop="name">
+                                    {{ video.title }}
+                                </h3>
+
+                                <!-- Description -->
+                                <p class="line-clamp-3 min-h-12 text-[14px] italic leading-4 text-white/85" itemprop="description">
+                                    {{ video.description }}
+                                </p>
+
+                                <!-- Accessibility Transcript -->
+                                <a :href="`/transcripts/${i}`" class="sr-only focus:not-sr-only">
+                                    Read transcript for {{ video.title }}
+                                </a>
+                            </div>
+                        </template>
+                    </article>
+
+                    <!-- Media Channel Card -->
+                    <aside class="flex h-125 flex-col items-center justify-center rounded-xl bg-secondary px-7 text-white shadow-[0_4px_10px_rgba(0,0,0,0.28)]"
+                        aria-labelledby="media-channel-title">
+
+                        <!-- Title -->
+                        <h3 id="media-channel-title" class="text-3xl font-bold uppercase">Media Channel</h3>
+
+                        <!-- Paragraph -->
+                        <p class="py-10 text-justify text-lg font-normal leading-6 tracking-wide text-white">
+                            Interviews, conference talks, and footage from across the cross-border region. Hear
+                            advisors, CEOs, and partners share what’s working, what isn’t, and where the
+                            opportunities are.
+                        </p>
+
+                        <!-- Browse More Button -->
+                        <router-link to="/media" aria-label="Browse more videos from the media channel" class="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-lg font-bold text-[#11213A] transition-all duration-300 hover:bg-[#EEF0FF] focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80">
+                            Browse More
+
+                            <!-- Arrow -->
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path d="M0 0h32v32H0z" fill="none" />
+                                <path fill="currentColor" d="M11.166 23.963L22.36 17.5c1.43-.824 1.43-2.175 0-3L11.165 8.037c-1.43-.826-2.598-.15-2.598 1.5v12.926c0 1.65 1.17 2.326 2.598 1.5z"/>
+                            </svg>
+                        </router-link>
+                    </aside>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <!-- MODAL PLAYER -->
-    <div
-      v-if="currentVideo"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-      @click.self="closePlayer"
-    >
-      <div class="w-full max-w-3xl px-4">
-        <div class="relative pb-[56.25%]">
-          <!-- 16:9 -->
-          <iframe
-            :src="currentVideo + '?autoplay=1&rel=0'"
-            class="absolute left-0 top-0 h-full w-full rounded-lg"
-            frameborder="0"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <button @click="closePlayer" class="mt-4 rounded bg-white px-4 py-2">Close</button>
-      </div>
-    </div>
-  </section>
+   </section>
 </template>
 
 <script setup>
