@@ -20,6 +20,7 @@
   /* Custom Breakpoints */
   --breakpoint-xs: 420px;
   --breakpoint-nav: 950px;
+  --breakpoint-hero: 950px;
   --breakpoint-wide: 1200px;
 }
 
