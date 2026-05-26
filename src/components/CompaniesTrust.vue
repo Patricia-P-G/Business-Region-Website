@@ -445,6 +445,14 @@ const testimonials = [
     line-height: 1.6;
   }
 
+   .quote-right {
+    display: none;
+  }
+
+  .quote-img {
+    display: none;
+  }
+
   .quote-img {
     width: 24px;
     height: 30px;
@@ -479,7 +487,9 @@ const testimonials = [
   }
 
   .mobile-card:nth-child(1),
-  .mobile-card:nth-child(3) {
+  .mobile-card:nth-child(2),
+  .mobile-card:nth-child(3)
+ {
     background: #405b77;
   }
 
@@ -498,9 +508,11 @@ const testimonials = [
   }
 
   .quote-right {
-    right: 22px;
-    bottom: 10px;
-    font-size: 52px;
+    display: none;
+  }
+
+  .quote-img {
+    display: none;
   }
 }
 
@@ -523,10 +535,12 @@ const testimonials = [
     line-height: 1.6;
   }
 
-  .quote-right {
-    right: 18px;
-    bottom: 8px;
-    font-size: 48px;
+   .quote-right {
+    display: none;
+  }
+
+  .quote-img {
+    display: none;
   }
 }
 </style>
