@@ -14,7 +14,7 @@
                         <router-link to="/" class="flex items-center" aria-label="Business Region homepage">
                             <img
                             src="@/assets/business-region-logo.svg"
-                            alt="Business Region logo"
+                            alt="Business Region DE-DK logo "
                             class="w-28.75 xs:w-32.25 nav:w-33.75 filter invert"
                             />
                         </router-link>
@@ -40,8 +40,8 @@
                             class="flex h-10 items-center justify-center gap-1.5 text-sm font-normal uppercase text-white transition-all duration-300 cursor-pointer wide:gap-2 wide:px-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
                             aria-label="Select language"
                             :aria-expanded="isLanguageDropdownOpen"
-                            aria-haspopup="true"
-                            >
+                            aria-haspopup="menu"
+                            aria-controls="desktop-language-menu">
 
                             <!-- Flag -->
                             <img :src="selectedLanguage.icon" :alt="`${selectedLanguage.label} flag`"class="h-6 w-6"/>
@@ -58,7 +58,7 @@
 
                         <!-- Language Dropdown-->
                         <transition name="dropdown">
-                            <div v-if="isLanguageDropdownOpen" class="absolute right-0 top-full mt-4 w-44 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl" role="menu">
+                            <div v-if="isLanguageDropdownOpen" id="desktop-language-menu" class="absolute right-0 top-full mt-4 w-44 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl" role="menu">
                                 <button
                                     v-for="language in languages"
                                     :key="language.code"
@@ -97,7 +97,8 @@
                                 class="flex h-10 items-center justify-center gap-1.5 text-sm font-normal uppercase text-white"
                                 aria-label="Select language"
                                 :aria-expanded="isLanguageDropdownOpen"
-                                aria-haspopup="true">
+                                aria-haspopup="menu"
+                                aria-controls="mobile-language-menu">
 
                                 <!-- Flag -->
                                 <img :src="selectedLanguage.icon" :alt="`${selectedLanguage.label} flag`" class="h-6 w-6"/>
@@ -114,7 +115,7 @@
 
                             <!-- Language Dropdown -->
                             <transition name="dropdown">
-                                <div v-if="isLanguageDropdownOpen" class="absolute right-0 top-full mt-4 w-40 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl" role="menu">
+                                <div v-if="isLanguageDropdownOpen" id="mobile-language-menu" class="absolute right-0 top-full mt-4 w-40 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl" role="menu">
                                     <button
                                         v-for="language in languages"
                                         :key="language.code"
@@ -140,6 +141,7 @@
                             class="relative z-80 flex h-10 w-10 cursor-pointer items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
                             :aria-label="isOpen ? 'Close menu' : 'Open menu'"
                             :aria-expanded="isOpen"
+                            aria-controls="mobile-menu"
                             type="button">
 
                             <!-- Top Line -->
@@ -171,8 +173,8 @@
             <!-- Mobile Menu -->
             <transition name="mobile-menu">
                 <!-- Mobile Menu Wrapper -->
-                <div v-if="isOpen" class="absolute right-0 top-18 w-52.5 rounded-lg bg-white px-5 py-10 shadow-2xl xs:right-4 sm:right-8 nav:hidden"
-                    role="dialog" aria-label="Mobile menu">
+                <div v-if="isOpen" id="mobile-menu" class="absolute right-0 top-18 w-52.5 rounded-lg bg-white px-5 py-10 shadow-2xl xs:right-4 sm:right-8 nav:hidden"
+                    role="navigation" aria-label="Mobile menu">
 
                     <!--Menu Items Wrapper-->
                     <div class="flex flex-col items-end gap-3 border-t border-[#7C8BDA] py-3">
