@@ -22,14 +22,14 @@
       Our Mission
     </h2>
 
-    <p class="mt-5 text-base  font-normal text-justify leading-7 text-black sm:text-lg">
+    <p class="mt-5 text-base  font-medium text-justify leading-6 text-black sm:text-lg">
       The project aims to improve coordination and business collaboration
       across borders, helping address labor shortages, support economic
       growth, and create a more attractive and visible region for
       companies and job seekers.
     </p>
 
-    <p class="mt-5 text-base font-normal text-justify leading-7 text-black sm:text-lg">
+    <p class="mt-5 text-base font-medium text-justify leading-6 text-black sm:text-lg">
       As part of the project we collect data and insights about regional
       opportunities, needs, and existing initiatives by collaborating with
       organizations, politicians, and stakeholders across the region. This

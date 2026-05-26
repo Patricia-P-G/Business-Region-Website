@@ -5,7 +5,7 @@
 
                 <!-- TITLE -->
                 <div class="col-span-12 pt-6 sm:pt-10">
-                    <h1 class="text-3xl font-semibold uppercase tracking-tight text-black sm:text-4xl">
+                    <h1 class="text-3xl font-semibold uppercase text-black sm:text-4xl">
                         Browse our partners
                     </h1>
                 </div>
@@ -35,7 +35,7 @@
                 </div>
 
                 <!-- PARTNERS -->
-                <div class="col-span-12 mt-12 grid grid-cols-1 items-center gap-x-12 gap-y-14 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-20">
+                <div class="col-span-12 mt-12 grid grid-cols-2 items-center gap-x-12 gap-y-5 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-20">
                     <div
                         v-for="partner in partners"
                         :key="partner.name"

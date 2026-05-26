@@ -15,7 +15,7 @@
             Priority 4
           </h2>
 
-          <p class="mt-6 text-base leading-6 text-black pb-5">
+          <p class="mt-6 text-base text-justify font-medium leading-6 text-black ">
             The priority “A functional region” aims to improve the strategic and
             institutional capacity and the framework for cross-border cooperation
             and to reduce barriers. The framework conditions include laws and
@@ -23,14 +23,14 @@
             awareness, information, knowledge and interest.
           </p>
 
-          <p class="mt-8 text-base leading-6 text-black pb-5">
+          <p class="mt-8 text-base text-justify font-medium leading-6 text-black">
             In addition to the improvements themselves, there will also be
             increased anchoring and institutionalization of cross-border
             cooperation and the expansion of structures and results that have
             already been created.
           </p>
 
-          <p class="mt-8 text-base leading-6 text-black">
+          <p class="mt-8 text-base text-justify font-medium leading-6 text-black">
             In terms of content, the priority “A functional region” has a
             cross-cutting approach and is therefore open to all relevant subject
             areas, however, the focus must always be on cross-border cooperation.

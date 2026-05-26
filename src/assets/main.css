@@ -24,7 +24,19 @@
 }
 
 @layer components {
+    .grid{
+        @apply grid grid-cols-12 gap-2.5;
+    }
+
+
+    /* Nav links */
   .nav-link {
     @apply text-white text-base tracking-wide font-normal relative;
   }
+
+  .dropdown-link{
+    @apply text-black text-base tracking-wide font-normal
+
+  }
+
 }
