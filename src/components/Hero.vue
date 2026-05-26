@@ -43,7 +43,7 @@
           <!-- CTA link -->
           <router-link
             to="/about"
-            class="flex h-[42px] w-[168px] xs:mb-20 items-center justify-center rounded-md bg-secondary text-sm font-normal uppercase text-white transition-all duration-300 hover:bg-[#5F73D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+            class="flex h-[42px] w-[168px] mb-25 xs:mb-0 items-center justify-center rounded-md bg-secondary text-sm font-normal uppercase text-white transition-all duration-300 hover:bg-[#5F73D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
             aria-label="Read more about Business Region DE-DK"
             title="Read more about Business Region DE-DK"
           >
