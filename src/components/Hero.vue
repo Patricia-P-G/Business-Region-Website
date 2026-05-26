@@ -22,12 +22,12 @@
         <!-- Hero content -->
         <div class="col-span-12 flex flex-col items-center justify-center text-center lg:col-start-1 lg:col-end-10 lg:items-start lg:text-left">
 
-          <!-- Main page title -->
+          <!-- Title -->
           <h1 id="hero-title" class="pb-8 text-4xl font-semibold leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)] sm:pb-10 sm:text-5xl lg:text-5xl wide:text-6xl">
             Cross-Border Business & Recruitment Denmark–Germany
           </h1>
 
-          <!-- SEO-friendly hero description -->
+          <!-- Description -->
           <p class="mx-auto max-w-225 pb-10 text-base leading-7 tracking-wide text-white sm:text-xl lg:mx-0">
             Business Region DE-DK supports cross-border collaboration,
             recruitment, and regional growth by connecting companies,
@@ -35,7 +35,7 @@
             Northern Germany.
           </p>
 
-          <!-- CTA link -->
+          <!-- CTA Button -->
           <router-link
             to="/about"
             class=" flex h-10.5 w-42 mb-23 xs:mb-0 items-center justify-center rounded-md bg-secondary text-sm font-normal uppercase text-white transition-all duration-300 hover:bg-[#5F73D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <!-- Bottom fade decoration -->
+    <!-- Bottom fade Decoration -->
     <div class="hero-bottom-fade" aria-hidden="true"></div>
 
   </section>
