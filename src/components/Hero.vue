@@ -21,7 +21,7 @@
 
         <!-- Hero content -->
         <div
-          class="col-span-12 flex flex-col items-center py-50 text-center md:col-start-1 md:col-end-11 md:items-start md:text-left lg:col-end-10"
+          class="col-span-12 flex flex-col items-center justify-center text-center md:col-start-1 md:col-end-11 md:items-start md:text-left lg:col-end-10"
         >
           <!-- Main page title -->
           <h1
@@ -43,7 +43,7 @@
           <!-- CTA link -->
           <router-link
             to="/about"
-            class="flex h-[42px] w-[168px] items-center justify-center rounded-md bg-secondary text-sm font-normal uppercase text-white transition-all duration-300 hover:bg-[#5F73D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+            class="flex h-[42px] w-[168px] xs:mb-20 items-center justify-center rounded-md bg-secondary text-sm font-normal uppercase text-white transition-all duration-300 hover:bg-[#5F73D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
             aria-label="Read more about Business Region DE-DK"
             title="Read more about Business Region DE-DK"
           >
