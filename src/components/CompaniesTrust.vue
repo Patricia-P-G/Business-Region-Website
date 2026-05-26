@@ -7,7 +7,7 @@
       <div class="grid grid-cols-12 gap-2.5">
         <!-- TITLE -->
         <div class="col-span-12">
-          <h2 id="partners-title" class="text-3xl font-bold uppercase text-primary sm:text-4xl">
+          <h2 id="partners-title" class="text-xl flex justify-center font-bold uppercase text-primary sm:text-4xl xs:text-xl">
             Companies that trust us:
           </h2>
         </div>
@@ -35,18 +35,18 @@
                 />
 
                 <div>
-                  <h3 class="text-sm font-semibold">
+                  <h3 class="text-lg  xs:text-sm font-semibold">
                     {{ person.name }}
                   </h3>
 
-                  <p class="mt-1 text-xs italic text-white/70">
+                  <p class="mt-1 text-xs italic text-black">
                     {{ person.position }}
                   </p>
                 </div>
               </div>
 
               <!-- QUOTE -->
-              <span class="quote-left"> “ </span>
+              <span class=" hidden md:visible quote-left"> “ </span>
 
               <p class="testimonial-text">
                 {{ person.quote }}

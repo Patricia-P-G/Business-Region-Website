@@ -8,9 +8,11 @@
                 <div class="col-span-12 lg:col-start-1 lg:col-end-6">
 
                     <!-- Title -->
-                    <h2 class="pb-10 text-3xl font-semibold uppercase text-primary sm:text-4xl">
+                     <div class="flex justify-center">
+                    <h2 class="pb-10 text-3xl flex justify-center font-semibold uppercase text-primary sm:text-4xl">
                         Become a member today
                     </h2>
+                </div>
 
                     <!-- Content -->
                     <div class="text-[#111111]">

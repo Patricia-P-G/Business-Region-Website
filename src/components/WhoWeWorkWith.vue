@@ -13,7 +13,7 @@
       <div class="grid grid-cols-12 gap-2.5">
         <!-- TITLE -->
         <div class="col-span-12">
-          <h2 id="partners-title" class="text-3xl font-bold uppercase text-white sm:text-4xl">
+          <h2 id="partners-title" class="text-xl flex justify-center font-bold uppercase text-white sm:text-4xl">
             Who do we work with:
           </h2>
         </div>

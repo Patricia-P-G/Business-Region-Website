@@ -4,7 +4,7 @@
         aria-labelledby="events-title"
     >
 
-        <div class="relative z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-25">
+        <div class="relative flex z-10 mx-auto max-w-[1600px] px-5 xs:px-6 sm:px-8 lg:px-25">
 
             <div class="grid grid-cols-12 gap-2.5">
 

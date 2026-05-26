@@ -28,7 +28,7 @@
           </h1>
 
           <p
-            class="mx-auto max-w-[900px] pb-10 text-base leading-7 tracking-wide text-[#d4cfcf] sm:text-xl md:mx-0 col-start-1 col-end-9"
+            class="mx-auto max-w-[900px] pb-10 text-base leading-7 tracking-wide text-white sm:text-xl md:mx-0 col-start-1 col-end-9"
           >
             Business Region DE-DK supports cross-border collaboration, recruitment, and regional
             growth by connecting companies, talent, and opportunities across Southern Denmark and
