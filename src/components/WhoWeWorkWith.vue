@@ -4,8 +4,7 @@
     aria-describedby="partners-description" itemscope itemtype="https://schema.org/Organization">
 
     <!-- Center Glow -->
-    <div class="pointer-events-none absolute left-1/2 top-1/2 h-162.5 w-162.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#A5B4FF]/25 blur-3xl"
-        aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/2 top-1/2 h-162.5 w-162.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#A5B4FF]/25 blur-3xl" aria-hidden="true"></div>
 
     <!-- Right Spacing -->
     <div class="relative z-10 mx-auto max-w-400 px-5 xs:px-6 sm:px-8 lg:px-20">
