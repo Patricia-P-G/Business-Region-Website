@@ -46,7 +46,7 @@
 
         <!-- Default Button -->
         <button type="button" @click="setSort('default')" :aria-pressed="sortType === 'default'" :class="filterButtonClass(sortType === 'default')">
-          Default
+          All Companies
         </button>
 
         <!-- Alphabetically A-Z Button -->
