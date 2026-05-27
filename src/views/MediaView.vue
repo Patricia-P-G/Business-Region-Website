@@ -5,7 +5,7 @@
       itemscope itemtype="https://schema.org/WebPage">
 
       <!-- Hero Image -->
-      <img src="@/assets/media/hero-image-media.png" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale"
+      <img src="/media/hero-image-media.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale"
         loading="eager" fetchpriority="high"
       />
 
