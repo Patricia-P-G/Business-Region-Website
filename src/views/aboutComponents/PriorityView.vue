@@ -13,7 +13,7 @@
         <article class="col-span-12 lg:col-start-1 lg:col-end-6" itemprop="articleBody">
 
           <!-- Title -->
-          <h2 id="priority-title" class="pb-5 text-3xl font-medium uppercase text-black sm:text-4xl" itemprop="headline">
+          <h2 id="priority-title" class="pb-5 text-3xl text-center font-medium uppercase text-black sm:text-4xl lg:text-left" itemprop="headline">
             Priority 4
           </h2>
 

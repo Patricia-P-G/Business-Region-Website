@@ -1,119 +1,104 @@
 <template>
-  <div>
-    <!-- NEWSLETTER BUTTON -->
-    <transition name="newsletter">
-      <button
-        v-if="showNewsletterButton"
-        @click="isOpen = true"
-        class="fixed bottom-8 right-8 z-40 flex items-center gap-0"
-        aria-label="Open newsletter signup"
-      >
-        <!-- TEXT APPEARS AFTER ICON -->
-        <transition name="newsletter-text">
-          <span
-            v-if="showNewsletterText"
-            class="rounded-l-2xl bg-[#F2F3F7] px-5 py-2 text-xl font-semibold text-primary shadow-sm"
-          >
-            Sign up here for Newsletter
-          </span>
-        </transition>
+  <!-- Newsletter Section -->
+  <div aria-label="Newsletter subscription" itemscope itemtype="https://schema.org/SubscribeAction">
 
-        <!-- ICON FIRST -->
-        <span
-          class="flex h-13 w-13 items-center justify-center rounded-full bg-primary shadow-xl cursor-pointer"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-white"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"
-            />
+    <!-- Newsletter Icon Wrapper -->
+    <transition name="newsletter">
+
+      <!-- Newsletter Button -->
+      <button v-if="showNewsletterButton" @click="isOpen = true" class="fixed bottom-8 right-8 z-40 flex items-center gap-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+        aria-label="Open newsletter signup popup" aria-haspopup="dialog" :aria-expanded="isOpen">
+
+        <!-- Icon Wrapper -->
+        <div class="relative flex items-center justify-end">
+          <transition name="newsletter-text">
+            <!-- Text -->
+            <span v-if="showNewsletterText" class="relative -mr-1.5 whitespace-nowrap rounded-xl bg-[#F2F3F7] px-4.5 py-2 text-base font-semibold text-[#12294B] shadow-sm after:absolute after:left-full after:top-1/2 after:-translate-y-1/2 after:border-[7px] after:border-solid after:border-y-transparent after:border-r-transparent after:border-l-[#F2F3F7]">
+              Sign up here for Newsletter
+            </span>
+          </transition>
+        </div>
+
+        <!-- Newsletter Icon -->
+        <span class="flex h-13 w-13 cursor-pointer items-center justify-center rounded-full bg-primary shadow-xl" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/>
           </svg>
         </span>
+    
       </button>
     </transition>
 
-    <!-- POPUP -->
+    <!-- Newsletter Pop Up -->
     <transition name="popup">
-      <div
-        v-if="isOpen"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-5"
-        @click.self="isOpen = false"
-      >
-        <div
-          class="relative w-full max-w-[900px] overflow-hidden rounded-xl bg-[#F3F5FA] px-8 py-10 shadow-2xl"
-        >
-          <button
-            @click="isOpen = false"
-            class="absolute right-5 top-4 text-3xl font-light text-primary"
-            aria-label="Close newsletter popup"
-          >
-            ×
+      <!-- Dialog Overlay -->
+      <div v-if="isOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-5" @click.self="isOpen = false" role="dialog"
+        aria-modal="true" aria-labelledby="newsletter-title" aria-describedby="newsletter-description">
+
+        <!--Pop Up Content Wrapper -->
+        <div class="relative w-full max-w-235 overflow-hidden rounded-[20px] bg-[linear-gradient(105deg,#F5F6F9_0%,#F0F2F8_50%,#B2BFEB_100%)] p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
+          
+          <!-- Close Button -->
+          <button @click="isOpen = false" class="absolute right-6 top-4 rounded-md cursor-pointer text-3xl" aria-label="Close newsletter popup"type="button">
+
+            <!-- Close Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0z" fill="none" /><path fill="#526176" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/>
+            </svg>
           </button>
 
-          <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-12">
-            <div class="md:col-span-7">
-              <h2 class="text-3xl font-bold text-[#11213A]">
+          <!-- Grid Wrapper -->
+          <div class="grid grid-cols-1 items-center gap-6 md:grid-cols-12">
+
+            <!-- Newsletter Content -->
+            <div class="md:col-span-8 lg:col-span-7">
+
+              <!-- Title -->
+              <h2 id="newsletter-title" class="text-[32px] font-bold tracking-tight text-primary" itemprop="name">
                 Join Our Newsletter
               </h2>
 
-              <p class="mt-4 text-lg text-[#526176]">
+              <!-- Subtitle -->
+              <p id="newsletter-description" class="mt-3 text-lg font-normal text-[#526176]" itemprop="description">
                 Get the latest from across the border.
               </p>
 
-              <form class="mt-8 flex flex-col gap-4 sm:flex-row" @submit.prevent="subscribe">
-                <label for="newsletter-email" class="sr-only">
-                  Email address
-                </label>
+              <!-- Form Wrapper -->
+              <form class="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center" @submit.prevent="subscribe" aria-label="Newsletter subscription form">
+                
+                <!-- Only for Screen Readers -->
+                <label for="newsletter-email" class="sr-only"> Email address </label>
 
-                <input
-                  id="newsletter-email"
-                  v-model="email"
-                  type="email"
-                  required
+                <!-- Input -->
+                <input id="newsletter-email" v-model="email" type="email" required inputmode="email" autocomplete="email" aria-required="true" itemprop="email"
                   placeholder="Your email address..."
-                  class="h-14 flex-1 rounded-lg border border-[#D2D8E4] bg-white px-5 text-base outline-none transition focus:border-[#7988D2]"
+                  class="h-14 flex-1 rounded-xl border border-[#D9E1EC] bg-white px-5 text-base text-primary placeholder-[#909EB4] outline-none shadow-[0_2px_4px_rgba(0,0,0,0.02)] transition focus:border-[#7988D2] focus:ring-1 focus:ring-[#7988D2]"
                 />
 
-                <button
-                  type="submit"
-                  class="h-14 rounded-lg bg-primary px-7 text-base font-semibold uppercase text-white transition hover:bg-[#1B355B]"
-                >
+                <!-- Subscribe Button -->
+                <button type="submit" class="h-14 rounded-xl bg-primary px-8 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-[#1a355e] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#12294B] focus-visible:ring-offset-2 cursor-pointer"
+                  aria-label="Subscribe to newsletter">
                   Subscribe
                 </button>
               </form>
 
-              <p class="mt-4 text-sm text-[#6B778C]">
+              <!-- Text Under Input -->
+              <p class="mt-4 text-[13px] tracking-wide text-[#7A8A9E]">
                 Weekly newsletter only. No spam, unsubscribe at any time.
               </p>
             </div>
 
-            <div class="hidden md:col-span-5 md:flex md:justify-end">
-              <div class="relative h-40 w-48">
-                <div
-                  class="absolute right-10 top-8 h-24 w-32 rotate-[-15deg] rounded-lg bg-white shadow-lg"
-                ></div>
-
-                <div
-                  class="absolute right-0 top-0 flex h-36 w-40 rotate-[7deg] items-center justify-center rounded-lg bg-white shadow-xl"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-28 w-28 text-[#112E56]"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"
-                    />
-                  </svg>
-                </div>
+            <!-- Image Wrapper -->
+            <div class="relative hidden md:col-span-4 md:flex md:justify-end lg:col-span-5" aria-hidden="true">
+              <div class="relative inline-block h-72 w-68">
+                <!-- Envelope Image -->
+                <img src="@/assets/envelope.png" alt="" class="absolute inset-0 h-full w-full scale-110 object-contain opacity-0" @error="(e) => (e.target.style.opacity = 0)"
+                  @load="(e) => (e.target.style.opacity = 1)"
+                />
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </transition>
@@ -121,48 +106,47 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
 
-const isOpen = ref(false)
-const email = ref('')
+const isOpen = ref(false);
+const email = ref("");
 
-const showNewsletterButton = ref(false)
-const showNewsletterText = ref(false)
+const showNewsletterButton = ref(false);
+const showNewsletterText = ref(false);
 
-let textTimer = null
+let textTimer = null;
 
 const handleScroll = () => {
   if (window.scrollY > 350 && !showNewsletterButton.value) {
-    showNewsletterButton.value = true
+    showNewsletterButton.value = true;
 
-    // TEXT APPEARS
+    // Text Appears
     textTimer = setTimeout(() => {
-      showNewsletterText.value = true
+      showNewsletterText.value = true;
 
-      // TEXT DISAPPEARS AFTER 20s
+      // Text Disappears after 20s
       setTimeout(() => {
-        showNewsletterText.value = false
-      }, 20000)
-
-    }, 600)
+        showNewsletterText.value = false;
+      }, 20000);
+    }, 600);
   }
-}
+};
 
 const subscribe = () => {
-  console.log('Newsletter email:', email.value)
-  email.value = ''
-  isOpen.value = false
-}
+  console.log("Newsletter email:", email.value);
+  email.value = "";
+  isOpen.value = false;
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  handleScroll()
-})
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-  clearTimeout(textTimer)
-})
+  window.removeEventListener("scroll", handleScroll);
+  clearTimeout(textTimer);
+});
 </script>
 
 <style scoped>
@@ -181,45 +165,72 @@ onUnmounted(() => {
 }
 
 .newsletter-text-enter-active {
-  transition: all 0.45s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .newsletter-text-enter-from {
   opacity: 0;
-  transform: translateX(20px);
-  max-width: 0;
+  transform: translateX(12px) scale(0.95);
 }
 
 .newsletter-text-enter-to {
   opacity: 1;
-  transform: translateX(0);
-  max-width: 400px;
+  transform: translateX(0) scale(1);
+}
+
+/* Smooth out the exit transition details */
+.newsletter-text-leave-active {
+  transition: all 0.35s cubic-bezier(0.4, 0, 1, 1);
+  position: absolute;
+  right: 100%;
+}
+
+.newsletter-text-leave-from {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.newsletter-text-leave-to {
+  opacity: 0;
+  transform: translateX(12px) scale(0.95);
 }
 
 .popup-enter-active,
 .popup-leave-active {
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .popup-enter-from,
 .popup-leave-to {
   opacity: 0;
-  transform: scale(0.96);
+  transform: scale(0.95) translateY(10px);
 }
 
 .popup-enter-to,
 .popup-leave-from {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateY(0);
 }
 
-.newsletter-text-leave-active {
-  transition: all 0.45s ease;
-}
+@media (prefers-reduced-motion: reduce) {
+  .newsletter-enter-active,
+  .newsletter-text-enter-active,
+  .newsletter-text-leave-active,
+  .popup-enter-active,
+  .popup-leave-active {
+    transition: none !important;
+  }
 
-.newsletter-text-leave-to {
-  opacity: 0;
-  transform: translateX(20px);
-  max-width: 0;
+  .newsletter-enter-from,
+  .newsletter-enter-to,
+  .newsletter-text-enter-from,
+  .newsletter-text-enter-to,
+  .newsletter-text-leave-to,
+  .popup-enter-from,
+  .popup-enter-to,
+  .popup-leave-from,
+  .popup-leave-to {
+    transform: none !important;
+  }
 }
 </style>

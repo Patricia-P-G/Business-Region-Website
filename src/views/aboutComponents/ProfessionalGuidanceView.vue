@@ -112,7 +112,7 @@
                   </h2>
 
                   <p
-                    class="mt-1 text-[13px] font-medium leading-tight text-[#12294B] xs:mt-1.5 xs:text-[14px] lg:text-[15px] lg:leading-none transition-all duration-500"
+                    class="mt-2 text-[13px] font-medium leading-tight text-[#12294B] xs:mt-1.5 xs:text-[14px] lg:text-[15px] lg:leading-none transition-all duration-500"
                   >
                     {{ person.role }}
                   </p>
@@ -209,7 +209,7 @@
                 <h2 class="text-base font-bold leading-none xs:text-lg lg:text-xl transition-all duration-500">
                   {{ person.name }}
                 </h2>
-                <p class="mt-1.5 text-xs font-medium leading-tight lg:text-[15px] lg:leading-none transition-all duration-500">
+                <p class="mt-2 text-xs font-medium leading-tight lg:text-[15px] lg:leading-none transition-all duration-500">
                   {{ person.role }}
                 </p>
               </div>
