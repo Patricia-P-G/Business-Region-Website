@@ -47,7 +47,7 @@
 import { onMounted } from 'vue';
 import MediaLibrary from "./mediaComponents/MediaLibrary.vue";
 
-// Injectare dinamică a metadatelor SEO
+// Dynamic Meta Tags
 if (typeof window !== 'undefined') {
   document.title = "Media Channel - Cross-Border Region Library";
   
@@ -64,7 +64,7 @@ if (typeof window !== 'undefined') {
   };
 
   onMounted(() => {
-    // Tag-uri SEO standard
+    // SEO Standard Tags
     updateMeta('description', 'Explore our comprehensive media library featuring interviews, conference talks, and exclusive event footage.');
     updateMeta('keywords', 'media channel, cross-border region, interviews, conference talks, business events');
     
@@ -73,22 +73,19 @@ if (typeof window !== 'undefined') {
     updateMeta('og:description', 'Explore our comprehensive media library featuring interviews, conference talks, and exclusive event footage.', true);
     updateMeta('og:type', 'website', true);
     
-    // Twitter Card
-    updateMeta('twitter:card', 'summary_large_image');
   });
 }
 </script>
 
 <style scoped>
-/* Gradientul pentru tranzitia fina - ramane vizibil pe orice rezolutie */
 .hero-bottom-fade {
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 20;
-  height: 25vh; /* Se adaptează fluid în funcție de înălțimea ecranului */
+  height: 25vh;
   width: 100%;
-  pointer-events: none; /* Nu blochează interacțiunile utilizatorului în acea zonă */
+  pointer-events: none; 
 
   background-image: linear-gradient(
     to top,
