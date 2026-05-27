@@ -36,7 +36,7 @@
           <!-- TEXT -->
           <p
             id="network-hero-description"
-            class="mx-auto max-w-[900px] pb-10 text-base leading-7 tracking-wide text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)] sm:text-xl md:mx-0"
+            class="mx-auto max-w-[900px] pb-10 text-base leading-7 tracking-wide text-white sm:text-xl md:mx-0"
             itemprop="description"
           >
             Business DE-DK is a cross-border project focused on strengthening cooperation between
