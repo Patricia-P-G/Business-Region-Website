@@ -1,5 +1,6 @@
 <template>
   <section
+    id="contact"
     class="w-full bg-white py-16 sm:py-20"
     aria-labelledby="contact-title"
   >

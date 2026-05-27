@@ -3,7 +3,9 @@ import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import MediaView from "@/views/MediaView.vue";
 import EventsView from "@/views/EventsView.vue";
-import NetworkView from "@/views/NetworkView.vue";
+import NetworkView from "@/views/NetworkView.vue"
+
+import ContactView from "@/views/aboutComponents/ContactView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,7 +56,16 @@ const router = createRouter({
     //   component: () =>
     //     import("@/views/partners/CopenhagenCapacityView.vue"),
     // },
+
+    {
+    path: '/contact',
+    name: 'Contact',
+    component: ContactView
+  }
+  
   ],
+
+ 
 });
 
 export default router;
