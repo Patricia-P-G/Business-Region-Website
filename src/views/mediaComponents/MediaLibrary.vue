@@ -45,7 +45,7 @@
 
                 <!-- Filter Buttons -->
                 <button v-for="filter in filters" :key="filter" type="button" :aria-pressed="filter === activeFilter" :class="[
-                    'flex-shrink-0 cursor-pointer rounded-lg px-5 py-3 text-xs font-bold uppercase text-white transition duration-200 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:px-2 sm:py-4 sm:text-sm md:flex-shrink md:whitespace-normal',
+                    'shrink-0 cursor-pointer rounded-lg px-5 py-3 text-xs font-bold uppercase text-white transition duration-200 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:px-2 sm:py-4 sm:text-sm md:flex-shrink md:whitespace-normal',
                     filter === activeFilter ? 'bg-secondary' : 'bg-[#3E5A78] hover:bg-[#3E5A78]/90']" @click="activeFilter = filter">
                     {{ filter }}
                 </button>
