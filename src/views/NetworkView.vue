@@ -5,7 +5,7 @@
       itemscope itemtype="https://schema.org/WebPage">
 
       <!-- Hero Image -->
-      <img src="@/public/network/hero-image-network.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale"
+      <img src="/network/hero-image-network.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale"
         loading="eager" fetchpriority="high"
       />
 
