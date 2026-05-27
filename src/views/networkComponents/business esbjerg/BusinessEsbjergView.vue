@@ -125,7 +125,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section class="mx-auto max-w-[1400px] px-5 py-14 sm:px-8 lg:px-20">
+    <section class="mx-auto px-5 py-14 sm:px-8 lg:px-20">
       <div class="grid grid-cols-12 gap-10">
         <article class="col-span-12 lg:col-span-6">
           <h2 class="text-2xl font-semibold uppercase">About Business Esbjerg</h2>
@@ -150,7 +150,14 @@
           </div>
         </article>
 
-        <div class="col-span-12 lg:col-span-6"></div>
+        <div class="col-span-12 lg:col-span-6">
+             <img
+            src="@/assets/network/business esbjerg pic 1.jpg"
+            alt="Business Esbjerg project collaboration meeting"
+            class="h-[380px] w-full rounded-lg object-cover grayscale"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       <!-- HASHTAG / TEXT -->
@@ -192,14 +199,14 @@
 
       <!-- PROJECTS -->
       <div class="mt-20 grid grid-cols-12 items-center gap-10">
-        <!-- <div class="col-span-12 lg:col-span-6">
+        <div class="col-span-12 lg:col-span-6">
           <img
-            src="@/assets/network/business-esbjerg-project.png"
+            src="@/assets/network/business esbjerg pic 2.png"
             alt="Business Esbjerg project collaboration meeting"
             class="h-[280px] w-full rounded-lg object-cover grayscale"
             loading="lazy"
           />
-        </div> -->
+        </div>
 
         <article class="col-span-12 lg:col-span-6">
           <h2 class="text-2xl font-semibold uppercase">Projects</h2>
