@@ -45,7 +45,7 @@
             <div class="mt-8 flex w-full justify-center md:justify-start">
 
               <!-- Contact Us Button -->
-              <router-link to="/contact" class="inline-flex w-fit items-center justify-center rounded-md bg-secondary px-10 py-2.5 text-sm font-bold uppercase
+              <router-link to="/contact" class="inline-flex items-center justify-center rounded-md bg-secondary px-10 py-2.5 text-sm font-bold uppercase
                text-white transition hover:bg-[#6677c7] focus:outline-none focus-visible:ring-4 focus-visible:ring-secondary/40 focus-visible:ring-offset-2">
 
                 <span>Contact Us</span>
