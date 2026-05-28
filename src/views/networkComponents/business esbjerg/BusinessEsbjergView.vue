@@ -1,251 +1,246 @@
 <template>
-  <main class="min-h-screen text-[#12294B]">
-    <!-- HERO -->
-    <section
-      class="relative overflow-hidden bg-[linear-gradient(90deg,#8795DF_0%,#B4C0FF_22%,#DCE2FF_45%,#F3F5FF_68%,#FFFFFF_100%)] pb-12 pt-[110px] sm:pt-[120px]"
+  <main class="min-h-screen bg-white text-[#12294B] font-sans antialiased">
+    
+    <section 
+      class="relative bg-[linear-gradient(180deg,#A2B1F3_0%,#E2E7FC_100%)] min-h-[180px] sm:min-h-[220px] flex items-center overflow-hidden"
       aria-labelledby="partner-title"
     >
-      <!-- MAP SIDE -->
-<div class="pointer-events-none absolute right-0 top-0 h-full w-[45%] overflow-hidden">
+      <div class="absolute right-0 top-0 h-full w-full sm:w-[50%] md:w-[45%] pointer-events-none select-none mix-blend-multiply opacity-80" aria-hidden="true">
+        <img
+          src="@/assets/network/map image.png"
+          alt=""
+          class="h-full w-full object-cover object-right"
+          fetchpriority="high"
+        />
+      </div>
 
-  <!-- MAP IMAGE -->
-  <img
-    src="@/assets/network/map image.png"
-    alt=""
-    aria-hidden="true"
-    class="h-full w-full object-cover object-right opacity-40"
-  />
-
-  <!-- SOFT BLEND -->
-  <div
-    class="absolute inset-0
-           bg-[linear-gradient(to_right,
-           rgba(220,226,255,1)_0%,
-           rgba(232,236,255,0.92)_12%,
-           rgba(243,245,255,0.75)_24%,
-           rgba(248,249,255,0.45)_40%,
-           rgba(255,255,255,0)_65%)]"
-  ></div>
-
-</div>
-
-      <!-- CONTENT -->
-      <div class="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-20">
-        <div class="grid grid-cols-12 items-center gap-y-10 md:gap-8">
-          <!-- LOGO -->
-          <div class="col-span-12 flex justify-center md:col-span-2 md:justify-start">
-            <div
-              class="flex h-36 w-36 items-center justify-center rounded-full bg-white shadow-[0px_4px_12px_rgba(0,0,0,0.12)]"
-            >
+      <div class="relative z-10 mx-auto w-full max-w-[1400px] px-6 sm:px-12 lg:px-24 py-8">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+          
+          <div class="flex-shrink-0">
+            <div class="flex h-32 w-32 sm:h-36 sm:w-36 items-center justify-center rounded-full bg-white shadow-md">
               <img
                 src="@/assets/network/business esbjerg.png"
-                alt="Business Esbjerg logo"
-                class="h-20 w-20 object-contain"
+                alt="Business Esbjerg Official Logo"
+                class="h-20 w-20 sm:h-24 sm:w-24 object-contain"
               />
             </div>
           </div>
 
-          <!-- INFO -->
-          <div class="col-span-12 md:col-span-10">
-            <!-- TITLE -->
+          <div class="flex-grow text-center md:text-left pt-2">
             <h1
               id="partner-title"
-              class="text-center text-3xl font-semibold uppercase tracking-tight text-[#12294B] sm:text-4xl md:text-left"
+              class="text-2xl sm:text-3xl font-bold tracking-wide text-[#12294B] uppercase"
             >
               Business Esbjerg
             </h1>
-
-            <!-- SUBTITLE -->
-            <p class="mt-1 text-center text-sm italic text-[#12294B]/80 md:text-left">
+            <p class="mt-0.5 text-xs sm:text-sm italic text-[#12294B]/70 font-medium">
               Business industry
             </p>
 
-            <!-- CONTACT GRID -->
-            <div class="grid gap-x-16 gap-y-5 pt-8 text-sm sm:grid-cols-2 lg:max-w-[920px]">
-              <!-- EMAIL -->
+            <address class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 mt-6 text-xs sm:text-sm not-italic max-w-[800px]">
+              
               <a
                 href="mailto:info@businessesbjerg.com"
-                class="contact-link"
-                aria-label="Send email to Business Esbjerg"
+                class="contact-link focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-[#12294B]"
+                aria-label="Email: info@businessesbjerg.com"
               >
-                <img src="@/assets/adress icon.svg" class="h-5 w-5" alt="" aria-hidden="true" />
-
-                <span>info@businessesbjerg.com</span>
+                <img src="@/assets/adress icon.svg" class="h-4.5 w-4.5 font-bold text-[#12294B]" alt="" aria-hidden="true" />
+                <span class="hover:underline">info@businessesbjerg.com</span>
               </a>
 
-              <!-- FACEBOOK -->
-              <a href="#" class="contact-link" aria-label="Visit Business Esbjerg Facebook">
-                <img src="@/assets/facebook icon.svg" class="h-5 w-5" alt="" aria-hidden="true" />
-
-                <span>Business Esbjerg</span>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="contact-link focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-[#12294B]" 
+                aria-label="Facebook Profile"
+              >
+                <img src="@/assets/facebook icon.svg" class="h-4.5 w-4.5 text-[#12294B]" alt="" aria-hidden="true" />
+                <span class="hover:underline">Business Esbjerg</span>
               </a>
 
-              <!-- PHONE -->
-              <a href="tel:+4575123744" class="contact-link" aria-label="Call Business Esbjerg">
-                <img src="@/assets/phone icon.svg" class="h-5 w-5" alt="" aria-hidden="true" />
-
-                <span>+45 75 12 37 44</span>
+              <a 
+                href="tel:+4575123744" 
+                class="contact-link focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-[#12294B]" 
+                aria-label="Phone: +45 75 12 37 44"
+              >
+                <img src="@/assets/phone icon.svg" class="h-4.5 w-4.5 text-[#12294B]" alt="" aria-hidden="true" />
+                <span class="hover:underline">+45 75 12 37 44</span>
               </a>
 
-              <!-- LINKEDIN -->
-              <a href="#" class="contact-link" aria-label="Visit Business Esbjerg LinkedIn">
-                <img src="@/assets/linkedin icon.svg" class="h-5 w-5" alt="" aria-hidden="true" />
-
-                <span>in/businessesbjerg/</span>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="contact-link focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-[#12294B]" 
+                aria-label="LinkedIn Profile"
+              >
+                <img src="@/assets/linkedin icon.svg" class="h-4.5 w-4.5 text-[#12294B]" alt="" aria-hidden="true" />
+                <span class="hover:underline">in/businessesbjerg/</span>
               </a>
 
-              <!-- LOCATION -->
-              <p class="contact-link">
-                <img
-                  src="@/assets/location network icon.svg"
-                  class="h-5 w-5"
-                  alt=""
-                  aria-hidden="true"
-                />
-
+              <div class="contact-link">
+                <img src="@/assets/location network icon.svg" class="h-4.5 w-4.5 text-[#12294B]" alt="" aria-hidden="true" />
                 <span>John Tranums Vej 23, 6705 Esbjerg Ø</span>
-              </p>
+              </div>
 
-              <!-- WEBSITE -->
               <a
                 href="https://www.businessesbjerg.com/en/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="contact-link break-all"
-                aria-label="Visit Business Esbjerg website"
+                class="contact-link break-all focus:outline-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-[#12294B]"
+                aria-label="Website Link"
               >
-                <img src="@/assets/website icon.svg" class="h-5 w-5" alt="" aria-hidden="true" />
-
-                <span>https://www.businessesbjerg.com/en/</span>
+                <img src="@/assets/website icon.svg" class="h-4.5 w-4.5 text-[#12294B]" alt="" aria-hidden="true" />
+                <span class="hover:underline text-xs sm:text-sm">https://www.businessesbjerg.com/en/</span>
               </a>
-            </div>
+            </address>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="mx-auto px-5 py-14 sm:px-8 lg:px-20">
-      <div class="grid grid-cols-12 gap-10">
-        <article class="col-span-12 lg:col-span-6">
-          <h2 class="text-2xl font-semibold uppercase">About Business Esbjerg</h2>
-
-          <div class="mt-6 space-y-5 text-sm leading-6 text-black">
+    <div class="mx-auto max-w-[1400px] px-6 sm:px-12 lg:px-24 py-16">
+      
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start" aria-label="About Information">
+        <article class="lg:col-span-7">
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-[#12294B] uppercase">
+            About Business Esbjerg
+          </h2>
+          <div class="mt-6 space-y-5 text-sm sm:text-[15px] leading-relaxed text-black/80 font-normal">
             <p>
               Business Esbjerg creates the best possible conditions for doing business and working
               in Esbjerg and Fanø municipalities. We exist for our members, and our ambition is to
-              be a trusted and professional partner.
+              be a trusted and professional partner. Our sparring, projects and offers are intended to give members and their employees tools to create development and growth.
             </p>
-
             <p>
-              We seek opportunities for companies regardless of their starting point, and we make
-              sure they can contribute to the business policy agenda locally, regionally, and
-              nationally.
+              We seek opportunities for companies - regardless of their starting point - and work for better framework conditions. At the same time, we contribute to the business policy agenda locally, regionally and nationally - always with a focus on the interests of our members.
             </p>
-
             <p>
-              Our sparring, projects, and offers are intended to give companies and employees tools
-              to create sustainable value.
+              Our sparring, projects and offers are intended to give companies and employees tools to create noticeable value. The funds to solve these tasks come from our members, Esbjerg Municipality, the EU and various foundations.
             </p>
           </div>
         </article>
 
-        <div class="col-span-12 lg:col-span-6">
-             <img
+        <div class="lg:col-span-5 w-full h-full flex items-center">
+          <img
             src="@/assets/network/business esbjerg pic 1.jpg"
-            alt="Business Esbjerg project collaboration meeting"
-            class="h-[380px] w-full rounded-lg object-cover grayscale"
+            alt="Business representatives sitting at a table during a project collaboration meeting"
+            class="w-full h-auto max-h-[340px] rounded-md object-cover grayscale shadow-sm"
             loading="lazy"
           />
         </div>
-      </div>
+      </section>
 
-      <!-- HASHTAG / TEXT -->
-      <div class="mt-14 grid grid-cols-12 gap-10">
-        <div class="col-span-12 lg:col-span-6">
-          <p class="text-5xl font-bold text-[#7C8BDA] sm:text-6xl">#business</p>
+      <section class="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start" aria-hidden="true">
+        <div class="lg:col-span-5 flex items-center">
+          <p class="text-5xl sm:text-6xl md:text-7xl font-bold text-[#8495DF]/80 tracking-tighter select-none">
+            #business
+          </p>
         </div>
-
-        <div class="col-span-12 text-sm leading-6 text-black lg:col-span-6">
+        <div class="lg:col-span-7 text-sm sm:text-[15px] leading-relaxed text-black/80 font-normal space-y-4">
           <p>
-            We are the local business council in Esbjerg and Fanø municipalities, and we work to
-            create development for the business community in both municipalities.
+            We are the local business council in <span class="font-semibold text-[#12294B]">Esbjerg</span> and <span class="font-semibold text-[#12294B]">Fanø</span> municipalities and work to create development for the business community in both municipalities. With more than 1.000 member companies behind us, we represent the business community broadly. In addition, we have a number of selected focus areas that we give special attention to.
           </p>
-
-          <p class="mt-5">
-            Together with the business community, we inspire new paths to development and growth for
-            the benefit of both companies and citizens.
+          <p>
+            Together with the business community, we inspire new paths to development and growth - for the benefit of both companies and citizens.
           </p>
         </div>
+      </section>
+
+      <div class="mt-16 max-w-[1000px] mx-auto relative px-10 sm:px-16 py-8 bg-white rounded-xl shadow-[0px_6px_20px_rgba(0,0,0,0.06)] border border-gray-100/50">
+        <span class="absolute left-4 top-2 text-6xl font-serif font-bold text-[#8495DF]/40 select-none" aria-hidden="true">“</span>
+        <blockquote class="text-center text-base sm:text-lg font-medium text-[#12294B] leading-relaxed">
+          We create the best conditions for running a business and working in Esbjerg and Fanø municipalities.
+        </blockquote>
+        <span class="absolute right-4 bottom-[-16px] text-6xl font-serif font-bold text-[#8495DF]/40 select-none" aria-hidden="true">”</span>
       </div>
 
-      <!-- QUOTE -->
-      <blockquote
-        class="relative mx-auto mt-16 max-w-[1000px] rounded-md bg-white px-12 py-8 text-center text-lg text-[#12294B] shadow-[0px_4px_8px_rgba(0,0,0,0.18)]"
-      >
-        <span class="absolute left-5 top-3 text-5xl font-bold text-[#7C8BDA]" aria-hidden="true"
-          >“</span
-        >
-
-        We create the best conditions for running a business and working in Esbjerg and Fanø
-        municipalities.
-
-        <span
-          class="absolute bottom-[-10px] right-5 text-5xl font-bold text-[#7C8BDA]"
-          aria-hidden="true"
-          >”</span
-        >
-      </blockquote>
-
-      <!-- PROJECTS -->
-      <div class="mt-20 grid grid-cols-12 items-center gap-10">
-        <div class="col-span-12 lg:col-span-6">
+      <section class="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center" aria-label="Current Corporate Projects">
+        
+        <div class="lg:col-span-5 order-2 lg:order-1">
           <img
             src="@/assets/network/business esbjerg pic 2.png"
-            alt="Business Esbjerg project collaboration meeting"
-            class="h-[280px] w-full rounded-lg object-cover grayscale"
+            alt="Workplace synergy meeting showing aerial view of team planning cross-border collaborations"
+            class="w-full h-auto max-h-[300px] rounded-md object-cover grayscale shadow-sm"
             loading="lazy"
           />
         </div>
 
-        <article class="col-span-12 lg:col-span-6">
-          <h2 class="text-2xl font-semibold uppercase">Projects</h2>
-
-          <div class="mt-6 space-y-5 text-sm leading-6 text-black">
+        <article class="lg:col-span-7 order-1 lg:order-2">
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-[#12294B] uppercase">
+            Projects
+          </h2>
+          <div class="mt-6 space-y-4 text-sm sm:text-[15px] leading-relaxed text-black/80 font-normal">
             <p>
-              We participate in the project Business DE-DK, which focuses on investigating
-              cooperation opportunities across the border.
+              We participate in the project <span class="font-medium text-[#12294B]">Business DE/DK</span>, which focuses on investigating cooperation opportunities across the border - including in relation to international labor.
             </p>
-
             <p>
-              We also participate in Green Business, which supports small and medium-sized
-              enterprises in Denmark and Germany in their work with sustainability.
+              We also participate in the project <span class="font-medium text-[#12294B]">Green Business</span>, which supports small and medium-sized enterprises in Denmark and Germany in their work with sustainability, especially within the circular economy. Here, companies receive help with tools and strategies that support sustainable management.
             </p>
           </div>
 
-          <a
-            href="https://www.businessesbjerg.com/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-8 inline-flex rounded-md bg-[#7C8BDA] px-10 py-3 text-sm font-semibold uppercase text-white transition hover:bg-[#6574C9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#12294B]"
-          >
-            Visit our website
-          </a>
+          <div class="mt-8">
+            <a
+              href="https://www.businessesbjerg.com/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-md bg-[#7F92DC] px-8 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-200 hover:bg-[#6A7ECB] hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#12294B] focus-visible:ring-offset-2"
+            >
+              Visit our website
+            </a>
+          </div>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <div class="h-32 bg-[linear-gradient(to_top,#9BA8F0_0%,#FFFFFF_100%)]"></div>
+    </div>
+
+    <div class="h-24 bg-[linear-gradient(to_top,#A7B6F5_0%,#FFFFFF_100%)] opacity-40" aria-hidden="true"></div>
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue';
+
+const updateMeta = (name, content, isProperty = false) => {
+  if (typeof window === 'undefined') return;
+
+  const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
+  let meta = document.querySelector(selector);
+  
+  if (!meta) {
+    meta = document.createElement('meta');
+    if (isProperty) meta.setAttribute('property', name);
+    else meta.name = name;
+    document.head.appendChild(meta);
+  }
+  meta.content = content;
+};
+
+onMounted(() => {
+  document.title = "Business Esbjerg - Cross-Border Network Partner";
+  
+  updateMeta('description', 'Learn more about Business Esbjerg, a key partner in the DE-DK cross-border network driving business development and growth in Esbjerg and Fanø.');
+  updateMeta('keywords', 'Business Esbjerg, DE-DK network, cross-border cooperation, Esbjerg business council, regional development');
+  
+  updateMeta('og:title', 'Business Esbjerg - Cross-Border Network Partner', true);
+  updateMeta('og:description', 'Driving local and regional business growth across the Danish-German border.', true);
+  updateMeta('og:type', 'profile', true);
+  updateMeta('og:image', '@/assets/network/business esbjerg pic 1.jpg', true);
+});
+</script>
 
 <style scoped>
 .contact-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: #12294b;
+  font-weight: 500;
+}
+/* Filtrul corect pentru pictograme, fără erori de sintaxă */
+.contact-link img {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(21%) pure-blue;
 }
 </style>

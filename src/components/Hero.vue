@@ -79,7 +79,7 @@ const updateMeta = (name, content, isProperty = false) => {
 
 onMounted(() => {
 
-  document.title = "Network - Business DE-DK Cross-Border Cooperation";
+  document.title = "Business DE-DK Cross-Border Cooperation";
   
   // SEO Standard Tags
   updateMeta('description', 'Connect with partner companies, institutions, and initiatives driving the cross-border business cooperation between Germany and Denmark.');

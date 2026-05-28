@@ -80,7 +80,7 @@
                     <!-- Become a member Button -->
                     <router-link
                         to="/join"
-                        class="hidden text-base nav:flex nav:col-start-11 nav:col-end-13 h-9.5 w-full max-w-38.75 wide:max-w-[199px] items-center justify-center rounded-md bg-secondary px-3 wide:px-5 py-3 text-center text-[0.65rem] wide:text-xs font-semibold uppercase text-white shadow-sm transition-all duration-300 hover:bg-[#5F73D9] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                        class="hidden text-base nav:flex nav:col-start-11 nav:col-end-13 h-9.5 w-full max-w-38.75 wide:max-w-49.75 items-center justify-center rounded-md bg-secondary px-3 wide:px-5 py-3 text-center text-[0.65rem] wide:text-xs font-semibold uppercase text-white shadow-sm transition-all duration-300 hover:bg-[#5F73D9] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                         aria-label="Become a member">
                         Become a member
                     </router-link>

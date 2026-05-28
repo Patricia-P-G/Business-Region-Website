@@ -6,6 +6,7 @@ import EventsView from "@/views/EventsView.vue";
 import NetworkView from "@/views/NetworkView.vue"
 
 import ContactView from "@/views/aboutComponents/ContactView.vue";
+import BecomeMember from "@/components/BecomeMember.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -61,8 +62,13 @@ const router = createRouter({
     path: '/contact',
     name: 'Contact',
     component: ContactView
+  },
+  {
+    path: '/join',
+    name: 'Join',
+    component: BecomeMember
   }
-  
+
   ],
 
  
