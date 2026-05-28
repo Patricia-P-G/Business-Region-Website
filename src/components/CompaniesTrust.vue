@@ -36,7 +36,7 @@
           <!-- Mobile Version Wrapper -->
           <div class="flex flex-col gap-8 md:hidden" aria-label="Customer testimonials">
             <!-- Card Wrapper -->
-            <article v-for="person in testimonials" :key="`mobile-${person.name}`" class="relative w-full overflow-visible rounded-[14px] bg-tertinary
+            <article v-for="person in testimonials" :key="`mobile-${person.name}`" class="relative w-full overflow-visible rounded-[14px] bg-tertiary
               p-6 pb-14 text-white shadow-[0_0_18px_rgba(121,139,210,0.65)] max-[420px]:px-4.5 max-[420px]:pb-13"
               itemscope itemtype="https://schema.org/Review" itemprop="review">
 
@@ -152,7 +152,7 @@
               :aria-current="activeIndex === index ? 'true' : undefined" @click="activeIndex = index" />
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
