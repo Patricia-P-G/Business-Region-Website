@@ -30,12 +30,23 @@
           </p>
         </div>
 
-        <div class="col-span-12 relative w-full mt-4">
-          <div class="w-full">
+        <div class="col-span-12 mt-4 grid grid-cols-12 gap-2.5 items-center">
+
+          <button
+            class="events-prev hidden lg:flex lg:col-span-1 h-12 w-12 items-center justify-center justify-self-center rounded-full bg-white text-[#11213A] shadow-md transition-all duration-300 hover:scale-105 hover:bg-[#7C8BDA] hover:text-white"
+            aria-label="Previous events"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-5 w-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+
+          <div class="col-span-12 lg:col-span-10 min-w-0">
             <Swiper
               :modules="[Navigation, Pagination]"
               :slides-per-view="1"
               :space-between="24"
+              :loop="true"
               :navigation="{
                 prevEl: '.events-prev',
                 nextEl: '.events-next',
@@ -47,13 +58,13 @@
               }"
               :breakpoints="{
                 640: { slidesPerView: 2, spaceBetween: 24 },
-                1024: { slidesPerView: 4, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 12 },
               }"
-              class="events-swiper match-grid-offset"
+              class="events-swiper"
             >
               <SwiperSlide v-for="event in events" :key="event.title">
                 <article
-                  class="relative h-[250px] flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  class="relative mx-auto w-85.75 h-68 flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div class="relative h-[110px] w-full shrink-0">
                     <img
@@ -83,34 +94,15 @@
 
                     <div class="flex-1 flex flex-col justify-between">
                       <div>
-                        <div
-                          class="mb-1 flex items-center justify-end gap-1 text-[10px] text-[#7A7A7A]"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="2"
-                            stroke="currentColor"
-                            class="h-3 w-3 text-[#7C8BDA]"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                            />
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                            />
+                        <div class="mb-1 flex items-center justify-end gap-1 text-[10px] text-[#7A7A7A]">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-3 w-3 text-[#7C8BDA]">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                           </svg>
                           {{ event.location }}
                         </div>
 
-                        <h3
-                          class="text-sm font-black leading-snug text-black line-clamp-2 min-h-[40px] mb-1"
-                        >
+                        <h3 class="text-sm font-black leading-snug text-black line-clamp-2 min-h-10 mb-1">
                           {{ event.title }}
                         </h3>
                       </div>
@@ -123,55 +115,19 @@
                 </article>
               </SwiperSlide>
             </Swiper>
+
+            <div class="events-pagination flex justify-center items-center gap-1 mx-auto mt-6 lg:hidden"></div>
           </div>
 
-          <div
-            class="pointer-events-none absolute inset-y-0 left-3 right-3 z-20 hidden lg:flex items-center justify-between lg:-left-6 lg:-right-6"
+          <button
+            class="events-next hidden lg:flex lg:col-span-1 h-12 w-12 items-center justify-center justify-self-center rounded-full bg-white text-[#11213A] shadow-md transition-all duration-300 hover:scale-105 hover:bg-[#7C8BDA] hover:text-white"
+            aria-label="Next events"
           >
-            <button
-              class="events-prev pointer-events-auto z-30 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#11213A] shadow-md transition-all duration-300 hover:scale-105 hover:bg-[#7C8BDA] hover:text-white"
-              aria-label="Previous events"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2.5"
-                stroke="currentColor"
-                class="h-5 w-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-5 w-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
 
-            <button
-              class="events-next pointer-events-auto z-30 flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#11213A] shadow-md transition-all duration-300 hover:scale-105 hover:bg-[#7C8BDA] hover:text-white"
-              aria-label="Next events"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2.5"
-                stroke="currentColor"
-                class="h-5 w-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <div
-            class="events-pagination flex justify-center items-center gap-1 mx-auto mt-6 lg:hidden"
-          ></div>
         </div>
 
         <div class="col-span-12 mt-8 flex justify-end">
@@ -252,18 +208,23 @@ const events = [
     month: "June",
     location: "Sønderborg, Denmark",
   },
+  {
+    title: "Cross-Border Business Forum 2026",
+    description:
+      "Annual gathering of business leaders, advisors, and policymakers from Southern Jutland and Schleswig-Holstein.",
+    image: events1,
+    alt: "Cross-Border Business Forum event image",
+    country: "DE",
+    day: "12",
+    month: "June",
+    location: "Tønder, Germany",
+  },
 ];
 </script>
 
 <style scoped>
 .events-swiper {
   padding: 16px 4px 16px 4px;
-}
-
-@media (min-width: 1024px) {
-  .match-grid-offset :deep(.swiper-wrapper) {
-    padding-left: calc(8.333333% + 30px);
-  }
 }
 
 /* Custom coloring for Swiper responsive dots to match your #7C8BDA theme */
@@ -287,4 +248,5 @@ const events = [
   transform: translateX(-50%) !important;
   white-space: nowrap;
 }
+
 </style>

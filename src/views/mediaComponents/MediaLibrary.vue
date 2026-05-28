@@ -45,7 +45,7 @@
 
                 <!-- Filter Buttons -->
                 <button v-for="filter in filters" :key="filter" type="button" :aria-pressed="filter === activeFilter" :class="[
-                    'shrink-0 cursor-pointer rounded-lg px-5 py-3 text-xs font-bold uppercase text-white transition duration-200 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:px-2 sm:py-4 sm:text-sm md:flex-shrink md:whitespace-normal',
+                    'shrink-0 cursor-pointer rounded-lg px-5 py-3 text-xs font-bold uppercase text-white transition duration-200 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:px-2 sm:py-4 sm:text-sm md:shrink md:whitespace-normal',
                     filter === activeFilter ? 'bg-secondary' : 'bg-[#3E5A78] hover:bg-[#3E5A78]/90']" @click="activeFilter = filter">
                     {{ filter }}
                 </button>
@@ -64,7 +64,7 @@
                         itemscope itemtype="https://schema.org/Article">
 
                         <!-- Media Card Thumbnail  -->
-                        <div class="relative h-[170px] w-full overflow-hidden bg-slate-100">
+                        <div class="relative h-42.5 w-full overflow-hidden bg-slate-100">
 
                             <!-- Image -->
                             <img :src="getImageUrl(card.imageName)" :alt="`${card.title} cover image`" class="h-full w-full object-cover"
