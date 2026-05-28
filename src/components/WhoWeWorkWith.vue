@@ -113,9 +113,9 @@
 </template>
 
 <script setup>
-import businessEsbjerg from "@/assets/network/business esbjerg.png";
-import businessKolding from "@/assets/network/business kolding.png";
-import copenhagenCapacity from "@/assets/network/copenhagen capacity.png";
+import businessEsbjerg from "@/assets/network/business esbjerg.webp";
+import businessKolding from "@/assets/network/business kolding.webp";
+import copenhagenCapacity from "@/assets/network/copenhagen capacity.webp";
 
 const companies = [
   {
