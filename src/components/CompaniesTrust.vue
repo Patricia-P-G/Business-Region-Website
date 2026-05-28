@@ -15,27 +15,32 @@
         </div>
 
         <div class="col-span-12">
-          <hr class="border-0 border-t-[2px] border-primary" />
+          <hr class="border-0 border-t-[2px] border-primary" aria-hidden="true" />
         </div>
 
         <div class="col-span-12 mt-10 md:mt-20">
-          <!-- MOBILE -->
+          
           <div class="flex flex-col gap-8 md:hidden">
             <article
-              v-for="person in testimonials"
+              v-for="(person, index) in testimonials"
               :key="person.name"
-              class="testimonial-card active-card mobile-card"
+              class="relative w-full overflow-visible rounded-[14px] opacity-100 transition-all duration-[0.45s] ease-in-out p-6 pb-14 max-[420px]:px-4.5 max-[420px]:pb-13 text-white shadow-[0_0_18px_rgba(121,139,210,0.65)]"
+              :class="[
+                index < 3 ? 'bg-[#405b77]' : 'bg-[#12294b]'
+              ]"
+              itemscope
+              itemtype="https://schema.org/Review"
             >
               <div class="flex items-center gap-4">
                 <img
                   :src="person.image"
                   :alt="`${person.name} portrait`"
-                  class="testimonial-img shrink-0 rounded-full object-cover"
+                  class="shrink-0 rounded-full object-cover w-[72px] h-[72px] max-[420px]:w-[62px] max-[420px]:h-[62px]"
                 />
 
                 <div class="min-w-0">
-                  <h3 class="text-base font-semibold xs:text-lg">
-                    {{ person.name }}
+                  <h3 class="text-base font-semibold xs:text-lg" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <span itemprop="name">{{ person.name }}</span>
                   </h3>
 
                   <p class="mt-1 text-xs italic text-white/75">
@@ -44,40 +49,61 @@
                 </div>
               </div>
 
-              <p class="testimonial-text">
+              <p 
+                class="relative z-10 text-white mt-8 pl-6 pr-2.5 text-sm leading-[1.65] max-[420px]:mt-7 max-[420px]:pl-4.5 max-[420px]:pr-1.5 max-[420px]:text-xs max-[420px]:leading-[1.6]" 
+                itemprop="reviewBody"
+              >
                 {{ person.quote }}
               </p>
-
-              <span class="quote-right">”</span>
             </article>
           </div>
 
-          <!-- TABLET / DESKTOP -->
-          <div class="testimonial-desktop-grid hidden md:grid">
+          <div 
+            class="hidden md:grid grid-cols-12 items-center gap-2.5 max-[1399px]:gap-2 max-[1049px]:grid-cols-1 max-[1049px]:gap-6" 
+            role="region" 
+            aria-label="Customer Testimonials"
+          >
             <div
               v-for="(person, index) in testimonials"
               :key="person.name"
-              class="testimonial-column"
+              class="col-span-4 w-full max-[1049px]:col-span-1"
             >
               <article
-                class="testimonial-card"
-                :class="activeIndex === index ? 'active-card' : 'small-card'"
+                class="relative w-full overflow-visible rounded-[14px] transition-all duration-[0.45s] ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#6474bd] focus-visible:outline-offset-4"
+                :class="[
+                  activeIndex === index 
+                    ? 'opacity-100 z-20' 
+                    : 'max-[1049px]:opacity-100 max-[1049px]:z-auto opacity-65'
+                ]"
+                role="button"
+                :tabindex="0"
+                :aria-pressed="activeIndex === index ? 'true' : 'false'"
                 @click="activeIndex = index"
+                @keydown="(e) => handleCardKeydown(e, index)"
+                itemscope
+                itemtype="https://schema.org/Review"
               >
-                <div class="card-inner">
+                <div 
+                  class="relative rounded-[14px] p-10 text-white transition-all duration-[0.45s] ease-in-out shadow-[0_0_18px_rgba(121,139,210,0.65)] min-h-[420px] max-[1399px]:min-h-[360px] max-[1399px]:p-7 max-[1199px]:min-h-[330px] max-[1199px]:p-5.5 max-[1049px]:min-h-0 max-[1049px]:px-5.5 max-[1049px]:pt-6 max-[1049px]:pb-7.5"
+                  :class="[
+                    activeIndex === index 
+                      ? 'scale-100 bg-[#12294b] max-[1049px]:bg-[#405b77]' 
+                      : 'scale-[0.82] bg-[#5d7091] max-[1399px]:scale-[0.86] max-[1199px]:scale-[0.88] max-[1049px]:scale-100 max-[1049px]:bg-[#405b77]'
+                  ]"
+                >
                   <div class="flex items-center gap-5">
                     <img
                       :src="person.image"
                       :alt="`${person.name} portrait`"
-                      class="testimonial-img shrink-0 rounded-full object-cover"
+                      class="shrink-0 rounded-full object-cover w-[72px] h-[72px] max-[1399px]:w-14 max-[1399px]:h-14 max-[1199px]:w-12 max-[1199px]:h-12 max-[1049px]:w-14 max-[1049px]:h-14"
                     />
 
                     <div class="min-w-0">
-                      <h3 class="testimonial-name">
-                        {{ person.name }}
+                      <h3 class="text-xl font-semibold max-[1399px]:text-sm max-[1199px]:text-xs max-[1049px]:text-base" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <span itemprop="name">{{ person.name }}</span>
                       </h3>
 
-                      <p class="testimonial-position">
+                      <p class="mt-1 text-xs italic text-white/70 max-[1399px]:text-[10px] max-[1199px]:text-[9px] max-[1049px]:text-xs">
                         {{ person.position }}
                       </p>
                     </div>
@@ -85,18 +111,21 @@
 
                   <img
                     src="@/assets/quotes up.svg"
-                    class="quote-img quote-img-up"
+                    class="absolute w-8 h-10 left-[26px] top-[128px] max-[1399px]:w-[26px] max-[1399px]:h-8 max-[1399px]:left-5 max-[1399px]:top-[104px] max-[1199px]:w-5.5 max-[1199px]:h-7 max-[1199px]:left-4 max-[1199px]:top-[88px] max-[1049px]:hidden"
                     alt=""
                     aria-hidden="true"
                   />
 
-                  <p class="testimonial-text">
+                  <p 
+                    class="relative z-10 leading-[1.7] mt-[52px] pl-12 pr-[38px] text-[15px] max-[1399px]:mt-9 max-[1399px]:pl-8 max-[1399px]:pr-5.5 max-[1399px]:text-[13px] max-[1399px]:leading-[1.6] max-[1199px]:mt-7 max-[1199px]:pl-6.5 max-[1199px]:pr-3.5 max-[1199px]:text-[12px] max-[1199px]:leading-[1.55] max-[1049px]:mt-7 max-[1049px]:pl-6 max-[1049px]:pr-4.5 max-[1049px]:text-sm max-[1049px]:leading-[1.6]" 
+                    itemprop="reviewBody"
+                  >
                     {{ person.quote }}
                   </p>
 
                   <img
                     src="@/assets/quotes down.svg"
-                    class="quote-img quote-img-down"
+                    class="absolute w-8 h-10 right-[26px] bottom-6 max-[1399px]:w-[26px] max-[1399px]:h-8 max-[1399px]:right-5 max-[1399px]:bottom-5 max-[1199px]:w-5.5 max-[1199px]:h-7 max-[1199px]:right-4 max-[1199px]:bottom-4.5 max-[1049px]:hidden"
                     alt=""
                     aria-hidden="true"
                   />
@@ -105,13 +134,15 @@
             </div>
           </div>
 
-          <div class="mt-16 hidden justify-center gap-3 md:flex">
+          <div class="mt-16 hidden justify-center gap-3 max-[1049px]:!hidden md:flex" role="tablist" aria-label="Testimonial navigation dots">
             <button
               v-for="(_, index) in testimonials"
               :key="index"
               @click="activeIndex = index"
               class="h-2 w-2 rounded-full transition-all duration-300"
               :class="activeIndex === index ? 'scale-125 bg-primary' : 'bg-[#D9D9F2]'"
+              role="tab"
+              :aria-selected="activeIndex === index ? 'true' : 'false'"
               :aria-label="`Show testimonial ${index + 1}`"
             ></button>
           </div>
@@ -153,394 +184,11 @@ const testimonials = [
       "The network helped us connect with relevant partners, companies, and initiatives across the Danish-German border.",
   },
 ];
+
+const handleCardKeydown = (event, index) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    activeIndex.value = index;
+  }
+};
 </script>
-
-
-<style scoped>
-.testimonial-desktop-grid {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 10px;
-  align-items: center;
-}
-
-.testimonial-column {
-  grid-column: span 4 / span 4;
-  width: 100%;
-}
-
-.testimonial-card {
-  position: relative;
-  width: 100%;
-  border-radius: 14px;
-  overflow: visible;
-  transition:
-    opacity 0.45s ease,
-    background-color 0.45s ease;
-}
-
-.card-inner {
-  position: relative;
-  min-height: 420px;
-  border-radius: 14px;
-  background: #12294b;
-  padding: 40px;
-  color: white;
-  box-shadow: 0 0 18px rgba(121, 139, 210, 0.65);
-  transition:
-    transform 0.45s ease,
-    background-color 0.45s ease;
-}
-
-.testimonial-img {
-  width: 72px;
-  height: 72px;
-}
-
-.testimonial-name {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.testimonial-position {
-  margin-top: 4px;
-  font-size: 12px;
-  font-style: italic;
-  color: rgb(255 255 255 / 0.7);
-}
-
-.active-card {
-  opacity: 1;
-  z-index: 20;
-}
-
-.active-card .card-inner {
-  transform: scale(1);
-}
-
-.small-card {
-  opacity: 0.65;
-}
-
-.small-card .card-inner {
-  transform: scale(0.82);
-  background: #5d7091;
-}
-
-.testimonial-text {
-  position: relative;
-  z-index: 10;
-  margin-top: 52px;
-  padding-left: 48px;
-  padding-right: 38px;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.quote-img {
-  position: absolute;
-  width: 32px;
-  height: 40px;
-}
-
-.quote-img-up {
-  left: 26px;
-  top: 128px;
-}
-
-.quote-img-down {
-  right: 26px;
-  bottom: 24px;
-}
-
-.quote-right {
-  position: absolute;
-  right: 24px;
-  bottom: 10px;
-  font-size: 58px;
-  font-weight: 900;
-  line-height: 1;
-  color: #7c8bda;
-}
-
-/* DESKTOP SHRINK STEP 1 */
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .card-inner {
-    min-height: 360px;
-    padding: 28px;
-  }
-
-  .testimonial-img {
-    width: 58px;
-    height: 58px;
-  }
-
-  .testimonial-name {
-    font-size: 15px;
-  }
-
-  .testimonial-position {
-    font-size: 10px;
-  }
-
-  .testimonial-text {
-    margin-top: 36px;
-    padding-left: 32px;
-    padding-right: 22px;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  .quote-img {
-    width: 26px;
-    height: 32px;
-  }
-
-  .quote-img-up {
-    left: 20px;
-    top: 104px;
-  }
-
-  .quote-img-down {
-    right: 20px;
-    bottom: 20px;
-  }
-
-  .small-card .card-inner {
-    transform: scale(0.86);
-  }
-}
-
-/* DESKTOP SHRINK STEP 2 */
-@media (min-width: 1050px) and (max-width: 1199px) {
-  .card-inner {
-    min-height: 330px;
-    padding: 22px;
-  }
-
-  .testimonial-img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .testimonial-name {
-    font-size: 13px;
-  }
-
-  .testimonial-position {
-    font-size: 9px;
-  }
-
-  .testimonial-text {
-    margin-top: 28px;
-    padding-left: 26px;
-    padding-right: 14px;
-    font-size: 12px;
-    line-height: 1.55;
-  }
-
-  .quote-img {
-    width: 22px;
-    height: 28px;
-  }
-
-  .quote-img-up {
-    left: 16px;
-    top: 88px;
-  }
-
-  .quote-img-down {
-    right: 16px;
-    bottom: 18px;
-  }
-
-  .small-card .card-inner {
-    transform: scale(0.88);
-  }
-}
-
-/* DESKTOP SHRINK STEP 3 - still 3 cards */
-@media (min-width: 949px) and (max-width: 1049px) {
-  .testimonial-desktop-grid {
-    gap: 8px;
-  }
-
-  .card-inner {
-    min-height: 310px;
-    padding: 18px;
-  }
-
-  .testimonial-img {
-    width: 44px;
-    height: 44px;
-  }
-
-  .testimonial-name {
-    font-size: 12px;
-  }
-
-  .testimonial-position {
-    font-size: 8px;
-  }
-
-  .testimonial-text {
-    margin-top: 24px;
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .quote-img {
-    width: 20px;
-    height: 24px;
-  }
-
-  .quote-img-up {
-    left: 14px;
-    top: 78px;
-  }
-
-  .quote-img-down {
-    right: 14px;
-    bottom: 16px;
-  }
-
-  .small-card .card-inner {
-    transform: scale(0.9);
-  }
-}
-
-/* FROM 948PX DOWN: 1 CARD PER ROW */
-@media (min-width: 768px) and (max-width: 948px) {
-  .testimonial-desktop-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .testimonial-column {
-    grid-column: auto;
-  }
-
-  .card-inner {
-    min-height: auto;
-    padding: 24px 22px 30px;
-  }
-
-  .testimonial-img {
-    width: 58px;
-    height: 58px;
-  }
-
-  .testimonial-name {
-    font-size: 16px;
-  }
-
-  .testimonial-position {
-    font-size: 11px;
-  }
-
-  .testimonial-text {
-    margin-top: 28px;
-    padding-left: 24px;
-    padding-right: 18px;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-   .quote-right {
-    display: none;
-  }
-
-  .quote-img {
-    display: none;
-  }
-
-  .quote-img {
-    width: 24px;
-    height: 30px;
-  }
-
-  .quote-img-up {
-    left: 18px;
-    top: 86px;
-  }
-
-  .quote-img-down {
-    right: 20px;
-    bottom: 16px;
-  }
-
-  .small-card {
-    opacity: 1;
-  }
-
-  .small-card .card-inner {
-    transform: scale(1);
-  }
-}
-
-/* MOBILE */
-@media (max-width: 767px) {
-  .mobile-card {
-    background: #12294b;
-    padding: 24px 22px 56px;
-    color: white;
-    box-shadow: 0 0 18px rgba(121, 139, 210, 0.65);
-  }
-
-  .mobile-card:nth-child(1),
-  .mobile-card:nth-child(2),
-  .mobile-card:nth-child(3)
- {
-    background: #405b77;
-  }
-
-  .testimonial-img {
-    width: 72px;
-    height: 72px;
-  }
-
-  .testimonial-text {
-    margin-top: 32px;
-    padding-left: 24px;
-    padding-right: 10px;
-    font-size: 14px;
-    line-height: 1.65;
-    color: white;
-  }
-
-  .quote-right {
-    display: none;
-  }
-
-  .quote-img {
-    display: none;
-  }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 420px) {
-  .mobile-card {
-    padding: 22px 18px 52px;
-  }
-
-  .testimonial-img {
-    width: 62px;
-    height: 62px;
-  }
-
-  .testimonial-text {
-    margin-top: 28px;
-    padding-left: 18px;
-    padding-right: 6px;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-   .quote-right {
-    display: none;
-  }
-
-  .quote-img {
-    display: none;
-  }
-}
-</style>
