@@ -169,7 +169,7 @@ const companies = [
     years: '30+',
     employees: '200+',
     trust: 'trusted company #1',
-    logo: new URL('../../assets/network/business esbjerg.png', import.meta.url).href
+    logo: new URL('../../assets/network/business esbjerg.webp', import.meta.url).href
   },
   {
     name: 'Business Kolding',
@@ -179,7 +179,7 @@ const companies = [
     years: '30+',
     employees: '200+',
     trust: 'trusted company #1',
-    logo: new URL('../../assets/network/business kolding.png', import.meta.url).href
+    logo: new URL('../../assets/network/business kolding.webp', import.meta.url).href
   },
   {
     name: 'Copenhagen Capacity',
@@ -189,7 +189,7 @@ const companies = [
     years: '25+',
     employees: '150+',
     trust: 'trusted company #2',
-    logo: new URL('../../assets/network/copenhagen capacity.png', import.meta.url).href
+    logo: new URL('../../assets/network/copenhagen capacity.webp', import.meta.url).href
   },
   {
     name: 'Business Aabenraa',
@@ -199,7 +199,7 @@ const companies = [
     years: '20+',
     employees: '100+',
     trust: 'trusted company #3',
-    logo: new URL('../../assets/network/business aabenraa.png', import.meta.url).href
+    logo: new URL('../../assets/network/business aabenraa.webp', import.meta.url).href
   },
   {
     name: 'Tønder Erhversråd',
@@ -209,7 +209,7 @@ const companies = [
     years: '40+',
     employees: '300+',
     trust: 'trusted company #4',
-    logo: new URL('../../assets/network/tønder erhversråd.png', import.meta.url).href
+    logo: new URL('../../assets/network/tønder erhversråd.webp', import.meta.url).href
   },
   {
     name: 'Bundesagentur für Arbeit',
@@ -219,7 +219,7 @@ const companies = [
     years: '10+',
     employees: '60+',
     trust: 'trusted company #5',
-    logo: new URL('../../assets/network/bundesagentur für arbeit.png', import.meta.url).href
+    logo: new URL('../../assets/network/bundesagentur für arbeit.webp', import.meta.url).href
   },
   {
     name: 'Schleswig-Holstein',
@@ -229,7 +229,7 @@ const companies = [
     years: '15+',
     employees: '80+',
     trust: 'trusted company #6',
-    logo: new URL('../../assets/network/schleswig-holstein.png', import.meta.url).href
+    logo: new URL('../../assets/network/schleswig-holstein.webp', import.meta.url).href
   },
   {
     name: 'Dansk Industri',
@@ -239,7 +239,7 @@ const companies = [
     years: '12+',
     employees: '90+',
     trust: 'trusted company #7',
-    logo: new URL('../../assets/network/dansk industri.png', import.meta.url).href
+    logo: new URL('../../assets/network/dansk industri.webp', import.meta.url).href
   },
   {
     name: 'Sønderborg Vækstråd',
@@ -249,7 +249,7 @@ const companies = [
     years: '18+',
     employees: '120+',
     trust: 'trusted company #8',
-    logo: new URL('../../assets/network/sønderborg vækstråd.png', import.meta.url).href
+    logo: new URL('../../assets/network/sønderborg vækstråd.webp', import.meta.url).href
   }
 ];
 
