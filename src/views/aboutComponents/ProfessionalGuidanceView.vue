@@ -82,7 +82,7 @@
               >
                 <div class="absolute left-6 top-5 max-w-[85%] xs:left-8 xs:top-6 lg:max-w-[340px]">
                   <img
-                    src="@/assets/quotes up.svg"
+                    src="@/assets/icons/quotes up.svg"
                     alt=""
                     aria-hidden="true"
                     class="absolute left-0 top-0 h-5 w-5 xs:h-6 xs:w-6 transition-all duration-500"
@@ -93,7 +93,7 @@
                   </p>
 
                   <img
-                    src="@/assets/quotes down.svg"
+                    src="@/assets/icons/quotes down.svg"
                     alt=""
                     aria-hidden="true"
                     class="absolute bottom-[-12px] right-[-5px] h-5 w-5 xs:bottom-[-15px] xs:right-[-10px] xs:h-6 xs:w-6 transition-all duration-500"
@@ -185,7 +185,7 @@
                              focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                       :aria-label="`Open ${person.name}'s Facebook profile`"
                     >
-                      <img src="@/assets/facebook icon.svg" alt="" aria-hidden="true" class="h-6" />
+                      <img src="@/assets/icons/facebook icon.svg" alt="" aria-hidden="true" class="h-6" />
                     </a>
 
                     <a
@@ -199,7 +199,7 @@
                       :aria-label="`Open ${person.name}'s LinkedIn profile`"
                       itemprop="sameAs"
                     >
-                      <img src="@/assets/linkedin icon.svg" alt="" aria-hidden="true" class="h-6" />
+                      <img src="@/assets/icons/linkedin icon.svg" alt="" aria-hidden="true" class="h-6" />
                     </a>
                   </div>
                 </div>

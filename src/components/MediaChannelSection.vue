@@ -13,13 +13,13 @@
                         itemprop="name">
 
                         <!-- Up Quote Icon -->
-                        <img src="@/assets/quotes up.svg" alt="" aria-hidden="true" class="absolute left-0 -top-3.5 h-5 w-5 sm:-left-2 sm:-top-5 sm:h-8 sm:w-8"
+                        <img src="@/assets/icons/quotes up.svg" alt="" aria-hidden="true" class="absolute left-0 -top-3.5 h-5 w-5 sm:-left-2 sm:-top-5 sm:h-8 sm:w-8"
                         />
 
                         One region. Two countries. Endless possibilities.
 
                         <!-- Quotes Down Icon -->
-                        <img src="@/assets/quotes down.svg" alt="" aria-hidden="true"class="absolute bottom-[-14px] right-0 h-5 w-5 sm:-right-2 sm:bottom-[-20px] sm:h-8 sm:w-8"
+                        <img src="@/assets/icons/quotes down.svg" alt="" aria-hidden="true"class="absolute bottom-[-14px] right-0 h-5 w-5 sm:-right-2 sm:bottom-[-20px] sm:h-8 sm:w-8"
                         />
                     </h2>
 
@@ -78,7 +78,7 @@
                                 :aria-label="`Play video: ${video.title}`" @click.prevent="play(i)">
 
                                 <!-- Play Icon -->
-                                <img src="@/assets/play-button.svg" alt="" aria-hidden="true" class="h-20 w-20 cursor-pointer transition duration-300 group-hover:scale-110 group-hover:brightness-125"
+                                <img src="@/assets/icons/play-button.svg" alt="" aria-hidden="true" class="h-20 w-20 cursor-pointer transition duration-300 group-hover:scale-110 group-hover:brightness-125"
                                 />
                             </button>
 
@@ -135,9 +135,9 @@
 </template>
 
 <script setup>
-import mediaPerson1 from "@/assets/media-person1.webp";
-import mediaPerson2 from "@/assets/media-person2.webp";
-import mediaPerson3 from "@/assets/media-person3.webp";
+import mediaPerson1 from "@/assets/media/home/media-person1.webp";
+import mediaPerson2 from "@/assets/media/home/media-person2.webp";
+import mediaPerson3 from "@/assets/media/home/media-person3.webp";
 
 import { ref } from "vue";
 

@@ -43,7 +43,7 @@
                   class="flex items-start gap-3 text-left"
                 >
                   <img
-                    src="@/assets/checkmark.svg"
+                    src="@/assets/icons/checkmark.svg"
                     alt=""
                     aria-hidden="true"
                     class="mt-[2px] h-4 w-4 shrink-0"
@@ -85,7 +85,7 @@
                 <div class="flex h-full flex-col gap-10 justify-center">
                   <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left lg:gap-6">
                     <img
-                      src="@/assets/globe icon.svg"
+                      src="@/assets/icons/globe icon.svg"
                       alt=""
                       class="h-20 w-20 object-contain sm:h-24 sm:w-24 lg:h-25 lg:w-25"
                     />
@@ -99,7 +99,7 @@
                       Visibility & event invitations
                     </p>
                     <img
-                      src="@/assets/ticket icon.svg"
+                      src="@/assets/icons/ticket icon.svg"
                       alt=""
                       class="h-20 w-20 object-contain sm:h-24 sm:w-24 lg:h-25 lg:w-25"
                     />
@@ -107,7 +107,7 @@
 
                   <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left lg:gap-6">
                     <img
-                      src="@/assets/statistics icon.svg"
+                      src="@/assets/icons/statistics icon.svg"
                       alt=""
                       class="h-18 w-18 object-contain sm:h-20 sm:w-20"
                     />

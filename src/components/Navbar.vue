@@ -211,9 +211,9 @@ import { ref, watch, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 
 // Importing flag icons so they can be used inside the languages array
-import englishIcon from "@/assets/english icon.svg";
-import danishIcon from "@/assets/danish icon.svg";
-import germanIcon from "@/assets/german icon.svg";
+import englishIcon from "@/assets/icons/english icon.svg";
+import danishIcon from "@/assets/icons/danish icon.svg";
+import germanIcon from "@/assets/icons/german icon.svg";
 
 const route = useRoute();
 
