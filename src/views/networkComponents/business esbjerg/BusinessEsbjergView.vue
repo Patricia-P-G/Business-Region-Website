@@ -4,7 +4,7 @@
     <section class="relative bg-[linear-gradient(180deg,#A2B1F3_0%,#E2E7FC_100%)] min-h-45 sm:min-h-55 flex items-center overflow-hidden" aria-labelledby="partner-title">
       <!-- Map Wrapper-->
       <div class="absolute right-0 top-0 h-full w-[45%] md:w-[40%] pointer-events-none select-none mix-blend-multiply opacity-80" aria-hidden="true">
-        <img src="@/assets/network/business esbjerg/map image.png" alt="" class="h-full w-full object-cover object-left" fetchpriority="high"
+        <img src="@/assets/network/business esbjerg/map image.jpeg" alt="" class="h-full w-full object-cover object-left" fetchpriority="high"
         />
       </div>
 
@@ -135,7 +135,7 @@
         <!-- Image Wrapper Right -->
         <div class="lg:col-start-7 lg:col-span-6 w-full h-full flex items-center">
           <!-- Image Right  -->
-          <img src="@/assets/network/business esbjerg/business esbjerg pic 1.jpg" alt="Business representatives sitting at a table during a project collaboration meeting"
+          <img src="@/assets/network/business esbjerg/business esbjerg pic 1.webp" alt="Business representatives sitting at a table during a project collaboration meeting"
             class="w-full h-auto max-h-52 lg:max-h-85 rounded-md object-cover grayscale shadow-sm" loading="lazy"
           />
         </div>
@@ -187,7 +187,7 @@
         <!-- Image Wrapper -->
         <div class="lg:col-span-6">
           <!-- Image -->
-          <img src="@/assets/network/business esbjerg/business esbjerg pic 2.png" alt="Workplace synergy meeting showing aerial view of team planning cross-border collaborations"
+          <img src="@/assets/network/business esbjerg/business esbjerg pic 2.webp" alt="Workplace synergy meeting showing aerial view of team planning cross-border collaborations"
             class="w-full h-auto max-h-75 rounded-md object-cover grayscale shadow-sm" loading="lazy"
           />
         </div>
