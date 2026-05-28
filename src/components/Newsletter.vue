@@ -92,7 +92,7 @@
             <div class="relative hidden md:col-span-4 md:flex md:justify-end lg:col-span-5" aria-hidden="true">
               <div class="relative inline-block h-72 w-68">
                 <!-- Envelope Image -->
-                <img src="@/assets/envelope.png" alt="" class="absolute inset-0 h-full w-full scale-110 object-contain opacity-0" @error="(e) => (e.target.style.opacity = 0)"
+                <img src="@/assets/newsletter/envelope.png" alt="" class="absolute inset-0 h-full w-full scale-110 object-contain opacity-0" @error="(e) => (e.target.style.opacity = 0)"
                   @load="(e) => (e.target.style.opacity = 1)"
                 />
               </div>

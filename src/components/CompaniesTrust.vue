@@ -118,7 +118,7 @@
                   </div>
 
                   <!-- Quotes Up -->
-                  <img src="@/assets/quotes up.svg" class="absolute left-6.5 top-32 h-10 w-8 max-[1399px]:left-5 max-[1399px]:top-26
+                  <img src="@/assets/icons/quotes up.svg" class="absolute left-6.5 top-32 h-10 w-8 max-[1399px]:left-5 max-[1399px]:top-26
                     max-[1399px]:h-8 max-[1399px]:w-6.5 max-[1199px]:left-4 max-[1199px]:top-22 max-[1199px]:h-7 max-[1199px]:w-5.5 max-[1049px]:hidden"
                     alt="" aria-hidden="true"
                   />
@@ -132,7 +132,7 @@
                   </blockquote>
 
                   <!-- Quotes Down -->
-                  <img src="@/assets/quotes down.svg" class="absolute bottom-6 right-6.5 h-10 w-8 max-[1399px]:bottom-5 max-[1399px]:right-5 max-[1399px]:h-8
+                  <img src="@/assets/icons/quotes down.svg" class="absolute bottom-6 right-6.5 h-10 w-8 max-[1399px]:bottom-5 max-[1399px]:right-5 max-[1399px]:h-8
                     max-[1399px]:w-6.5 max-[1199px]:bottom-4.5 max-[1199px]:right-4 max-[1199px]:h-7 max-[1199px]:w-5.5 max-[1049px]:hidden"
                     alt="" aria-hidden="true"
                   />
@@ -161,9 +161,9 @@
 <script setup>
 import { ref } from "vue";
 
-import person1 from "@/assets/person1.png";
-import person2 from "@/assets/person2.png";
-import person3 from "@/assets/person3.png";
+import person1 from "@/assets/testimonial/person1.png";
+import person2 from "@/assets/testimonial/person2.png";
+import person3 from "@/assets/testimonial/person3.png";
 
 const activeIndex = ref(1);
 

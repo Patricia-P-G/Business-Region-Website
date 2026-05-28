@@ -7,7 +7,7 @@
     >
       <div class="absolute right-0 top-0 h-full w-full sm:w-[50%] md:w-[45%] pointer-events-none select-none mix-blend-multiply opacity-80" aria-hidden="true">
         <img
-          src="@/assets/network/map image.png"
+          src="@/assets/network/business esbjerg/map image.png"
           alt=""
           class="h-full w-full object-cover object-right"
           fetchpriority="high"
@@ -20,7 +20,7 @@
           <div class="flex-shrink-0">
             <div class="flex h-32 w-32 sm:h-36 sm:w-36 items-center justify-center rounded-full bg-white shadow-md">
               <img
-                src="@/assets/network/business esbjerg.png"
+                src="@/assets/network/business esbjerg.webp"
                 alt="Business Esbjerg Official Logo"
                 class="h-20 w-20 sm:h-24 sm:w-24 object-contain"
               />
@@ -125,9 +125,9 @@
 
         <div class="lg:col-span-5 w-full h-full flex items-center">
           <img
-            src="@/assets/network/business esbjerg pic 1.jpg"
+            src="@/assets/network/business esbjerg/business esbjerg pic 1.jpg"
             alt="Business representatives sitting at a table during a project collaboration meeting"
-            class="w-full h-auto max-h-[340px] rounded-md object-cover grayscale shadow-sm"
+            class="w-full h-auto max-h-85 rounded-md object-cover grayscale shadow-sm"
             loading="lazy"
           />
         </div>
@@ -161,7 +161,7 @@
         
         <div class="lg:col-span-5 order-2 lg:order-1">
           <img
-            src="@/assets/network/business esbjerg pic 2.png"
+            src="@/assets/network/business esbjerg/business esbjerg pic 2.png"
             alt="Workplace synergy meeting showing aerial view of team planning cross-border collaborations"
             class="w-full h-auto max-h-[300px] rounded-md object-cover grayscale shadow-sm"
             loading="lazy"

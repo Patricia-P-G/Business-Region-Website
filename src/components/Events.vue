@@ -214,9 +214,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import events1 from "@/assets/events1.png";
-import events2 from "@/assets/events2.png";
-import events3 from "@/assets/events3.png";
+import events1 from "@/assets/events/home/events1.png";
+import events2 from "@/assets/events/home/events2.png";
+import events3 from "@/assets/events/home/events3.png";
 
 const events = [
   {
