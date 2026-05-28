@@ -208,7 +208,7 @@ const cards = ref([
     durationOrRead: "10:45 min",
     location: "DE",
     date: "October 8",
-    route: "/media/friendly-danes",
+    route: "/media/meet-katja",
   },
   {
     title: "The two-step approach: attract and retain",
