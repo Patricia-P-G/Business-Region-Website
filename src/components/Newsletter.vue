@@ -1,6 +1,6 @@
 <template>
   <!-- Newsletter Section -->
-  <div aria-label="Newsletter subscription" itemscope itemtype="https://schema.org/SubscribeAction">
+  <section aria-label="Newsletter subscription" itemscope itemtype="https://schema.org/SubscribeAction">
 
     <!-- Newsletter Icon Wrapper -->
     <transition name="newsletter">
@@ -102,7 +102,7 @@
         </div>
       </div>
     </transition>
-  </div>
+  </section>
 </template>
 
 <script setup>

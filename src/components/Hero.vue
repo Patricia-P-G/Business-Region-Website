@@ -3,7 +3,7 @@
 
     <!-- Hero Image -->
     <img
-      src="@/assets/hero-image.png"
+      src="/home/hero-image.webp"
       alt=""
       aria-hidden="true"
       class="absolute inset-0 h-full w-full object-cover object-center"
