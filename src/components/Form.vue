@@ -48,7 +48,7 @@
 
                 <!-- All Sections Wrapper -->
                 <div>
-                    
+
                     <!-- Company Information Step 1 --------- Company Name + Address + City + Post Number -->
                     <fieldset v-if="currentStep === 0" ref="formStepContainer" tabindex="-1" class="grid grid-cols-12 gap-x-6 gap-y-5 animate-fadeIn border-none p-0 m-0 focus:outline-none" aria-labelledby="step-1-title">
                         
@@ -126,7 +126,7 @@
                             <label for="contactPerson" class="text-[15px] font-bold text-[#111111]">Contact person</label>
 
                             <!-- Contact Person Input -->
-                            <input id="contactPerson" v-model="formData.contactPerson" class="w-full min-w-0 box-border border border-[#767676] rounded-md px-4 py-[14px] text-[15px] font-medium text-[#1E293B] outline-none bg-[#F8F8F8] transition-all duration-200 placeholder:text-[#6B7280] placeholder:text-[14px] focus:border-[#6474bd] focus:bg-white focus:ring-2 focus:ring-[#6474bd]"
+                            <input id="contactPerson" v-model="formData.contactPerson" class="w-full min-w-0 box-border border border-[#767676] rounded-md px-4 py-3.5 text-[15px] font-medium text-[#1E293B] outline-none bg-[#F8F8F8] transition-all duration-200 placeholder:text-[#6B7280] placeholder:text-[14px] focus:border-[#6474bd] focus:bg-white focus:ring-2 focus:ring-[#6474bd]"
                                 placeholder="Eks. Joe Boel" requiredautocomplete="name"
                             />
 
@@ -249,6 +249,7 @@
 
 <script setup>
 import { ref, reactive, nextTick } from "vue";
+import emailjs from "@emailjs/browser";
 
 const steps = ["Company Information", "Contact Person", "Final Step"];
 const emit = defineEmits(["back-to-intro", "submit-form"]);
@@ -294,24 +295,38 @@ const handleBack = () => {
 
 const submitToBackend = async () => {
   isSending.value = true;
-  try {
-    const API_URL = "https://api.yourdomain.com/membership";
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+  
+  const templateParams = {
+    company_name: formData.companyName,
+    address: formData.address,
+    city: formData.city,
+    postnumber: formData.postnumber,
+    contact_person: formData.contactPerson,
+    phone: formData.phone,
+    email: formData.email,
+    website: formData.website,
+    cvr_number: formData.cvrNumber,
+    description: formData.description,
+  };
 
-    if (!response.ok) throw new Error("Network error");
+  try {
+    const response = await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
+
+    if (response.status !== 200) throw new Error("EmailJS submission failed");
 
     isSending.value = false;
-    alert("Formularul a fost trimis cu succes!");
+    alert("Form submitted successfully!");
     emit("submit-form", { ...formData });
     resetForm();
   } catch (error) {
     isSending.value = false;
-    alert("A apărut o eroare la trimitere.");
-    console.error(error);
+    alert("An error occurred while sending the email.");
+    console.error("EmailJS Error:", error);
   }
 };
 
@@ -321,6 +336,7 @@ const resetForm = () => {
     formData[key] = "";
   });
 };
+
 </script>
 
 <style scoped>
