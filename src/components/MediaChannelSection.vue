@@ -135,9 +135,9 @@
 </template>
 
 <script setup>
-import mediaPerson1 from "@/assets/media-person1.png";
-import mediaPerson2 from "@/assets/media-person2.png";
-import mediaPerson3 from "@/assets/media-person3.png";
+import mediaPerson1 from "@/assets/media-person1.webp";
+import mediaPerson2 from "@/assets/media-person2.webp";
+import mediaPerson3 from "@/assets/media-person3.webp";
 
 import { ref } from "vue";
 
