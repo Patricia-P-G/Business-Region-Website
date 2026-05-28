@@ -164,7 +164,7 @@ const cards = ref([
     title: "Friendly Danes at the negotiating table",
     description: "See the interview with Gwyn Nissen Chief Editor for Der Nordschleswiger",
     type: "Interview",
-    imageName: "card1.png",
+    imageName: "card1.webp",
     durationOrRead: "10:03 min",
     location: "DK",
     date: "December 2",
@@ -174,7 +174,7 @@ const cards = ref([
     description:
       "40 business leaders met at Eutin Brewery to tackle the skilled worker shortage across the Danish-German border.",
     type: "Conference",
-    imageName: "card2.png",
+    imageName: "card2.webp",
     durationOrRead: "5:56 min",
     location: "DK/DE",
     date: "October 8",
@@ -184,7 +184,7 @@ const cards = ref([
     description:
       "How ANDRITZ Feed & Biofuel turns international hires into long-term team members.",
     type: "Event Highlights",
-    imageName: "card3.png",
+    imageName: "card3.webp",
     durationOrRead: "5 min read",
     location: "DE",
     date: "December 2",
@@ -194,7 +194,7 @@ const cards = ref([
     description:
       "Hard to name, easy to feel — the cross-border region where Danish and German businesses find each other.",
     type: "Article",
-    imageName: "card4.png",
+    imageName: "card4.webp",
     durationOrRead: "6 min read",
     location: "DK/DE",
     date: "December 2",
@@ -204,7 +204,7 @@ const cards = ref([
     description:
       "Project manager at Erhvervsfremme Nordfriesland and responsible for the project Interreg Business DE-DK.",
     type: "Interview",
-    imageName: "card5.png",
+    imageName: "card5.webp",
     durationOrRead: "10:45 min",
     location: "DE",
     date: "October 8",
@@ -215,7 +215,7 @@ const cards = ref([
     description:
       "Gitte Crami Davidson of Work-live-stay: international hires aren’t just a strategic advantage — they’re people.",
     type: "Article",
-    imageName: "card6.png",
+    imageName: "card6.webp",
     durationOrRead: "7 min read",
     location: "DK/DE",
     date: "June 6",
