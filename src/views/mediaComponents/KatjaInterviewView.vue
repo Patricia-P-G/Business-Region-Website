@@ -289,34 +289,38 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
+import { scrollToTop } from '@/components/modules/scrollToTop';
 
-// ── Static image imports ──────────────────────────────────────────────────────
-import thumbnailSrc  from '@/assets/media/katja/katja-vid-thumbnail.jpg'
-import profileSrc    from '@/assets/media/katja/katja-rosenburg.png'
-import kliwinf       from '@/assets/media/katja/kliwinf.png'
-import interreg      from '@/assets/media/katja/interreg.png'
-import businessDeDk  from '@/assets/media/katja/business-de-dk.png'
+onMounted(async () => {
+  await nextTick()
+  scrollToTop('auto')
+})
 
-// ── Interview data ────────────────────────────────────────────────────────────
+
+import thumbnailSrc from '@/assets/media/katja/katja-vid-thumbnail.jpg'
+import profileSrc from '@/assets/media/katja/katja-rosenburg.png'
+import kliwinf from '@/assets/media/katja/kliwinf.png'
+import interreg from '@/assets/media/katja/interreg.png'
+import businessDeDk from '@/assets/media/katja/business-de-dk.png'
+
+
 // TODO (connector): replace this object with a prop, composable, or route-param fetch
 const interview = {
-  title:      'Meet Katja Rosenburg',
-  subtitle:   'Project manager at Erhvervsfremme Nordfriesland and responsible for the project Interreg Business DE-DK.',
-  youtubeUrl: 'https://www.youtube.com/watch?v=mqhIDMQmaTE',
-  embedUrl:   'https://www.youtube.com/embed/mqhIDMQmaTE',
-  postedDate: 'October 8, 2015',
-  description1:
-    'In this video, Katja shares how cooperation between the border regions of Denmark and Germany can help solve the current shortage of qualified labor.',
-  description2:
-    'Through Business DE-DK, companies on both sides of the border are brought together to find solutions to the needs of the workforce. Katja explains how networking and collaboration play a central role in attracting labor to the region, and how small obstacles can be overcome through joint efforts.',
-  description3:
-    'The project also supports the labor market by attracting global labor, who are given the opportunity to choose where they want to work in the border region.',
+  title: 'Meet Katja Rosenburg',
+  subtitle:'Project manager at Erhvervsfremme Nordfriesland and responsible for the project Interreg Business DE-DK.',
+  youtubeUrl:'https://www.youtube.com/watch?v=mqhIDMQmaTE',
+  embedUrl:'https://www.youtube.com/embed/mqhIDMQmaTE',
+  postedDate:'October 8, 2015',
+  description1:'In this video, Katja shares how cooperation between the border regions of Denmark and Germany can help solve the current shortage of qualified labor.',
+  description2:'Through Business DE-DK, companies on both sides of the border are brought together to find solutions to the needs of the workforce. Katja explains how networking and collaboration play a central role in attracting labor to the region, and how small obstacles can be overcome through joint efforts.',
+  description3:'The project also supports the labor market by attracting global labor, who are given the opportunity to choose where they want to work in the border region.',
+  
   person: {
-    name:        'Katja Rosenburg',
-    title:       'Sustainable Energy, Climate Neutral Economy, NF 467B1 NF1, Business DE-DK',
-    email:       'k.rosenburg@see-style.de',
-    phone:       '+45 66 88 86 15',
+    name:'Katja Rosenburg',
+    title:'Sustainable Energy, Climate Neutral Economy, NF 467B1 NF1, Business DE-DK',
+    email:'k.rosenburg@see-style.de',
+    phone:'+49 48 41 66 85 12',
     facebookUrl: '#', // TODO (connector): link real profile
     linkedinUrl: '#', // TODO (connector): link real profile
   },

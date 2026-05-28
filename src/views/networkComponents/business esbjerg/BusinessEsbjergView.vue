@@ -35,7 +35,7 @@
             </p>
 
             <!-- Information Wrapper -->
-            <address class="contact-scroll grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 mt-6 text-xs sm:text-sm not-italic max-w-200 max-h-25 overflow-y-scroll sm:max-h-none sm:overflow-visible focus:outline-none focus-visible:ring-2 focus-visible:ring-[#12294B] focus-visible:ring-offset-2"
+            <address class="contact-scroll grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 mt-6 text-xs sm:text-sm not-italic max-w-200 max-h-25 overflow-y-scroll sm:max-h-none sm:overflow-visible focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               tabindex="0" aria-label="Contact information directory. Use scroll buttons or arrow keys to browse contents.">
               
               <!-- Email Wrapper -->
