@@ -63,6 +63,11 @@ import MissionView from './aboutComponents/MissionView.vue';
 import PartnersView from './aboutComponents/PartnersView.vue';
 import PriorityView from './aboutComponents/PriorityView.vue';
 import ProfessionalGuidanceView from './aboutComponents/ProfessionalGuidanceView.vue';
+import { scrollToTop } from '@/components/modules/scrollToTop';
+
+onMounted(() => {
+  scrollToTop();
+});
 
 // Dynamic SEO
 if (typeof window !== 'undefined') {

@@ -23,7 +23,7 @@
 
                     <!-- Business Region -->
                     <router-link to="/" class="mb-8 mt-8 flex justify-center sm:justify-start focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded transition"
-                        aria-label="Business Region DE-DK homepage">
+                        aria-label="Business Region DE-DK homepage" @click="handleLogoClick">
                         <!-- Business Region Logo -->
                         <img src="@/assets/business-region-logo.svg" width="200" height="100" alt="Business Region DE-DK logo" class="invert" itemprop="logo"/>
                     </router-link>
@@ -195,3 +195,16 @@
         </div>
     </footer>
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router';
+import { scrollToTop } from '@/components/modules/scrollToTop';
+
+const router = useRouter();
+
+const handleLogoClick = async () => {
+  await router.push('/');
+
+  scrollToTop();
+};
+</script>

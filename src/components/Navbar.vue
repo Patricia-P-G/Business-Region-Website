@@ -11,7 +11,7 @@
                     <!-- Logo Wrapper -->
                     <div class="col-span-6 flex justify-start nav:col-span-2">
                         <!-- Logo -->
-                        <router-link to="/" class="flex items-center" aria-label="Business Region homepage">
+                        <router-link to="/" class="flex items-center" @click="handleLogoClick" aria-label="Business Region homepage">
                             <img
                             src="@/assets/business-region-logo.svg"
                             alt="Business Region DE-DK logo "
@@ -208,12 +208,21 @@
 
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
+import { scrollToTop } from '@/components/modules/scrollToTop';
+
 
 // Importing flag icons so they can be used inside the languages array
 import englishIcon from "@/assets/icons/english icon.svg";
 import danishIcon from "@/assets/icons/danish icon.svg";
 import germanIcon from "@/assets/icons/german icon.svg";
+
+const router = useRouter();
+const handleLogoClick = async () => {
+  await router.push('/');
+
+  scrollToTop();
+};
 
 const route = useRoute();
 
