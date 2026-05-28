@@ -7,6 +7,7 @@ import NetworkView from "@/views/NetworkView.vue"
 
 import ContactView from "@/views/aboutComponents/ContactView.vue";
 import BecomeMember from "@/components/BecomeMember.vue";
+import KatjaInterviewView from "@/views/mediaComponents/KatjaInterviewView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,30 +44,21 @@ const router = createRouter({
       name: "business-esbjerg",
       component: () => import("@/views/networkComponents/business esbjerg/BusinessEsbjergView.vue"),
     },
-
-    // {
-    //   path: "/partners/business-kolding",
-    //   name: "business-kolding",
-    //   component: () =>
-    //     import("@/views/partners/BusinessKoldingView.vue"),
-    // },
-
-    // {
-    //   path: "/partners/copenhagen-capacity",
-    //   name: "copenhagen-capacity",
-    //   component: () =>
-    //     import("@/views/partners/CopenhagenCapacityView.vue"),
-    // },
-
     {
     path: '/contact',
-    name: 'Contact',
+    name: 'contact',
     component: ContactView
   },
   {
     path: '/join',
     name: 'Join',
     component: BecomeMember
+  },
+
+  {
+    path: '/media/meet-katja',
+    name: 'meet katja',
+    component: KatjaInterviewView
   }
 
   ],
