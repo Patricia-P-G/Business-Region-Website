@@ -46,6 +46,11 @@
 <script setup>
 import { onMounted } from 'vue';
 import MediaLibrary from "./mediaComponents/MediaLibrary.vue";
+import { scrollToTop } from '@/components/modules/scrollToTop';
+
+onMounted(() => {
+  scrollToTop();
+});
 
 // Dynamic Meta Tags
 if (typeof window !== 'undefined') {

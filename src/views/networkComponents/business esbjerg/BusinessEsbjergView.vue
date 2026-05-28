@@ -234,6 +234,11 @@
 
 <script setup>
 import { onMounted } from 'vue';
+import { scrollToTop } from '@/components/modules/scrollToTop';
+
+onMounted(() => {
+  scrollToTop();
+});
 
 const updateMeta = (name, content, isProperty = false) => {
   const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;

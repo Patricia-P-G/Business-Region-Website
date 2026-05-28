@@ -49,6 +49,11 @@
 
 import { onMounted } from "vue";
 import NetworkCompanies from "./networkComponents/NetworkCompanies.vue";
+import { scrollToTop } from '@/components/modules/scrollToTop';
+
+onMounted(() => {
+  scrollToTop();
+});
 
 // Dynamic SEO
 if (typeof window !== 'undefined') {
