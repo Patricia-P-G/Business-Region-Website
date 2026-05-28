@@ -36,7 +36,7 @@
         aria-modal="true" aria-labelledby="newsletter-title" aria-describedby="newsletter-description">
 
         <!--Pop Up Content Wrapper -->
-        <div class="relative w-full max-w-235 overflow-hidden rounded-[20px] bg-[linear-gradient(105deg,#F5F6F9_0%,#F0F2F8_50%,#B2BFEB_100%)] p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
+        <div class="relative w-full max-w-235 overflow-hidden rounded-[20px] bg-[linear-gradient(105deg,#F5F6F9_0%,#F0F2F8_50%,#B2BFEB_100%)] p-7 xs:p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
           
           <!-- Close Button -->
           <button @click="isOpen = false" class="absolute right-6 top-4 rounded-md cursor-pointer text-3xl" aria-label="Close newsletter popup"type="button">
@@ -72,11 +72,11 @@
                 <!-- Input -->
                 <input id="newsletter-email" v-model="email" type="email" required inputmode="email" autocomplete="email" aria-required="true" itemprop="email"
                   placeholder="Your email address..."
-                  class="h-14 flex-1 rounded-xl border border-[#D9E1EC] bg-white px-5 text-base text-primary placeholder-[#909EB4] outline-none shadow-[0_2px_4px_rgba(0,0,0,0.02)] transition focus:border-[#7988D2] focus:ring-1 focus:ring-[#7988D2]"
+                  class="h-14 w-full flex-1 rounded-xl border border-[#D9E1EC] bg-white px-5 py-4 text-base text-primary placeholder-[#909EB4] outline-none shadow-[0_2px_4px_rgba(0,0,0,0.02)] transition focus:border-[#7988D2] focus:ring-1 focus:ring-[#7988D2]"
                 />
 
                 <!-- Subscribe Button -->
-                <button type="submit" class="h-14 rounded-xl bg-primary px-8 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-[#1a355e] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#12294B] focus-visible:ring-offset-2 cursor-pointer"
+                <button type="submit" class="h-11 sm:h-14 rounded-xl bg-primary px-8 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-[#1a355e] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#12294B] focus-visible:ring-offset-2 cursor-pointer"
                   aria-label="Subscribe to newsletter">
                   Subscribe
                 </button>
