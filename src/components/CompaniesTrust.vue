@@ -20,27 +20,24 @@
 
         <div class="col-span-12 mt-10 md:mt-20">
           
-          <div class="flex flex-col gap-8 md:hidden">
+          <div class="flex flex-col gap-8 md:hidden" aria-hidden="true">
             <article
               v-for="(person, index) in testimonials"
-              :key="person.name"
+              :key="`mobile-${person.name}`"
               class="relative w-full overflow-visible rounded-[14px] opacity-100 transition-all duration-[0.45s] ease-in-out p-6 pb-14 max-[420px]:px-4.5 max-[420px]:pb-13 text-white shadow-[0_0_18px_rgba(121,139,210,0.65)]"
               :class="[
                 index < 3 ? 'bg-[#405b77]' : 'bg-[#12294b]'
               ]"
-              itemscope
-              itemtype="https://schema.org/Review"
             >
               <div class="flex items-center gap-4">
                 <img
                   :src="person.image"
-                  :alt="`${person.name} portrait`"
                   class="shrink-0 rounded-full object-cover w-[72px] h-[72px] max-[420px]:w-[62px] max-[420px]:h-[62px]"
                 />
 
                 <div class="min-w-0">
-                  <h3 class="text-base font-semibold xs:text-lg" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                    <span itemprop="name">{{ person.name }}</span>
+                  <h3 class="text-base font-semibold xs:text-lg">
+                    <span>{{ person.name }}</span>
                   </h3>
 
                   <p class="mt-1 text-xs italic text-white/75">
@@ -49,10 +46,7 @@
                 </div>
               </div>
 
-              <p 
-                class="relative z-10 text-white mt-8 pl-6 pr-2.5 text-sm leading-[1.65] max-[420px]:mt-7 max-[420px]:pl-4.5 max-[420px]:pr-1.5 max-[420px]:text-xs max-[420px]:leading-[1.6]" 
-                itemprop="reviewBody"
-              >
+              <p class="relative z-10 text-white mt-8 pl-6 pr-2.5 text-sm leading-[1.65] max-[420px]:mt-7 max-[420px]:pl-4.5 max-[420px]:pr-1.5 max-[420px]:text-xs max-[420px]:leading-[1.6]">
                 {{ person.quote }}
               </p>
             </article>
@@ -60,13 +54,14 @@
 
           <div 
             class="hidden md:grid grid-cols-12 items-center gap-2.5 max-[1399px]:gap-2 max-[1049px]:grid-cols-1 max-[1049px]:gap-6" 
-            role="region" 
+            role="list" 
             aria-label="Customer Testimonials"
           >
             <div
               v-for="(person, index) in testimonials"
-              :key="person.name"
+              :key="`desktop-${person.name}`"
               class="col-span-4 w-full max-[1049px]:col-span-1"
+              role="listitem"
             >
               <article
                 class="relative w-full overflow-visible rounded-[14px] transition-all duration-[0.45s] ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#6474bd] focus-visible:outline-offset-4"
@@ -94,7 +89,7 @@
                   <div class="flex items-center gap-5">
                     <img
                       :src="person.image"
-                      :alt="`${person.name} portrait`"
+                      :alt="`Portrait of ${person.name}`"
                       class="shrink-0 rounded-full object-cover w-[72px] h-[72px] max-[1399px]:w-14 max-[1399px]:h-14 max-[1199px]:w-12 max-[1199px]:h-12 max-[1049px]:w-14 max-[1049px]:h-14"
                     />
 
@@ -136,14 +131,14 @@
 
           <div class="mt-16 hidden justify-center gap-3 max-[1049px]:!hidden md:flex" role="tablist" aria-label="Testimonial navigation dots">
             <button
-              v-for="(_, index) in testimonials"
+              v-for="(person, index) in testimonials"
               :key="index"
               @click="activeIndex = index"
-              class="h-2 w-2 rounded-full transition-all duration-300"
+              class="h-2 w-2 rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
               :class="activeIndex === index ? 'scale-125 bg-primary' : 'bg-[#D9D9F2]'"
               role="tab"
               :aria-selected="activeIndex === index ? 'true' : 'false'"
-              :aria-label="`Show testimonial ${index + 1}`"
+              :aria-label="`Show testimonial from ${person.name}`"
             ></button>
           </div>
         </div>
