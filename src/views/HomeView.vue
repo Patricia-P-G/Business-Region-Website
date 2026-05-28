@@ -17,7 +17,4 @@ import WhoWeWorkWith from '@/components/WhoWeWorkWith.vue';
   <MediaChannelSection />
   <Events />
   
-  <main>
-
-  </main>
 </template>
