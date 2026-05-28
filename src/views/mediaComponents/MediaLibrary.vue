@@ -146,6 +146,7 @@
 <script setup>
 import { ref, computed, watch } from "vue";
 
+
 const searchQuery = ref("");
 const activeFilter = ref("All");
 const currentPage = ref(1);
