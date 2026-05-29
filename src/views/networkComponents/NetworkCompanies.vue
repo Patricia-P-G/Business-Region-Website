@@ -45,17 +45,17 @@
       <div class="grid grid-cols-1 gap-6 py-20 sm:grid-cols-3" aria-label="Company filters">
 
         <!-- Default Button -->
-        <button type="button" @click="setSort('default')" :aria-pressed="sortType === 'default'" :class="filterButtonClass(sortType === 'default')">
+        <button type="button" @click="setSort('default')" :aria-pressed="sortType === 'default'" :class="sortType === 'default' ? 'filter-button-active' : 'filter-button-inactive'">
           All Companies
         </button>
 
         <!-- Alphabetically A-Z Button -->
-        <button type="button" @click="setSort('az')" :aria-pressed="sortType === 'az'" :class="filterButtonClass(sortType === 'az')">
+        <button type="button" @click="setSort('az')" :aria-pressed="sortType === 'az'" :class="sortType === 'az' ? 'filter-button-active' : 'filter-button-inactive'">
           Alphabetically A-Z
         </button>
 
         <!-- Alphabetically Z-A Button -->
-        <button type="button" @click="setSort('za')" :aria-pressed="sortType === 'za'" :class="filterButtonClass(sortType === 'za')">
+        <button type="button" @click="setSort('za')" :aria-pressed="sortType === 'za'" :class="sortType === 'za' ? 'filter-button-active' : 'filter-button-inactive'">
           Alphabetically Z-A
         </button>
 
@@ -311,13 +311,6 @@ const loadMore = () => {
     isLoading.value = false;
   }, 700);
 };
-
-
-// Dynamically applies button styles based on active filter state
-const filterButtonClass = (isActive) => [
-  'rounded-lg cursor-pointer py-4 text-sm font-bold uppercase text-white transition focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40',
-  isActive ? 'bg-[#7C8BDA] hover:bg-[#6D7BD0]' : 'bg-[#3E5A78] hover:bg-[#334A63]'
-];
 
 // Resets visible cards whenever the search query changes
 watch(searchQuery, () => {

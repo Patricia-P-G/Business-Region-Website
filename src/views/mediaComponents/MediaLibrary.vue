@@ -43,8 +43,8 @@
       <div class="-mx-5 flex gap-3 overflow-x-auto px-5 pb-10 sm:-mx-8 sm:px-8 sm:pb-20 xs:-mx-6 xs:px-6 md:grid md:grid-cols-5 md:gap-4 lg:mx-0 lg:px-0 no-scrollbar"
         aria-label="Filter media content">
         <!-- Buttons -->
-        <button v-for="filter in filters" :key="filter" type="button" :aria-pressed="filter === activeFilter" :class="['shrink-0 cursor-pointer rounded-lg px-5 py-3 text-xs font-bold uppercase text-white transition duration-200 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:px-2 sm:py-4 sm:text-sm md:shrink md:whitespace-normal',
-          filter === activeFilter ? 'bg-secondary' : 'bg-[#3E5A78] hover:bg-[#3E5A78]/90']" @click="activeFilter = filter">
+        <button v-for="filter in filters" :key="filter" type="button" :aria-pressed="filter === activeFilter" :class="[filter === activeFilter ? 'filter-button-active' : 'filter-button-inactive',
+          'shrink-0 whitespace-nowrap px-5 sm:px-2 md:shrink md:whitespace-normal']" @click="activeFilter = filter">
           {{ filter }}
         </button>
       </div>

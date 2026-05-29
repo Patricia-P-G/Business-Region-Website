@@ -14,6 +14,7 @@
   --color-primary: #12294b;
   --color-secondary: #7988d2;
   --color-tertiary: #405b77;
+  --color-quaternary: #0000;
   --font-display: "Raleway", sans-serif;
 
   /* Custom Breakpoints */
@@ -40,6 +41,20 @@
 
   .heading-section{
 
+  }
+
+
+  /* Filter Buttons  */
+  .filter-button-active {
+    @apply cursor-pointer rounded-lg py-4 text-sm font-bold uppercase text-white transition
+           bg-secondary hover:bg-[#8A98E2]
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40;
+  }
+
+  .filter-button-inactive {
+    @apply cursor-pointer rounded-lg py-4 text-sm font-bold uppercase text-white transition
+           bg-tertiary hover:bg-[#567394]
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40;
   }
 
 }
