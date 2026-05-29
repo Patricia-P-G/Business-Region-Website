@@ -1,10 +1,10 @@
 <template>
   <!-- Become a Member Section  -->
-    <section :class="['relative w-full flex items-center justify-center overflow-hidden transition-colors duration-500 py-12 sm:py-16', showForm ? 'bg-[#112E56]' : 'bg-white']"
+    <section :class="['relative w-full flex items-center justify-center overflow-hidden transition-colors duration-500 py-20 sm:py-16', showForm ? 'bg-[#112E56]' : 'bg-white']"
         aria-labelledby="enrollment-heading">
 
         <!-- Right Space -->
-        <div class="relative z-10 mx-auto w-full max-w-400 px-5 xs:px-6 sm:px-8 lg:px-20">
+        <div class="relative z-10 mx-auto w-full max-w-400 py-10 px-5 xs:px-6 sm:px-8 lg:px-20">
             <transition
                 enter-active-class="transition-all duration-500 ease-in-out"
                 leave-active-class="transition-all duration-500 ease-in-out"
