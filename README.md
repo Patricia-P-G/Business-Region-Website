@@ -1,5 +1,6 @@
 # 🌍 Business Region DE-DK Website - MMD 2nd Project
 
+
 ## 📖 Project Overview
 
 This project was developed as part of the Multimedia Design programme at SEA - Syddansk Erhvervsakademi.
