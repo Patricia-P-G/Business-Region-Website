@@ -46,42 +46,54 @@
 </template>
 
 <script setup>
-
 import { onMounted } from "vue";
+import { useHead } from "@vueuse/head";
+
 import NetworkCompanies from "./networkComponents/NetworkCompanies.vue";
-import { scrollToTop } from '@/components/modules/scrollToTop';
+import { scrollToTop } from "@/components/modules/scrollToTop";
 
 onMounted(() => {
   scrollToTop();
 });
 
-// Dynamic SEO
-if (typeof window !== 'undefined') {
-  const updateMeta = (name, content, isProperty = false) => {
-    const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-    let meta = document.querySelector(selector);
-    
-    if (!meta) {
-      meta = document.createElement('meta');
-      if (isProperty) meta.setAttribute('property', name);
-      else meta.name = name;
-      document.head.appendChild(meta);
-    }
-    meta.content = content;
-  };
+// Seo
+useHead({
+  title: "Network | Business Region DE-DK",
 
-  onMounted(() => {
-    document.title = "Network - Business DE-DK Cross-Border Cooperation";
-    
-    // SEO Standard Tags
-    updateMeta('description', 'Connect with partner companies, institutions, and initiatives driving the cross-border business cooperation between Germany and Denmark.');
-    updateMeta('keywords', 'business network, cross-border cooperation, Germany Denmark, DE-DK partners, regional initiatives');
-    
-    // Open Graph (Social Media / Facebook / LinkedIn)
-    updateMeta('og:title', 'Network - Business DE-DK Cross-Border Cooperation', true);
-    updateMeta('og:description', 'Connect with partner companies, institutions, and initiatives driving the cross-border business cooperation between Germany and Denmark.', true);
-    updateMeta('og:type', 'website', true);
-    updateMeta('og:image', '/network/hero-image-network.webp', true);
-  });
-}
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://business-region-de-dk.web.app/network',
+    },
+  ],
+
+  meta: [
+    {
+      name: "description",
+      content:"Explore partner companies, institutions, and initiatives that support cross-border cooperation between Denmark and Germany through the Business Region DE-DK network.",
+    },
+    {
+      name: "keywords",
+      content: "Business Region DE-DK, network, partner companies, Denmark Germany cooperation, business collaboration, cross-border network",
+    },
+
+    // Open Graph
+    {
+      property: "og:title",
+      content: "Network | Business Region DE-DK",
+    },
+    {
+      property: "og:description",
+      content: "Explore partner companies, institutions, and initiatives that support cross-border cooperation between Denmark and Germany.",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:image",
+      content: "/network/hero-image-network.webp",
+    }
+  ],
+});
 </script>

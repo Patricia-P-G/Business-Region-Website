@@ -1,7 +1,7 @@
 <template>
   <main>
    <!-- Hero Media Channel -->
-    <section class="relative h-180 w-full overflow-hidden" aria-labelledby="network-hero-title" aria-describedby="network-hero-description"
+    <section class="relative h-180 w-full overflow-hidden" aria-labelledby="media-hero-title" aria-describedby="media-hero-description"
       itemscope itemtype="https://schema.org/WebPage">
 
       <!-- Hero Image -->
@@ -18,7 +18,7 @@
         <div>
       
           <!-- Title -->
-          <h1 id="network-hero-title" class="mx-auto max-w-6xl pb-5 text-4xl font-semibold uppercase leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)]"
+          <h1 id="media-hero-title" class="mx-auto max-w-6xl pb-5 text-4xl font-semibold uppercase leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)]"
             itemprop="headline">
             Media Channel
           </h1>
@@ -45,41 +45,53 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import MediaLibrary from "./mediaComponents/MediaLibrary.vue";
+import { useHead } from '@vueuse/head';
+
+import MediaLibrary from './mediaComponents/MediaLibrary.vue';
 import { scrollToTop } from '@/components/modules/scrollToTop';
 
 onMounted(() => {
   scrollToTop();
 });
 
-// Dynamic Meta Tags
-if (typeof window !== 'undefined') {
-  document.title = "Media Channel - Cross-Border Region Library";
+// Seo
+useHead({
+  title: 'Media Channel | Business Region DE-DK',
   
-  const updateMeta = (name, content, isProperty = false) => {
-    const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-    let meta = document.querySelector(selector);
-    if (!meta) {
-      meta = document.createElement('meta');
-      if (isProperty) meta.setAttribute('property', name);
-      else meta.name = name;
-      document.head.appendChild(meta);
-    }
-    meta.content = content;
-  };
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://business-region-de-dk.web.app/media',
+    },
+  ],
 
-  onMounted(() => {
-    // SEO Standard Tags
-    updateMeta('description', 'Explore our comprehensive media library featuring interviews, conference talks, and exclusive event footage.');
-    updateMeta('keywords', 'media channel, cross-border region, interviews, conference talks, business events');
-    
-    // Open Graph (Social Media)
-    updateMeta('og:title', 'Media Channel - Cross-Border Region Library', true);
-    updateMeta('og:description', 'Explore our comprehensive media library featuring interviews, conference talks, and exclusive event footage.', true);
-    updateMeta('og:type', 'website', true);
-    
-  });
-}
+  meta: [
+    {
+      name: 'description',
+      content:'Explore interviews, conference talks, articles, and event footage from the Danish-German cross-border business region.',
+    },
+    {
+      name: 'keywords',
+      content: 'Business Region DE-DK, media channel, interviews, conference talks, business events, Denmark Germany cooperation',
+    },
+    {
+      property: 'og:title',
+      content: 'Media Channel | Business Region DE-DK',
+    },
+    {
+      property: 'og:description',
+      content:'Explore interviews, conference talks, articles, and event footage from the Danish-German cross-border business region.',
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:image',
+      content: '/media/hero-image-media.webp',
+    },
+  ],
+});
 </script>
 
 <style scoped>

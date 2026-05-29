@@ -5,7 +5,7 @@
       itemscope itemtype="https://schema.org/WebPage">
 
       <!-- Hero Image -->
-      <img src="@/assets/about us/hero-image-about-us.png" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale motion-reduce:scale-100"
+      <img src="@/assets/about us/hero-image-about-us.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale motion-reduce:scale-100"
         loading="eager" fetchpriority="high"
       />
 
@@ -69,32 +69,44 @@ onMounted(() => {
   scrollToTop();
 });
 
-// Dynamic SEO
-if (typeof window !== 'undefined') {
-  const updateMeta = (name, content, isProperty = false) => {
-    const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-    let meta = document.querySelector(selector);
-    
-    if (!meta) {
-      meta = document.createElement('meta');
-      if (isProperty) meta.setAttribute('property', name);
-      else meta.name = name;
-      document.head.appendChild(meta);
-    }
-    meta.content = content;
-  };
+useHead({
+  title: 'About Us | Business Region DE-DK',
 
-  onMounted(() => {
-    document.title = "About Us - Business DE-DK Cross-Border Project";
-    
-    // SEO Standard Tags
-    updateMeta('description', 'Learn about the Business DE-DK project, our mission, priorities, and partner institutions supporting German-Danish cross-border business development.');
-    
-    // Open Graph (Social Media)
-    updateMeta('og:title', 'About Us - Business DE-DK Cross-Border Project', true);
-    updateMeta('og:description', 'Learn about the Business DE-DK project, our mission, priorities, and partner institutions supporting German-Danish cross-border business development.', true);
-    updateMeta('og:type', 'website', true);
-    updateMeta('og:image', '/about-us-preview.png', true);
-  });
-}
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://business-region-de-dk.web.app/about',
+    },
+  ],
+
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Learn about Business Region DE-DK, our mission, priorities, and partner organizations supporting cross-border cooperation between Denmark and Germany.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'Business Region DE-DK, about us, cross-border cooperation, Denmark Germany, business development, regional partnerships',
+    },
+    {
+      property: 'og:title',
+      content: 'About Us | Business Region DE-DK',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Learn about Business Region DE-DK, our mission, priorities, and partner organizations supporting cross-border cooperation between Denmark and Germany.',
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:image',
+      content: '/about us/hero-image-about-us.webp',
+    },
+  ],
+});
 </script>
