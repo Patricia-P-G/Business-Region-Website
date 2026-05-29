@@ -56,7 +56,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: '/home/hero-image-home.webp',
+      content: '/home/hero-image.webp',
     },
   ],
 });
