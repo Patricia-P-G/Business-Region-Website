@@ -152,8 +152,14 @@
 </template>
 
 <script setup>
-import { ref, nextTick } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
+import { scrollToTop } from '@/components/modules/scrollToTop';
 import Form from './Form.vue'
+
+onMounted(() => {
+  scrollToTop();
+});
+
 
 const showForm = ref(false)
 const formComponent = ref(null)
