@@ -1,5 +1,4 @@
 # 🌍 Business Region DE-DK Website - MMD 2nd Project
----
 
 ## 📖 Project Overview
 
@@ -9,30 +8,23 @@ Business Region DE-DK is a responsive web platform designed to strengthen cross-
 
 The website provides information about partner organizations, networking opportunities, events, media content, and membership opportunities while following modern web development practices, accessibility standards, and SEO best practices.
 
----
-
 ## 👥 Meet the Team
 
 This project was developed by:
 
-- **Patricia Puienaru-Gundelfingen**
-- **Tetiana Tarasiuk**
-- **Aneta Bolibruchová**
-- **Mihaela Hioara**
-
-
----
+- Patricia Puienaru-Gundelfingen
+- Tetiana Tarasiuk
+- Aneta Bolibruchová
+- Mihaela Hioara
 
 ## 🛠️ Tech Stack & Tools
 
-- **Frontend:** Vue 3
-- **Routing:** Vue Router
-- **Styling:** Tailwind CSS
-- **Build Tool:** Vite
-- **Version Control:** Git & GitHub
-- **Design:** Figma
-
----
+- Frontend: Vue 3
+- Routing: Vue Router
+- Styling: Tailwind CSS
+- Build Tool: Vite
+- Version Control: Git & GitHub
+- Design: Figma
 
 ## ✨ Key Features
 
@@ -43,8 +35,6 @@ This project was developed by:
 - Media section with category filtering
 - Membership application form
 - Reusable component architecture
-
----
 
 ## 📄 License
 
