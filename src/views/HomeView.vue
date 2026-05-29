@@ -1,11 +1,11 @@
 <template>
-
-  <Hero />
-  <CompaniesTrust/>
-  <WhoWeWorkWith/>
-  <BecomeMember />
-  <MediaChannelSection />
-  
+  <main>
+    <Hero />
+    <CompaniesTrust/>
+    <WhoWeWorkWith/>
+    <BecomeMember />
+    <MediaChannelSection />
+  </main>
 </template>
 
 
