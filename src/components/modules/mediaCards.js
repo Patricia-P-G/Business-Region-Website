@@ -1,16 +1,16 @@
 export const mediaCards = [
   {
     id: 1,
-    title: 'Friendly Danes at the negotiating table',
-    description: 'See the interview with Gwyn Nissen Chief Editor for Der Nordschleswiger',
+    title: 'Meet Katja Rosenburg',
+    description:
+      'Project manager at Erhvervsfremme Nordfriesland and responsible for the project Interreg Business DE-DK.',
     type: 'Interview',
-    imageName: 'card1.webp',
-    durationOrRead: '10:03 min',
-    location: 'DK',
-    date: 'December 2',
-    route: '/media/friendly-danes',
+    imageName: 'card5.webp',
+    durationOrRead: '10:45 min',
+    location: 'DE',
+    date: 'October 8',
+    route: '/media/meet-katja',
   },
-
   {
     id: 2,
     title: 'Sharing skills across the border at Eutin Brewery',
@@ -23,7 +23,6 @@ export const mediaCards = [
     date: 'October 8',
     route: '/media/eutin-brewery',
   },
-
   {
     id: 3,
     title: 'Onboarding international talent at ANDRITZ',
@@ -36,7 +35,6 @@ export const mediaCards = [
     date: 'December 2',
     route: '/media/andritz',
   },
-
   {
     id: 4,
     title: 'Business DE-DK borderless cooperation.',
@@ -49,20 +47,17 @@ export const mediaCards = [
     date: 'December 2',
     route: '/media/business-de-dk',
   },
-
-  {
+   {
     id: 5,
-    title: 'Meet Katja Rosenburg',
-    description:
-      'Project manager at Erhvervsfremme Nordfriesland and responsible for the project Interreg Business DE-DK.',
+    title: 'Friendly Danes at the negotiating table',
+    description: 'See the interview with Gwyn Nissen Chief Editor for Der Nordschleswiger',
     type: 'Interview',
-    imageName: 'card5.webp',
-    durationOrRead: '10:45 min',
-    location: 'DE',
-    date: 'October 8',
-    route: '/media/meet-katja',
+    imageName: 'card1.webp',
+    durationOrRead: '10:03 min',
+    location: 'DK',
+    date: 'December 2',
+    route: '/media/friendly-danes',
   },
-
   {
     id: 6,
     title: 'The two-step approach: attract and retain',

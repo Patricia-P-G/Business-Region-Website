@@ -224,13 +224,13 @@
                 <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
 
                     <!-- Back Button -->
-                    <button type="button" @click="handleBack" class="cursor-pointer flex h-12 w-full items-center justify-center gap-4 rounded-md border border-[#102542] bg-white px-6 text-base font-bold uppercase tracking-wide text-[#102542] transition-all duration-200 hover:bg-gray-50 focus:outline-2 focus:outline-[#102542]">
+                    <button type="button" @click="handleBack" class="cta-outline-button">
                         <span class="text-xl leading-none uppercase" aria-hidden="true">&larr;</span>
                         Back
                     </button>
 
                     <!-- Submit Button -->
-                    <button type="submit" :disabled="isSending" class="cursor-pointer flex h-12 w-full items-center justify-center gap-4 rounded-md bg-[#6474bd] px-6 text-base font-bold uppercase tracking-wide text-white transition-all duration-200 hover:bg-[#5262ab] focus:outline-2 focus:outline-[#6474bd] disabled:opacity-50 disabled:cursor-not-allowed">
+                    <button type="submit" :disabled="isSending" class="cta-lavander-button-form w-full gap-4">
                         <span>{{ currentStep === 2 ? (isSending ? "Sending..." : "Submit") : "Next" }}</span>
                         <span v-if="!isSending" class="text-xl leading-none" aria-hidden="true">&rarr;</span>
                     </button>

@@ -22,9 +22,9 @@
         </label>
 
         <!-- Search Bar Wrapper -->
-        <div class="flex h-12 w-full max-w-190 items-center rounded-xl border-2 border-primary bg-[#7988D221] px-5 shadow-sm">
+        <div class="search-input-wrapper max-w-190">
           <!-- Search Icon Wrapper -->
-          <div class="flex items-baseline pr-2.5" aria-hidden="true">
+          <div class="search-input-icon" aria-hidden="true">
 
             <!-- Magnifying Glass Icon  -->
             <svg focusable="false" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
@@ -34,7 +34,7 @@
 
           <!-- Input -->
           <input id="company-search" v-model="searchQuery" type="search" placeholder="Search..." autocomplete="off" aria-label="Search media by title, company, or industry"
-            class="w-full bg-transparent text-base italic text-primary outline-none placeholder:text-primary/70 focus:outline-none"
+            class="search-input"
           />
         </div>
       </div>

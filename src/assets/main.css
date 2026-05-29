@@ -15,7 +15,6 @@
   --color-secondary: #7988d2;
   --color-tertiary: #405b77;
   --color-quaternary: #0000;
-  --font-display: "Raleway", sans-serif;
 
   /* Custom Breakpoints */
   --breakpoint-xs: 420px;
@@ -25,7 +24,9 @@
 }
 
 @layer components {
-    .grid{
+
+  /*  -----------------------------------Default Grid ----------------------------------------- */
+    .grid-wrapper{
         @apply grid grid-cols-12 gap-2.5;
     }
 
@@ -39,11 +40,82 @@
     @apply text-black text-base tracking-wide font-normal
   }
 
+
+
+  /* ------------------- Titles with Underline ---------------------------------------------- */
   .heading-section{
 
   }
 
 
+
+  /* ------------------------------ INPUTS --------------------------------------------------- */
+
+  /* Search Bar */
+  .search-input-wrapper {
+    @apply flex h-12 w-full items-center rounded-xl
+           border-2 border-primary
+           bg-[#7988D221] px-5 shadow-sm;
+  }
+
+  /* Search Icon */
+  .search-input-icon {
+    @apply flex items-baseline pr-2.5;
+  }
+
+  /* Search Field */
+  .search-input {
+    @apply w-full bg-transparent text-base italic
+           text-primary outline-none
+           placeholder:text-primary/70
+           focus:outline-none;
+  }
+
+
+  /* -------------------------------- BUTTONS ----------------------------------------------- */
+
+  /* Lavander Button */
+  .cta-lavander-button {
+    @apply inline-flex h-10.5 items-center justify-center rounded-md
+           bg-secondary text-sm font-semibold uppercase text-white
+           transition-all duration-300
+           hover:bg-[#5F73D9]
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-white;
+  }
+
+  /* Form Buttons */
+  .cta-outline-button {
+    @apply inline-flex h-12 w-full items-center justify-center gap-4
+           rounded-md border border-primary
+           bg-white px-6 text-base font-semibold
+           uppercase tracking-wider text-black
+           transition-all duration-300
+          hover:bg-[#F1F4F8]
+           hover:border-[#1B355B]
+           hover:text-[#1B355B]
+           focus:outline-none
+           focus-visible:ring-2
+           focus-visible:ring-primary
+           focus-visible:ring-offset-2 cursor-pointer;
+  }
+
+  .cta-lavander-button-form {
+    @apply inline-flex h-12 items-center justify-center rounded-md
+           bg-secondary text-base font-semibold uppercase text-white
+           transition-all duration-300
+           hover:bg-[#5F73D9]
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer;
+  }
+
+  /* For Become a Member Section */
+  .cta-dark {
+     @apply inline-flex h-10.5 cursor-pointer items-center justify-center rounded-md
+           bg-primary px-8 text-xs font-semibold
+           uppercase tracking-wider text-white duration-300
+           hover:bg-[#1B355B] focus:outline-none
+           focus-visible:ring-2 focus-visible:ring-[#112E56] focus-visible:ring-offset-2;
+  }
+    
   /* Filter Buttons  */
   .filter-button-active {
     @apply cursor-pointer rounded-lg py-4 text-sm font-bold uppercase text-white transition

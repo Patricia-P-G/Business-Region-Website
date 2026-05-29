@@ -57,7 +57,7 @@
                             <!-- Become a Member Wrapper -->
                             <div class="flex justify-center lg:justify-start">
                                 <!-- Become a member Button -->
-                                <button type="button" :aria-expanded="showForm" @click="showForm = true" class="mt-4 rounded-md bg-[#112E56] px-8 py-3 text-xs cursor-pointer font-bold uppercase tracking-wider text-white transition duration-300 hover:bg-[#1B355B] cursor-pointerfocus:outline-2 focus:outline-offset-2 focus:outline-[#112E56] sm:mt-6">
+                                <button type="button" :aria-expanded="showForm" @click="showForm = true" class="cta-dark mt-4 sm:mt-6">
                                         Become a member
                                 </button>
                             </div>

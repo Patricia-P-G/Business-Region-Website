@@ -21,10 +21,10 @@
         <label for="company-search" class="sr-only">Search companies</label>
 
         <!--Input Wrapper  -->
-        <div class="flex h-12 w-full max-w-190 items-center rounded-xl border-2 border-primary bg-[#7988D221] px-5 shadow-sm">
+        <div class="search-input-wrapper max-w-190">
 
           <!--Icon Wrapper  -->
-          <div class="flex items-baseline pr-2.5" aria-hidden="true">
+          <div class="search-input-icon" aria-hidden="true">
 
             <!-- Magnifying Glass -->
             <svg focusable="false" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" />
@@ -35,7 +35,7 @@
           
           <!-- Input + Text -->
           <input id="company-search" v-model="searchQuery" type="search" placeholder="Search..." autocomplete="off" aria-label="Search companies by name or industry"
-            class="w-full bg-transparent text-base italic text-primary outline-none placeholder:text-primary/70 focus:outline-none"
+            class="search-input"
           />
 
         </div>
@@ -126,19 +126,17 @@
       <div v-if="hasMoreCompanies" class="flex justify-center pt-16">
 
         <!-- View More Button -->
-        <button type="button" @click="loadMore" :disabled="isLoading" :aria-busy="isLoading.toString()" aria-controls="company-list" class="flex min-w-40 items-center
-          justify-center gap-3 rounded-lg bg-primary px-8 py-4 text-sm font-bold uppercase text-white transition cursor-pointer
-          hover:bg-[#1B355B] focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40 disabled:cursor-not-allowed disabled:opacity-70">
-          
+        <button type="button" @click="loadMore" :disabled="isLoading" :aria-busy="isLoading.toString()" aria-controls="company-list"
+          class="cta-dark min-w-40 gap-3 disabled:cursor-not-allowed disabled:opacity-70">
           <span v-if="!isLoading">View More</span>
 
-          <!-- Loading State with Spinner-->
           <span v-else class="flex items-center gap-3">
             Loading
 
-            <!-- Loading Spinner -->
-            <span class="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white motion-reduce:animate-none" aria-hidden="true"></span>
-          </span>
+            <!-- Loading Spin -->
+            <span
+              class="h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white motion-reduce:animate-none" aria-hidden="true"></span>
+            </span>
         </button>
       </div>
     </div>
@@ -146,9 +144,9 @@
 </template>
 
 
-
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { companies } from '@/components/modules/companies';
 
 // Controls how many company cards are shown each time (Default)
 const itemsPerLoad = 6;
@@ -158,100 +156,6 @@ const visibleCount = ref(6);
 const isLoading = ref(false);
 const searchQuery = ref('');
 const sortType = ref('default');
-
-// Companies 
-const companies = [
-  {
-    name: 'Business Esbjerg',
-    slug: 'business-esbjerg',
-    route: '/partners/business-esbjerg',
-    industry: 'Industry mentioned',
-    years: '30+',
-    employees: '200+',
-    trust: 'trusted company #1',
-    logo: new URL('../../assets/network/business esbjerg.webp', import.meta.url).href
-  },
-  {
-    name: 'Business Kolding',
-    slug: 'business-kolding',
-    route: '/partners/business-kolding',
-    industry: 'Industry mentioned',
-    years: '30+',
-    employees: '200+',
-    trust: 'trusted company #1',
-    logo: new URL('../../assets/network/business kolding.webp', import.meta.url).href
-  },
-  {
-    name: 'Copenhagen Capacity',
-    slug: 'copenhagen-capacity',
-    route: '/partners/copenhagen-capacity',
-    industry: 'Industry mentioned',
-    years: '25+',
-    employees: '150+',
-    trust: 'trusted company #2',
-    logo: new URL('../../assets/network/copenhagen capacity.webp', import.meta.url).href
-  },
-  {
-    name: 'Business Aabenraa',
-    slug: 'business-aabenraa',
-    route: '/partners/business-aabenraa',
-    industry: 'Industry mentioned',
-    years: '20+',
-    employees: '100+',
-    trust: 'trusted company #3',
-    logo: new URL('../../assets/network/business aabenraa.webp', import.meta.url).href
-  },
-  {
-    name: 'Tønder Erhversråd',
-    slug: 'tonder-erhversrad',
-    route: '/partners/tonder-erhversrad',
-    industry: 'Industry mentioned',
-    years: '40+',
-    employees: '300+',
-    trust: 'trusted company #4',
-    logo: new URL('../../assets/network/tønder erhversråd.webp', import.meta.url).href
-  },
-  {
-    name: 'Bundesagentur für Arbeit',
-    slug: 'bundesagentur-fur-arbeit',
-    route: '/partners/bundesagentur-fur-arbeit',
-    industry: 'Industry mentioned',
-    years: '10+',
-    employees: '60+',
-    trust: 'trusted company #5',
-    logo: new URL('../../assets/network/bundesagentur für arbeit.webp', import.meta.url).href
-  },
-  {
-    name: 'Schleswig-Holstein',
-    slug: 'schleswig-holstein',
-    route: '/partners/schleswig-holstein',
-    industry: 'Industry mentioned',
-    years: '15+',
-    employees: '80+',
-    trust: 'trusted company #6',
-    logo: new URL('../../assets/network/schleswig-holstein.webp', import.meta.url).href
-  },
-  {
-    name: 'Dansk Industri',
-    slug: 'dansk-industri',
-    route: '/partners/dansk-industri',
-    industry: 'Industry mentioned',
-    years: '12+',
-    employees: '90+',
-    trust: 'trusted company #7',
-    logo: new URL('../../assets/network/dansk industri.webp', import.meta.url).href
-  },
-  {
-    name: 'Sønderborg Vækstråd',
-    slug: 'sonderborg-vaekstrad',
-    route: '/partners/sonderborg-vaekstrad',
-    industry: 'Industry mentioned',
-    years: '18+',
-    employees: '120+',
-    trust: 'trusted company #8',
-    logo: new URL('../../assets/network/sønderborg vækstråd.webp', import.meta.url).href
-  }
-];
 
 // Filters companies based on the search input and selected sorting option
 const filteredCompanies = computed(() => {
