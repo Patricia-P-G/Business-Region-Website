@@ -126,7 +126,7 @@
         <!-- Browse More Wrapper  -->
         <div class="col-span-12 mt-8 flex justify-end">
           <!-- Browse More Button -->
-          <router-link to="/events" class="cursor-pointer group flex items-center gap-2 rounded-md px-4 py-2 text-xs font-black text-primary transition-all duration-300 hover:bg-[#EEF0FF] hover:text-secondary focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80"
+          <router-link to="/events" class="cursor-pointer group flex items-center gap-2 rounded-md px-4 py-2 text-base font-black text-primary transition-all duration-300 hover:bg-[#EEF0FF] hover:text-secondary focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80"
             aria-label="Browse more events" title="Browse more events">
             <span>Browse more</span>
 
