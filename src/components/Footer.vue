@@ -53,13 +53,13 @@
                         </address>
 
                         <!-- Phone Number -->
-                        <a href="tel:+4521775916" class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded" 
+                        <a href="tel:+4521775916" class="link-hover" 
                             itemprop="telephone" aria-label="Call corporate telephone at +45 21 77 59 16">
                             +45 21 77 59 16
                         </a>
 
                         <!-- Email Adress -->
-                        <a href="mailto:lecba@toender.dk" class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded break-all"
+                        <a href="mailto:lecba@toender.dk" class="link-hover"
                             itemprop="email" aria-label="Email office administration at lecba@toender.dk">
                             lecba@toender.dk
                         </a>
@@ -115,8 +115,8 @@
                     <ul class="flex flex-col gap-2 text-sm text-white/90">
                         <!-- Youtube -->
                         <li>
-                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Business Region DE-DK corporate profile on YouTube (Opens in new tab)"
-                                class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                            <a href="https://www.youtube.com/@Business-region" target="_blank" rel="noopener noreferrer" aria-label="Visit Business Region DE-DK corporate profile on YouTube (Opens in new tab)"
+                                class="link-hover">
                                 YouTube
                             </a>
                         </li>
@@ -124,7 +124,7 @@
                         <!-- LinkedIn -->
                         <li>
                             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Business Region DE-DK professional channel on LinkedIn (Opens in new tab)"
-                                class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                                class="link-hover">
                                 LinkedIn
                             </a>
                         </li>
@@ -132,7 +132,7 @@
                         <!-- Instagram -->
                         <li>
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Business Region DE-DK content feed on Instagram (Opens in new tab)"
-                                class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                                class="link-hover">
                                 Instagram
                             </a>
                         </li>
@@ -152,35 +152,35 @@
                     <ul class="flex flex-col gap-2 text-sm text-white/90">
                         <!-- Employeed -->
                         <li>
-                            <router-link to="/employees" class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                            <router-link to="/employees" class="link-hover">
                                 Employees
                             </router-link>
                         </li>
 
                         <!-- Strategy -->
                         <li>
-                            <router-link to="/strategy" class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                            <router-link to="/strategy" class="link-hover">
                                 Strategy
                             </router-link>
                         </li>
 
                         <!-- B2B Services -->
                         <li>
-                            <router-link to="/b2b" class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                            <router-link to="/b2b" class="link-hover">
                                 B2B Services
                             </router-link>
                         </li>
 
                         <!-- Privacy Policy -->
                         <li>
-                            <router-link to="/privacy" class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                            <router-link to="/privacy" class="link-hover">
                                 Privacy Policy
                             </router-link>
                         </li>
 
                         <!-- For Business -->
                         <li>
-                            <router-link to="/businesses" class="transition hover:text-blue-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80 rounded">
+                            <router-link to="/businesses" class="link-hover">
                                 For businesses
                             </router-link>
                         </li>

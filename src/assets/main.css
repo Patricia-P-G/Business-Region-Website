@@ -23,6 +23,7 @@
   --breakpoint-wide: 1200px;
 }
 
+
 @layer components {
 
   /*  -----------------------------------Default Grid ----------------------------------------- */
@@ -31,7 +32,7 @@
     }
 
 
-    /* Nav links */
+  /* Nav links */
   .nav-link {
     @apply text-white text-base tracking-wide font-normal relative;
   }
@@ -40,7 +41,14 @@
     @apply text-black text-base tracking-wide font-normal
   }
 
-
+  /* Footer Link */
+  .link-hover {
+    @apply rounded transition
+           hover:text-blue-300
+           focus:outline-none
+           focus-visible:ring-4
+           focus-visible:ring-white/80;
+  }
 
   /* ------------------- Titles with Underline ---------------------------------------------- */
   .heading-section{

@@ -194,7 +194,7 @@
                         <router-link
                             to="/join"
                             @click="closeMobileMenu"
-                            class="flex min-h-8.5 w-full items-center justify-center rounded-md bg-secondary px-3 py-2 text-center text-medium font-semibold uppercase leading-tight text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                            class="cta-lavander-button"
                             aria-label="Become a member"
                             >
                             Become a member
@@ -245,6 +245,7 @@ const selectLanguage = (language) => {
 };
 
 const menu = [
+  { name: "home", label: "Home", href: "/" },
   { name: "about", label: "About Us", href: "/about" },
   { name: "media", label: "Media", href: "/media" },
   { name: "events", label: "Events", href: "/events" },
