@@ -5,7 +5,7 @@
       itemscope itemtype="https://schema.org/WebPage">
 
       <!-- Hero Image -->
-      <img src="@/assets/about us/hero-image-about-us.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale motion-reduce:scale-100"
+      <img src="/about/hero-image-about-us.webp" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[center_35%] grayscale motion-reduce:scale-100"
         loading="eager" fetchpriority="high"
       />
 
@@ -58,6 +58,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
+import { useHead } from '@vueuse/head';
 import ContactView from './aboutComponents/ContactView.vue';
 import MissionView from './aboutComponents/MissionView.vue';
 import PartnersView from './aboutComponents/PartnersView.vue';
@@ -105,7 +106,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: '/about us/hero-image-about-us.webp',
+      content: '/about/hero-image-about-us.webp',
     },
   ],
 });

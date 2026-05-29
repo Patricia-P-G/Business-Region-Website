@@ -24,7 +24,7 @@
 
           <!-- Title -->
           <h1 id="hero-title" class="pb-8 text-4xl font-semibold leading-tight text-white drop-shadow-[0_4px_2px_rgba(0,0,0,0.5)] sm:pb-10 sm:text-5xl lg:text-5xl wide:text-6xl">
-            Cross-Border Business & Recruitment Denmark–Germany
+            Cross-Border Business & Recruitment Denmark-Germany
           </h1>
 
           <!-- Description -->

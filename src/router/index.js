@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import MediaView from "@/views/MediaView.vue";
-import EventsView from "@/views/EventsView.vue";
 import NetworkView from "@/views/NetworkView.vue";
 
 import ContactView from "@/views/aboutComponents/ContactView.vue";
@@ -12,6 +11,11 @@ import BusinessEsbjergView from "@/views/networkComponents/business esbjerg/Busi
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+
+   scrollBehavior() {
+    return { top: 0 };
+  },
+  
   routes: [
     {
       path: "/",
@@ -27,11 +31,6 @@ const router = createRouter({
       path: "/media",
       name: "media",
       component: MediaView,
-    },
-    {
-      path: "/events",
-      name: "events",
-      component: EventsView,
     },
     {
       path: "/network",
