@@ -16,7 +16,7 @@
     <!-- Container -->
     <div class="relative z-10 mx-auto min-h-screen max-w-400 px-5 xs:px-6 sm:px-8 lg:px-20 wide:px-20">
 
-      <!-- 12 column grid -->
+      <!-- 12 column Grid -->
       <div class="grid min-h-screen grid-cols-12 gap-2.5">
 
         <!-- Hero content -->
