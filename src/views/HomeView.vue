@@ -5,6 +5,7 @@
     <WhoWeWorkWith/>
     <BecomeMember />
     <MediaChannelSection />
+    <Events />
   </main>
 </template>
 
@@ -17,6 +18,7 @@ import CompaniesTrust from '@/components/CompaniesTrust.vue';
 import Hero from '@/components/Hero.vue';
 import MediaChannelSection from '@/components/MediaChannelSection.vue';
 import WhoWeWorkWith from '@/components/WhoWeWorkWith.vue';
+import Events from '@/components/Events.vue';
 
 useHead({
   title: 'Business Region DE-DK | Cross-Border Business Cooperation',

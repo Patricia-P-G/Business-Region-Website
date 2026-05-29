@@ -54,7 +54,7 @@
                             </div>
 
                             <!-- Description List Wrapper -->
-                            <dl class="text-right text-sm leading-6 text-[#5f5e5e]" :aria-label="`${company.name} company facts`">
+                            <dl class="text-right text-sm leading-6 text-[#504f4f]" :aria-label="`${company.name} company facts`">
 
                                 <div>
                                     <dt class="sr-only">Years of experience</dt>
