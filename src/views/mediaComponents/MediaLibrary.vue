@@ -40,11 +40,10 @@
       </div>
 
       <!-- Filters Wrapper -->
-      <div class="-mx-5 flex gap-3 overflow-x-auto px-5 pb-10 sm:-mx-8 sm:px-8 sm:pb-20 xs:-mx-6 xs:px-6 md:grid md:grid-cols-5 md:gap-4 lg:mx-0 lg:px-0 no-scrollbar"
+      <div class="grid grid-cols-2 gap-4 pb-10 sm:grid-cols-3 sm:gap-6 sm:pb-20 lg:grid-cols-5 lg:gap-4"
         aria-label="Filter media content">
         <!-- Buttons -->
-        <button v-for="filter in filters" :key="filter" type="button" :aria-pressed="filter === activeFilter" :class="[filter === activeFilter ? 'filter-button-active' : 'filter-button-inactive',
-          'shrink-0 whitespace-nowrap px-5 sm:px-2 md:shrink md:whitespace-normal']" @click="activeFilter = filter">
+        <button v-for="filter in filters" :key="filter" type="button" :aria-pressed="filter === activeFilter" :class="[filter === activeFilter ? 'filter-button-active' : 'filter-button-inactive']" @click="activeFilter = filter">
           {{ filter }}
         </button>
       </div>

@@ -3,11 +3,12 @@ import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import MediaView from "@/views/MediaView.vue";
 import EventsView from "@/views/EventsView.vue";
-import NetworkView from "@/views/NetworkView.vue"
+import NetworkView from "@/views/NetworkView.vue";
 
 import ContactView from "@/views/aboutComponents/ContactView.vue";
 import BecomeMember from "@/components/BecomeMember.vue";
 import KatjaInterviewView from "@/views/mediaComponents/KatjaInterviewView.vue";
+import BusinessEsbjergView from "@/views/networkComponents/business esbjerg/BusinessEsbjergView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,26 +39,52 @@ const router = createRouter({
       component: NetworkView,
     },
 
+    // Footer - Directs you to Home since the pages are not created
+    {
+      path: "/employees",
+      redirect: "/",
+    },
+    {
+      path: "/strategy",
+      redirect: "/",
+    },
+    {
+      path: "/b2b",
+      redirect: "/",
+    },
+    {
+      path: "/privacy",
+      redirect: "/",
+    },
+    {
+      path: "/businesses",
+      redirect: "/",
+    },
+
     // PARTNER PAGES
     {
       path: "/partners/business-esbjerg",
       name: "business-esbjerg",
-      component: () => import("@/views/networkComponents/business esbjerg/BusinessEsbjergView.vue"),
+      component: BusinessEsbjergView,
     },
+    // Contact
     {
     path: '/contact',
     name: 'contact',
     component: ContactView
   },
+
+  // Become a Member
   {
     path: '/join',
-    name: 'Join',
+    name: 'join',
     component: BecomeMember
   },
 
+  // Meet Katja
   {
     path: '/media/meet-katja',
-    name: 'meet katja',
+    name: 'meet-katja',
     component: KatjaInterviewView
   }
 

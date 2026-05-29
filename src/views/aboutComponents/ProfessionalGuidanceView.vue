@@ -60,7 +60,7 @@
 
           <!-- Flip Card Container  -->
           <div :class="['relative h-full w-full rounded-xl transition-transform duration-700 ease-in-out transform-3d motion-reduce:transition-none',
-            person.isFlipped ? '[transform:rotateY(180deg)]' : 'transform-none']">
+            person.isFlipped ? '[transform:rotateY(180deg)]' : 'transform-none lg:group-hover:[transform:rotateY(180deg)]']">
             
             <!-- Front Side Card Wrapper -->
             <div class="absolute inset-0 max-[1400px]:overflow-hidden min-[1401px]:overflow-visible rounded-xl shadow-[0px_7.08px_8.68px_0.89px_rgba(0,0,0,0.29)] backface-hidden">
