@@ -86,7 +86,7 @@
                 :class="[activeIndex === index ? 'z-20 opacity-100' : 'opacity-65 max-[1049px]:z-auto max-[1049px]:opacity-100']" :aria-pressed="activeIndex === index" :aria-label="`Show testimonial from ${person.name}`" @click="activeIndex = index">
 
                 <!-- Main Card Wrapper ----- (The card changes style depending on whether it is active or inactive ------ It also includes responsive sizing for different screen widths) -->
-                <div class="relative min-h-105 rounded-[14px] p-10 text-white shadow-[0_0_18px_rgba(121,139,210,0.65)] transition-all duration-[0.45s] ease-in-out motion-reduce:transition-none motion-reduce:transform-none max-[1399px]:min-h-90 max-[1399px]:p-7
+                <div class="relative min-h-105 rounded-[14px] p-10 text-white cursor-pointer shadow-[0_0_18px_rgba(121,139,210,0.65)] transition-all duration-[0.45s] ease-in-out motion-reduce:transition-none motion-reduce:transform-none max-[1399px]:min-h-90 max-[1399px]:p-7
                   max-[1199px]:min-h-82.5 max-[1199px]:p-5.5 max-[1049px]:min-h-0 max-[1049px]:px-5.5 max-[1049px]:pb-7.5 max-[1049px]:pt-6"
                   :class="[activeIndex === index ? 'scale-100 bg-primary max-[1049px]:bg-tertiary' : 'scale-[0.82] bg-[#5d7091] max-[1399px]:scale-[0.86] max-[1199px]:scale-[0.88] max-[1049px]:scale-100 max-[1049px]:bg-tertairy']">
                  
@@ -146,7 +146,7 @@
           <div class="mt-16 hidden justify-center gap-3 md:flex max-[1049px]:hidden!" aria-label="Select testimonial">
 
             <!-- Clickable -->
-            <button v-for="(person, index) in testimonials" :key="`dot-${person.name}`" type="button" class="h-3 w-3 rounded-full transition-all duration-300 
+            <button v-for="(person, index) in testimonials" :key="`dot-${person.name}`" type="button" class="h-3 w-3 rounded-full cursor-pointer transition-all duration-300 
               focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none"
               :class="activeIndex === index ? 'scale-125 bg-primary' : 'bg-[#D9D9F2]'" :aria-label="`Show testimonial from ${person.name}`"
               :aria-current="activeIndex === index ? 'true' : undefined" @click="activeIndex = index" />
