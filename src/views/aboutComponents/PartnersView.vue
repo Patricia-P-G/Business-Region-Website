@@ -32,7 +32,7 @@
                     <!-- Button -->
                     <button v-for="category in categories" :key="category" type="button" :aria-pressed="activeCategory === category"
                     @click="activeCategory = category" class="cursor-pointer rounded-lg py-3 text-sm font-medium uppercase text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    :class=" activeCategory === category ? 'bg-[#7C8BDA] hover:bg-[#6d7bd0]' : 'bg-[#3E5A78] hover:bg-[#334a63]'">
+                    :class=" activeCategory === category ? 'filter-button-active' : 'filter-button-inactive'">
                         {{ category }}
                     </button>
                 </div>
