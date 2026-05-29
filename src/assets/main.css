@@ -2,12 +2,6 @@
 @import "tailwindcss";
 @import "./base.css";
 
-@layer base {
-  html,
-  body {
-    font-family: 'Raleway', sans-serif;
-  }
-}
 
 @theme {
   /* Colors */
@@ -25,13 +19,7 @@
 
 @layer components {
 
-  /*  -----------------------------------Default Grid ----------------------------------------- */
-    .grid-wrapper{
-        @apply grid grid-cols-12 gap-2.5;
-    }
-
-
-  /* Nav links */
+  /* Nav Links */
   .nav-link {
     @apply text-white text-base tracking-wide font-normal relative;
   }
@@ -48,13 +36,6 @@
            focus-visible:ring-4
            focus-visible:ring-white/80;
   }
-
-  /* ------------------- Titles with Underline ---------------------------------------------- */
-  .heading-section{
-
-  }
-
-
 
   /* ------------------------------ INPUTS --------------------------------------------------- */
 

@@ -1,24 +1,22 @@
 <template>
-  <main>
-    <Hero />
-    <CompaniesTrust/>
-    <WhoWeWorkWith/>
-    <BecomeMember />
-    <MediaChannelSection />
-    <Events />
-  </main>
+  <Hero />
+  <CompaniesTrust/>
+  <WhoWeWorkWith/>
+  <BecomeMember />
+  <MediaChannelSection />
+  <Events />
 </template>
 
 
 <script setup>
-import { useHead } from '@vueuse/head';
-
 import BecomeMember from '@/components/BecomeMember.vue';
 import CompaniesTrust from '@/components/CompaniesTrust.vue';
 import Hero from '@/components/Hero.vue';
 import MediaChannelSection from '@/components/MediaChannelSection.vue';
 import WhoWeWorkWith from '@/components/WhoWeWorkWith.vue';
 import Events from '@/components/Events.vue';
+import { useHead } from '@vueuse/head';
+
 
 useHead({
   title: 'Business Region DE-DK | Cross-Border Business Cooperation',

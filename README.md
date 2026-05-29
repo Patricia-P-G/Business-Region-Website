@@ -1,10 +1,9 @@
 # 🌍 Business Region DE-DK Website - MMD 2nd Project
-
 ---
 
 ## 📖 Project Overview
 
-This project was developed as part of the Multimedia Design programme at SEA - Syddansk Erhversakademi.
+This project was developed as part of the Multimedia Design programme at SEA - Syddansk Erhvervsakademi.
 
 Business Region DE-DK is a responsive web platform designed to strengthen cross-border cooperation between businesses in Denmark and Germany.
 
@@ -12,7 +11,7 @@ The website provides information about partner organizations, networking opportu
 
 ---
 
-## Meet the Team
+## 👥 Meet the Team
 
 This project was developed by:
 
