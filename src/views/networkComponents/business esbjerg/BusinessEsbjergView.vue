@@ -232,36 +232,52 @@
 
 <script setup>
 import { onMounted } from 'vue';
+import { useHead } from '@vueuse/head';
 import { scrollToTop } from '@/components/modules/scrollToTop';
 
 onMounted(() => {
   scrollToTop();
 });
 
-const updateMeta = (name, content, isProperty = false) => {
-  const selector = isProperty ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-  let meta = document.querySelector(selector);
+useHead({
+  title: 'Business Esbjerg | Business Region DE-DK',
 
-  if (!meta) {
-    meta = document.createElement('meta');
-    if (isProperty) meta.setAttribute('property', name);
-    else meta.name = name;
-    document.head.appendChild(meta);
-  }
-  meta.content = content;
-};
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://business-region-de-dk.web.app/partners/business-esbjerg',
+    },
+  ],
 
-onMounted(() => {
-  document.title = "Business Esbjerg - Cross-Border Network Partner";
-
-  updateMeta('description', 'Learn more about Business Esbjerg, a key partner in the DE-DK cross-border network driving business development and growth in Esbjerg and Fanø.');
-  updateMeta('keywords', 'Business Esbjerg, DE-DK network, cross-border cooperation, Esbjerg business council, regional development');
-
-  updateMeta('og:title', 'Business Esbjerg - Cross-Border Network Partner', true);
-  updateMeta('og:description', 'Driving local and regional business growth across the Danish-German border.', true);
-  updateMeta('og:type', 'profile', true);
-  
-  updateMeta('og:image', 'https://business-region-de-dk.web.app/assets/business-esbjerg-share.jpg', true);
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Learn more about Business Esbjerg, a partner organization supporting business development, innovation, and cross-border cooperation in the Danish-German region.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'Business Esbjerg, Esbjerg business council, Business Region DE-DK, cross-border cooperation, regional development',
+    },
+    {
+      property: 'og:title',
+      content: 'Business Esbjerg | Business Region DE-DK',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Learn more about Business Esbjerg and its role in supporting business growth and cross-border cooperation.',
+    },
+    {
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      property: 'og:image',
+      content: '/network/business esbjerg.webp',
+    },
+  ],
 });
 
 </script>

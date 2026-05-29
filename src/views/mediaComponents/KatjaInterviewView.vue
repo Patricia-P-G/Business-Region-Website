@@ -44,7 +44,7 @@
               <!-- Thumbnail Picture -->
               <img :src="thumbnailSrc" :alt="`${interview.title} - video thumbnail`" class="absolute inset-0 h-full w-full object-cover"/>
 
-              <!-- Bckground Overlay when Hover -->
+              <!-- Background Overlay when Hover -->
               <div class="absolute inset-0 bg-black/15 transition duration-300 group-hover:bg-black/30" aria-hidden="true"></div>
 
               <!-- Play Button -->
@@ -274,6 +274,7 @@
 
 <script setup>
 import { ref, computed, onMounted, nextTick } from 'vue';
+import { useHead } from '@vueuse/head';
 
 import { scrollToTop } from '@/components/modules/scrollToTop';
 import MediaCard from './MediaCard.vue';
@@ -295,7 +296,7 @@ const interview = {
   subtitle:'Project manager at Erhvervsfremme Nordfriesland and responsible for the project Interreg Business DE-DK.',
   youtubeUrl: 'https://www.youtube.com/watch?v=mqhIDMQmaTE',
   embedUrl: 'https://www.youtube.com/embed/mqhIDMQmaTE',
-  postedDate: 'October 8, 2015',
+  postedDate: 'October 8, 2025',
   description1: 'In this video, Katja shares how cooperation between the border regions of Denmark and Germany can help solve the current shortage of qualified labor.',
   description2: 'Through Business DE-DK, companies on both sides of the border are brought together to find solutions to the needs of the workforce. Katja explains how networking and collaboration play a central role in attracting labor to the region, and how small obstacles can be overcome through joint efforts.',
   description3:'The project also supports the labor market by attracting global labor, who are given the opportunity to choose where they want to work in the border region.',
@@ -350,4 +351,46 @@ function prevSlide() {
 function nextSlide() {
   currentSlide.value = Math.min(maxSlide.value, currentSlide.value + 1);
 }
+
+useHead({
+  title: 'Meet Katja Rosenburg | Business Region DE-DK',
+
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://business-region-de-dk.web.app/media/meet-katja',
+    },
+  ],
+
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Watch an interview with Katja Rosenburg, Project Manager at Erhvervsfremme Nordfriesland, discussing cross-border cooperation, labor mobility, and the Business DE-DK initiative.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'Katja Rosenburg, Business DE-DK, cross-border cooperation, Germany Denmark, labor mobility, Interreg, business development',
+    },
+    {
+      property: 'og:title',
+      content: 'Meet Katja Rosenburg | Business Region DE-DK',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Watch an interview with Katja Rosenburg discussing labor mobility and cross-border business cooperation in the Danish-German region.',
+    },
+    {
+      property: 'og:type',
+      content: 'video.other',
+    },
+    {
+      property: 'og:image',
+      content: '/media/katja/katja-vid-thumbnail.jpg',
+    },
+  ],
+});
+
 </script>

@@ -119,7 +119,7 @@
                         </p>
 
                         <!-- Browse More Button -->
-                        <router-link to="/media" aria-label="Browse more videos from the media channel" class="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-lg font-bold text-[#11213A] transition-all duration-300 hover:bg-[#EEF0FF] focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80">
+                        <router-link to="/media" aria-label="Browse more videos from the media channel" class="mt-8 flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-lg font-bold text-[#11213A] transition-all duration-300 hover:bg-[#EEF0FF] focus:outline-none focus-visible:ring-4 focus-visible:ring-white/80">
                             Browse More
 
                             <!-- Arrow -->
