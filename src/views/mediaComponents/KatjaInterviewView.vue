@@ -1,29 +1,32 @@
 <template>
   <main>
     <!-- Katja Interview Section -->
-    <section
-      class="w-full pt-40"
-      style="background: linear-gradient(to bottom, rgba(121,136,210,1) 0%, rgba(121,136,210,0.38) 35%, rgba(255,255,255,0) 60%, #ffffff 100%);"
-      aria-labelledby="interview-page-title"
-    >
+    <section class="w-full pt-40 bg-[linear-gradient(to_bottom,rgba(121,136,210,1)_0%,rgba(121,136,210,0.38)_35%,rgba(255,255,255,0)_60%,#ffffff_100%)]"
+      aria-labelledby="interview-page-title">
+
+      <!-- Right Space -->
       <div class="mx-auto max-w-400 px-5 sm:px-8 lg:px-20">
-        <!-- Title + Subtitle -->
+
+        <!-- Title + Subtitle Wrapper -->
         <div class="mb-8">
+          <!-- Title -->
           <h1 id="interview-page-title" class="mb-3 text-3xl font-bold text-white sm:text-4xl">
             {{ interview.title }}
           </h1>
 
+          <!-- Subtitle -->
           <p class="text-sm leading-6 text-white/85 sm:max-w-[50%] sm:text-base">
             {{ interview.subtitle }}
           </p>
         </div>
 
+        <!-- Grid Wrapper -->
         <div class="grid grid-cols-12 gap-6">
-          <!-- Video Player -->
-          <div
-            class="group relative col-span-12 aspect-video overflow-hidden rounded-xl bg-black sm:aspect-auto sm:flex sm:h-125 sm:items-center sm:justify-center lg:col-span-8"
-          >
+
+          <!-- Video Player Wrapper -->
+          <div class="group relative col-span-12 aspect-video overflow-hidden rounded-xl bg-black sm:aspect-auto sm:flex sm:h-125 sm:items-center sm:justify-center lg:col-span-8">
             <template v-if="isPlaying">
+              <!-- Youtube Iframe -->
               <iframe
                 :src="`${interview.embedUrl}?autoplay=1&rel=0&playsinline=1`"
                 :title="`Video player for ${interview.title}`"
