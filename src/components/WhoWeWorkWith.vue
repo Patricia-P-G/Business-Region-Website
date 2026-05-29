@@ -33,7 +33,7 @@
             <ul class="col-span-12 grid grid-cols-1 gap-8 pt-10 md:grid-cols-3 md:gap-12" aria-label="Partner companies">
 
             <!-- Card -->
-                <li v-for="company in companies" :key="company.name" class="list-none">
+                <li v-for="company in featuredCompanies" :key="company.name" class="list-none">
 
                     <!-- To make it accessible (each page) -->
                     <router-link :to="company.route" class="group block h-full rounded-lg bg-white p-5 shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(255,255,255,0.85)] focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B234E]"
@@ -113,40 +113,8 @@
 </template>
 
 <script setup>
-import businessEsbjerg from "@/assets/network/business esbjerg.webp";
-import businessKolding from "@/assets/network/business kolding.webp";
-import copenhagenCapacity from "@/assets/network/copenhagen capacity.webp";
+import { companies } from '@/components/modules/companies';
 
-const companies = [
-  {
-    name: "Business Esbjerg",
-    industry: "Industry mentioned",
-    logo: businessEsbjerg,
-    years: "30+",
-    employees: "200+",
-    trust: "trusted company #1",
-    darkLogo: false,
-    route: "/partners/business-esbjerg",
-  },
-  {
-    name: "Business Kolding",
-    industry: "Industry mentioned",
-    logo: businessKolding,
-    years: "30+",
-    employees: "200+",
-    trust: "trusted company #1",
-    darkLogo: true,
-    route: "/partners/business-kolding",
-  },
-  {
-    name: "Copenhagen Capacity",
-    industry: "Industry mentioned",
-    logo: copenhagenCapacity,
-    years: "30+",
-    employees: "200+",
-    trust: "trusted company #1",
-    darkLogo: false,
-    route: "/partners/copenhagen-capacity",
-  },
-];
+const featuredCompanies = companies.slice(0, 3);
+
 </script>

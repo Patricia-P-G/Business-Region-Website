@@ -26,7 +26,7 @@
 
             <!-- Title -->
             <h1 id="partner-title" class="text-2xl sm:text-3xl font-bold tracking-wide text-primary uppercase">
-              Business Esbjerg
+              Company Name
             </h1>
 
             <!-- Description -->
@@ -216,9 +216,7 @@
 
           <!-- Visito Our Website Button  -->
           <div class="mt-8 flex justify-center lg:justify-start">
-            <a href="https://www.businessesbjerg.com/en/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md bg-secondary
-              px-8 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-200 hover:bg-[#6A7ECB] hover:shadow
-              focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+            <a href="https://www.businessesbjerg.com/en/" target="_blank" rel="noopener noreferrer" class="cta-lavander-button px-8">
               Visit our website <span class="sr-only">(opens in new window)</span>
             </a>
           </div>
